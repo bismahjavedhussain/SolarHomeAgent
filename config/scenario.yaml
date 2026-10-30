@@ -130,12 +130,12 @@ tariff:
     - [700, 41.85]
     - [999999, 47.20]
 
-  # Fixed charge in Rs per kW of sanctioned load, one entry per unprotected band.
-  # Reported range is Rs 200-675/kW; the step pattern below is NOT individually
-  # confirmed. VERIFY AGAINST NEPRA.
-  fixed_charge_per_kw: [0, 0, 0, 200, 400, 600, 675, 675]
-  sanctioned_load_kw: 5
-  fixed_charge_applies_to_protected: false
+  # Fixed charge in Rs per kW of sanctioned load, one entry per band.
+  # Reported S.R.O. 279(I)/2026. VERIFY AGAINST NEPRA before quoting.
+  protected_fixed_charge_per_kw: [200, 300]                      # one per protected band
+  fixed_charge_per_kw: [275, 300, 350, 400, 500, 675, 675, 675]  # one per unprotected band
+  sanctioned_load_kw: 5        # assumed
+  fixed_charge_applies_to_protected: true
 
   protected_limit_units: 200
   protected_status_months: 6   # months of unprotected pricing after crossing the limit

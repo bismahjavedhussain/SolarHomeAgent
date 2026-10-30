@@ -18,7 +18,7 @@ These are results from a **simulation**, not measurements from a real home. They
 
 During a power cut a home with nothing left in the battery simply goes dark, and load it never served never appears on the bill. So units bought must be read next to load actually served: **374.6 kWh usual vs 379.7 kWh agent**, out of 388.7 kWh the home wanted. Per 100 kWh actually served, grid units go **57.4 -> 47.8**.
 
-Cost of the units bought: **Rs 7,117 -> Rs 2,114** on unprotected pricing (including Rs 0 of fixed charges). Band rates are the reported S.R.O. 279(I)/2026 figures and still need verifying against NEPRA; taxes, duty and fuel adjustments are excluded, so a real bill would be higher.
+Cost of the units bought: **Rs 8,867 -> Rs 3,614** on unprotected pricing (including Rs 1,500 of fixed charges). Band rates are the reported S.R.O. 279(I)/2026 figures and still need verifying against NEPRA; taxes, duty and fuel adjustments are excluded, so a real bill would be higher.
 
 ## How much the agent trusted itself
 
@@ -36,7 +36,7 @@ Cost of the units bought: **Rs 7,117 -> Rs 2,114** on unprotected pricing (inclu
 
 Usual behaviour crosses the 200-unit limit (215 units) and the agent stays under it (181.4 units). That matters twice over, and the two figures are different things:
 
-1. **This month: Rs 5,003 less** for the units bought (Rs 7,117 against Rs 2,114).
+1. **This month: Rs 5,253 less** for the units bought (Rs 8,867 against Rs 3,614).
 2. **The next 6 months: about Rs 18,788.** Once a home crosses the limit it stays on unprotected rates for 6 months *even after its usage drops back under 200*. This figure prices those months at 181.4 units, the agent's own monthly usage, and assumes it holds steady. It is an estimate, not a forecast.
 
 A month above the limit can never itself be billed at protected rates, so the penalty is not that month's own gap - it is what the *following* months cost.

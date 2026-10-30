@@ -210,24 +210,34 @@ against NEPRA before being quoted anywhere.** Rates are revised periodically.
 
 | Band | Rate | Fixed charge | Label |
 |---|---|---|---|
-| 1-100 | Rs 22.44 | - | Reported |
-| 101-200 | Rs 28.91 | - | Reported |
-| 201-300 | Rs 33.10 | - | Reported |
-| 301-400 | Rs 36.46 | Rs 200/kW | Reported rate; fixed charge is the reported low end |
-| 401-500 | Rs 38.95 | Rs 400/kW | Reported rate; **fixed charge step not individually confirmed** |
-| 501-600 | Rs 40.22 | Rs 600/kW | Reported rate; **fixed charge step not individually confirmed** |
-| 601-700 | Rs 41.85 | Rs 675/kW | Reported rate; fixed charge is the reported high end |
+| 1-100 | Rs 22.44 | Rs 275/kW | Reported |
+| 101-200 | Rs 28.91 | Rs 300/kW | Reported |
+| 201-300 | Rs 33.10 | Rs 350/kW | Reported |
+| 301-400 | Rs 36.46 | Rs 400/kW | Reported |
+| 401-500 | Rs 38.95 | Rs 500/kW | Reported |
+| 501-600 | Rs 40.22 | Rs 675/kW | Reported |
+| 601-700 | Rs 41.85 | Rs 675/kW | Reported |
 | Over 700 | Rs 47.20 | Rs 675/kW | Reported |
 
 The earlier version of this project interpolated six of these eight rates and flagged them as
 placeholders. They are now the reported figures, used verbatim from `config/scenario.yaml` with no
 interpolation anywhere in the code.
 
-**Fixed charges** are Rs per kW of sanctioned load, applied to the band the month reaches.
-Sanctioned load defaults to **5 kW** (assumed). The reported range is Rs 200-675/kW; the two
-endpoints are as reported, but **the step pattern between them is not individually confirmed** and
-needs checking. Protected consumers are treated as exempt
-(`fixed_charge_applies_to_protected: false`).
+**Fixed charges** are Rs per kW of sanctioned load, applied to the band the month reaches. All
+values are the reported S.R.O. 279(I)/2026 figures and **should still be verified against NEPRA**.
+Protected and unprotected consumers have separate tables:
+
+| Protected band | Fixed charge |
+|---|---|
+| 1-100 | Rs 200/kW |
+| 101-200 | Rs 300/kW |
+
+Sanctioned load defaults to **5 kW** (assumed), so a protected home on 150 units pays Rs 1,500 of
+fixed charges. Protected consumers are **not** exempt
+(`fixed_charge_applies_to_protected: true`).
+
+Note that the fixed charge often cancels out of the six-month penalty, because a home just under
+200 units sits in the same band position on both tables (Rs 300/kW either way).
 
 ### The cost of crossing 200 units
 

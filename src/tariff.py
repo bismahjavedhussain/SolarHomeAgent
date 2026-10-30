@@ -20,6 +20,14 @@ def band_index(units: float, cfg: dict) -> int:
     return len(cfg["unprotected_bands"]) - 1
 
 
+def protected_band_index(units: float, cfg: dict) -> int:
+    """Which protected band a month's usage lands in."""
+    for index, (limit, _) in enumerate(cfg["protected_bands"]):
+        if units <= limit:
+            return index
+    return len(cfg["protected_bands"]) - 1
+
+
 def protected_cost(units: float, cfg: dict) -> float:
     """Telescopic protected pricing: each slice of units is charged at its own rate."""
     cost, previous = 0.0, 0
@@ -39,9 +47,12 @@ def unprotected_cost(units: float, cfg: dict) -> tuple[float, float]:
 
 def fixed_charge(units: float, protected: bool, cfg: dict) -> float:
     """Fixed charge in Rs, from sanctioned load and the band reached."""
-    if protected and not cfg.get("fixed_charge_applies_to_protected", False):
-        return 0.0
-    per_kw = cfg["fixed_charge_per_kw"][band_index(units, cfg)]
+    if protected:
+        if not cfg.get("fixed_charge_applies_to_protected", False):
+            return 0.0
+        per_kw = cfg["protected_fixed_charge_per_kw"][protected_band_index(units, cfg)]
+    else:
+        per_kw = cfg["fixed_charge_per_kw"][band_index(units, cfg)]
     return per_kw * cfg["sanctioned_load_kw"]
 
 

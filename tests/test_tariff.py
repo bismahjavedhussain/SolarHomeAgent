@@ -4,7 +4,8 @@ from __future__ import annotations
 import pytest
 
 from src.tariff import (band_index, band_limits, estimate_bill, fixed_charge,
-                        protected_cost, protected_loss_cost, unprotected_cost)
+                        protected_band_index, protected_cost, protected_loss_cost,
+                        unprotected_cost)
 
 
 def test_protected_pricing_is_telescopic(config):
@@ -72,7 +73,7 @@ def test_protected_flag_only_applies_to_eligible_homes(config):
 def test_fixed_charge_scales_with_sanctioned_load(config):
     """Fixed charge is Rs per kW of sanctioned load, for the band reached."""
     cfg = dict(config["tariff"])
-    heavy = 350  # a band that carries a fixed charge
+    heavy = 350
     per_kw = cfg["fixed_charge_per_kw"][band_index(heavy, cfg)]
     assert per_kw > 0
     assert fixed_charge(heavy, False, cfg) == pytest.approx(per_kw * cfg["sanctioned_load_kw"])
@@ -81,12 +82,30 @@ def test_fixed_charge_scales_with_sanctioned_load(config):
     assert fixed_charge(heavy, False, doubled) == pytest.approx(2 * fixed_charge(heavy, False, cfg))
 
 
-def test_protected_homes_pay_no_fixed_charge_by_default(config):
-    """Protected consumers are exempt unless the config says otherwise."""
+def test_protected_homes_pay_a_fixed_charge_too(config):
+    """The reported tariff charges protected consumers a fixed amount as well."""
     cfg = config["tariff"]
-    assert not cfg["fixed_charge_applies_to_protected"]
-    assert fixed_charge(150, True, cfg) == 0.0
-    assert estimate_bill(150, 0, "none", True, cfg)["fixed_charge_rs"] == 0.0
+    assert cfg["fixed_charge_applies_to_protected"]
+    expected = cfg["protected_fixed_charge_per_kw"][protected_band_index(150, cfg)] * cfg["sanctioned_load_kw"]
+    assert fixed_charge(150, True, cfg) == pytest.approx(expected)
+    assert estimate_bill(150, 0, "none", True, cfg)["fixed_charge_rs"] == pytest.approx(expected)
+
+
+def test_protected_and_unprotected_use_their_own_fixed_charge_tables(config):
+    """The two tables are separate, so a band index is never read from the wrong one."""
+    cfg = config["tariff"]
+    assert len(cfg["protected_fixed_charge_per_kw"]) == len(cfg["protected_bands"])
+    assert len(cfg["fixed_charge_per_kw"]) == len(cfg["unprotected_bands"])
+    assert protected_band_index(50, cfg) == 0
+    assert protected_band_index(150, cfg) == 1
+    assert protected_band_index(500, cfg) == len(cfg["protected_bands"]) - 1
+
+
+def test_every_fixed_charge_is_in_the_reported_range(config):
+    """All per-kW values sit inside the reported Rs 200-675 range."""
+    cfg = config["tariff"]
+    values = cfg["protected_fixed_charge_per_kw"] + cfg["fixed_charge_per_kw"]
+    assert all(200 <= v <= 675 for v in values), values
 
 
 def test_fixed_charge_appears_in_the_bill(config):

@@ -11,7 +11,7 @@
   {
     "segment": "a1_landing",
     "start": 7.0,
-    "seconds": 5.0,
+    "seconds": 4.5,
     "lines": [
       "In September 2026, I built Agentic Arbiter.",
       "It covers 238 real data-centre campuses across 36 US states."
@@ -19,7 +19,7 @@
   },
   {
     "segment": "a2_site",
-    "start": 12.0,
+    "start": 11.5,
     "seconds": 4.5,
     "lines": [
       "Data centres run chillers even when",
@@ -28,13 +28,13 @@
   },
   {
     "segment": "a3_config",
-    "start": 16.5,
-    "seconds": 3.0,
+    "start": 16.0,
+    "seconds": 1.8,
     "lines": []
   },
   {
     "segment": "a4_working",
-    "start": 19.5,
+    "start": 17.8,
     "seconds": 3.5,
     "lines": [
       "It works hour by hour, deciding when it's safe to shut the chillers off."
@@ -42,8 +42,8 @@
   },
   {
     "segment": "a5_schedule",
-    "start": 23.0,
-    "seconds": 5.5,
+    "start": 21.3,
+    "seconds": 4.3,
     "lines": [
       "It made no unsafe calls.",
       "The old controller made one."
@@ -51,7 +51,7 @@
   },
   {
     "segment": "a6_economic",
-    "start": 28.5,
+    "start": 25.6,
     "seconds": 4.0,
     "lines": [
       "Over five real years, that's about four hundred extra hours a year."
@@ -59,7 +59,7 @@
   },
   {
     "segment": "a7_selfscore",
-    "start": 32.5,
+    "start": 29.6,
     "seconds": 6.5,
     "lines": [
       "And it grades itself.",
@@ -69,17 +69,17 @@
   },
   {
     "segment": "c2_coalition",
-    "start": 39.0,
+    "start": 36.1,
     "seconds": 8.0,
     "lines": [
-      "Second of 842 teams, out of more than four thousand people,",
+      "Second of 842 teams, out of nearly four thousand people,",
       "at FortyGuard's hackathon, sponsored by NVIDIA.",
-      "The UN's Cool Coalition featured it."
+      "The UN-backed Cool Coalition featured it."
     ]
   },
   {
     "segment": "a8_future",
-    "start": 47.0,
+    "start": 44.1,
     "seconds": 4.0,
     "lines": [
       "Next I want it running live on real sites, not just measured on them."
@@ -87,7 +87,7 @@
   },
   {
     "segment": "c3_pakistan",
-    "start": 51.0,
+    "start": 48.1,
     "seconds": 7.5,
     "lines": [
       "Then I looked at home.",
@@ -97,42 +97,42 @@
   },
   {
     "segment": "s1_demand",
-    "start": 58.5,
-    "seconds": 5.0,
+    "start": 55.6,
+    "seconds": 6.0,
     "lines": [
       "I asked twenty-one families.",
-      "Seven of the ten with solar are already trying to use more sun by day."
+      "Seven of the ten with solar have changed habits or are getting a battery."
     ]
   },
   {
     "segment": "h1_metrics",
-    "start": 63.5,
-    "seconds": 6.0,
+    "start": 61.6,
+    "seconds": 7.2,
     "lines": [
       "So I'm building a Solar Home Agent.",
-      "It reads tomorrow's weather, then picks when to run the motor and the iron."
+      "It helps most in a solar home with no battery that can't sell its spare power."
     ]
   },
   {
     "segment": "h2_month",
-    "start": 69.5,
-    "seconds": 4.0,
+    "start": 68.8,
+    "seconds": 6.0,
     "lines": [
-      "Same habit: it remembers how wrong it's been."
+      "It reads tomorrow's weather, picks when to run the motor and the iron, and remembers how wrong it's been."
     ]
   },
   {
     "segment": "h3_savings",
-    "start": 73.5,
-    "seconds": 4.5,
+    "start": 74.8,
+    "seconds": 7.0,
     "lines": [
-      "Moving a few jobs into the afternoon keeps this home under the limit.",
+      "Moving a few jobs into the sunny hours keeps this home under the limit.",
       "About five thousand rupees this month."
     ]
   },
   {
     "segment": "h4_grid",
-    "start": 78.0,
+    "start": 81.8,
     "seconds": 4.5,
     "lines": [
       "Nearly nineteen thousand over the next six.",
@@ -141,7 +141,7 @@
   },
   {
     "segment": "s2_trust",
-    "start": 82.5,
+    "start": 86.3,
     "seconds": 5.0,
     "lines": [
       "Thirteen said they'd only trust an app that explains itself.",
@@ -150,8 +150,8 @@
   },
   {
     "segment": "h5_day",
-    "start": 87.5,
-    "seconds": 5.5,
+    "start": 91.3,
+    "seconds": 4.7,
     "lines": [
       "When it isn't sure, it says no,",
       "and tells you why."
@@ -159,7 +159,7 @@
   },
   {
     "segment": "h6_promises",
-    "start": 93.0,
+    "start": 96.0,
     "seconds": 3.0,
     "lines": [
       "It keeps score against what the sun actually did."
@@ -167,7 +167,7 @@
   },
   {
     "segment": "h7_switches",
-    "start": 96.0,
+    "start": 99.0,
     "seconds": 4.0,
     "lines": [
       "But look what it can't fix: it still wastes most of its midday sun,",
@@ -176,15 +176,15 @@
   },
   {
     "segment": "h8_assume",
-    "start": 100.0,
-    "seconds": 3.8,
+    "start": 103.0,
+    "seconds": 2.5,
     "lines": [
       "Storage closes that."
     ]
   },
   {
     "segment": "c4_next",
-    "start": 103.8,
+    "start": 105.5,
     "seconds": 8.0,
     "lines": [
       "Next: five to ten homes in Islamabad, over WhatsApp.",
@@ -193,7 +193,7 @@
   },
   {
     "segment": "c5_close",
-    "start": 111.8,
+    "start": 113.5,
     "seconds": 6.0,
     "lines": [
       "The solar is already on Pakistan's roofs.",

@@ -7,12 +7,12 @@ Energy gets wasted for a boring reason:
 nobody trusts the forecast enough to act on it.
 
 3
-00:00:07,200 --> 00:00:10,046
-Last year I built Agentic Arbiter, on my own.
+00:00:07,200 --> 00:00:09,284
+In September 2026, I built Agentic Arbiter.
 
 4
-00:00:10,186 --> 00:00:12,400
-It's live, and this is it running.
+00:00:09,424 --> 00:00:12,400
+It covers 238 real data-centre campuses across 36 US states.
 
 5
 00:00:12,700 --> 00:00:14,805
@@ -23,130 +23,130 @@ Data centres run chillers even when
 the air outside is already cold enough.
 
 7
-00:00:17,700 --> 00:00:20,550
+00:00:17,700 --> 00:00:21,900
 I pick a real site, and the plant's own limits.
 
 8
-00:00:20,690 --> 00:00:22,400
-Then I let the agent decide.
+00:00:22,200 --> 00:00:25,900
+Then it works hour by hour, deciding when it's safe to shut the chillers off.
 
 9
-00:00:22,700 --> 00:00:26,900
-It works hour by hour, deciding when it's safe to shut the chillers off.
-
-10
-00:00:27,200 --> 00:00:30,230
+00:00:26,200 --> 00:00:28,980
 It made no unsafe calls.
 
-11
-00:00:30,370 --> 00:00:33,400
+10
+00:00:29,120 --> 00:00:31,900
 The old controller made one.
 
-12
-00:00:33,700 --> 00:00:37,900
+11
+00:00:32,200 --> 00:00:36,400
 Over five real years, that's about four hundred extra hours a year.
 
-13
-00:00:38,200 --> 00:00:39,552
+12
+00:00:36,700 --> 00:00:37,867
 And it grades itself.
 
+13
+00:00:38,007 --> 00:00:42,093
+Here it's missing its target, because the data was patchy during the hackathon window.
+
 14
-00:00:39,692 --> 00:00:42,733
-Here it's missing its own target, and saying so.
+00:00:42,233 --> 00:00:43,400
+It says so itself.
 
 15
-00:00:42,873 --> 00:00:44,900
-That's the part I'm proudest of.
+00:00:43,700 --> 00:00:47,249
+Second of 842 teams, out of more than four thousand people,
 
 16
-00:00:45,200 --> 00:00:46,980
-Second of eight hundred and forty-two teams.
+00:00:47,389 --> 00:00:49,324
+at FortyGuard's hackathon, sponsored by NVIDIA.
 
 17
-00:00:47,120 --> 00:00:48,900
-The UN's Cool Coalition picked it up.
+00:00:49,464 --> 00:00:51,400
+The UN's Cool Coalition featured it.
 
 18
-00:00:49,200 --> 00:00:51,558
-Pakistan has solar on millions of roofs,
+00:00:51,700 --> 00:00:55,900
+Next I want it running live on real sites, not just measured on them.
 
 19
-00:00:51,698 --> 00:00:53,718
-but the grid can't see it.
+00:00:56,200 --> 00:00:57,353
+Then I looked at home.
 
 20
-00:00:53,858 --> 00:00:57,900
-Go over two hundred units a month, and every unit gets re-priced.
+00:00:57,493 --> 00:01:00,492
+Pakistan has solar on millions of roofs, but the grid can't see it.
 
 21
-00:00:58,200 --> 00:01:00,387
-So I'm building a Solar Home Agent.
+00:01:00,632 --> 00:01:03,400
+Go over two hundred units a month, and every unit gets re-priced.
 
 22
-00:01:00,527 --> 00:01:04,900
-It reads tomorrow's weather, then picks when to run the motor and the iron.
+00:01:03,700 --> 00:01:05,720
+So I'm building a Solar Home Agent.
 
 23
-00:01:05,200 --> 00:01:09,900
-Same habit: it remembers how wrong it's been.
+00:01:05,860 --> 00:01:09,900
+It reads tomorrow's weather, then picks when to run the motor and the iron.
 
 24
-00:01:10,200 --> 00:01:13,320
-Moving a few jobs into the afternoon keeps this home under the limit.
+00:01:10,200 --> 00:01:14,400
+Same habit: it remembers how wrong it's been.
 
 25
-00:01:13,460 --> 00:01:14,900
-About five thousand rupees this month.
+00:01:14,700 --> 00:01:17,820
+Moving a few jobs into the afternoon keeps this home under the limit.
 
 26
-00:01:15,200 --> 00:01:17,078
-Nearly nineteen thousand over the next six.
+00:01:17,960 --> 00:01:19,400
+About five thousand rupees this month.
 
 27
-00:01:17,218 --> 00:01:19,900
-It's a simulation, on one real month of Islamabad weather.
+00:01:19,700 --> 00:01:21,578
+Nearly nineteen thousand over the next six.
 
 28
-00:01:20,200 --> 00:01:24,056
-When it isn't sure, it says no,
+00:01:21,718 --> 00:01:24,400
+It's a simulation, on one real month of Islamabad weather.
 
 29
-00:01:24,196 --> 00:01:26,400
-and tells you why.
+00:01:24,700 --> 00:01:28,238
+When it isn't sure, it says no,
 
 30
-00:01:26,700 --> 00:01:30,200
-It keeps score against what the sun actually did.
+00:01:28,378 --> 00:01:30,400
+and tells you why.
 
 31
-00:01:30,500 --> 00:01:34,200
-But look what it can't fix.
+00:01:30,700 --> 00:01:33,900
+It keeps score against what the sun actually did.
 
 32
-00:01:34,500 --> 00:01:37,188
-It still wastes most of its midday sun, and buys after dark.
+00:01:34,200 --> 00:01:37,400
+But look what it can't fix.
 
 33
-00:01:37,328 --> 00:01:38,000
-Storage closes that.
+00:01:37,700 --> 00:01:40,148
+It still wastes most of its midday sun, and buys after dark.
 
 34
-00:01:38,300 --> 00:01:40,869
-Next: five to ten homes in Islamabad, over WhatsApp.
+00:01:40,288 --> 00:01:40,900
+Storage closes that.
 
 35
-00:01:41,009 --> 00:01:44,435
-I'm starting an Energy-and-AI circle at COMSATS, and I'd join IRENA NewGen.
+00:01:41,200 --> 00:01:44,602
+Next: five to ten homes in Islamabad, over WhatsApp.
 
 36
-00:01:44,575 --> 00:01:48,000
-Then add those homes into one neighbourhood forecast, with our distribution company.
+00:01:44,742 --> 00:01:48,900
+Then add them into one neighbourhood forecast, with our distribution company.
 
 37
-00:01:48,300 --> 00:01:50,462
+00:01:49,200 --> 00:01:51,362
 The solar is already on Pakistan's roofs.
 
 38
-00:01:50,602 --> 00:01:54,000
+00:01:51,502 --> 00:01:54,900
 I want to help the grid see it, and trust it.
 

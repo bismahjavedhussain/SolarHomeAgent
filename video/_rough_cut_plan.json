@@ -13,8 +13,8 @@
     "start": 7.0,
     "seconds": 5.5,
     "lines": [
-      "Last year I built Agentic Arbiter, on my own.",
-      "It's live, and this is it running."
+      "In September 2026, I built Agentic Arbiter.",
+      "It covers 238 real data-centre campuses across 36 US states."
     ]
   },
   {
@@ -29,24 +29,23 @@
   {
     "segment": "t03_config",
     "start": 17.5,
-    "seconds": 5.0,
+    "seconds": 4.5,
     "lines": [
-      "I pick a real site, and the plant's own limits.",
-      "Then I let the agent decide."
+      "I pick a real site, and the plant's own limits."
     ]
   },
   {
     "segment": "t04_working",
-    "start": 22.5,
-    "seconds": 4.5,
+    "start": 22.0,
+    "seconds": 4.0,
     "lines": [
-      "It works hour by hour, deciding when it's safe to shut the chillers off."
+      "Then it works hour by hour, deciding when it's safe to shut the chillers off."
     ]
   },
   {
     "segment": "t05_schedule",
-    "start": 27.0,
-    "seconds": 6.5,
+    "start": 26.0,
+    "seconds": 6.0,
     "lines": [
       "It made no unsafe calls.",
       "The old controller made one."
@@ -54,7 +53,7 @@
   },
   {
     "segment": "t06_economic",
-    "start": 33.5,
+    "start": 32.0,
     "seconds": 4.5,
     "lines": [
       "Over five real years, that's about four hundred extra hours a year."
@@ -62,53 +61,62 @@
   },
   {
     "segment": "t07_selfscore",
-    "start": 38.0,
+    "start": 36.5,
     "seconds": 7.0,
     "lines": [
       "And it grades itself.",
-      "Here it's missing its own target, and saying so.",
-      "That's the part I'm proudest of."
+      "Here it's missing its target, because the data was patchy during the hackathon window.",
+      "It says so itself."
     ]
   },
   {
-    "segment": "t08_scale",
-    "start": 45.0,
-    "seconds": 4.0,
+    "segment": "t08_coalition",
+    "start": 43.5,
+    "seconds": 8.0,
     "lines": [
-      "Second of eight hundred and forty-two teams.",
-      "The UN's Cool Coalition picked it up."
+      "Second of 842 teams, out of more than four thousand people,",
+      "at FortyGuard's hackathon, sponsored by NVIDIA.",
+      "The UN's Cool Coalition featured it."
     ]
   },
   {
-    "segment": "t09_pakistan",
-    "start": 49.0,
-    "seconds": 9.0,
+    "segment": "t09_future",
+    "start": 51.5,
+    "seconds": 4.5,
     "lines": [
-      "Pakistan has solar on millions of roofs,",
-      "but the grid can't see it.",
+      "Next I want it running live on real sites, not just measured on them."
+    ]
+  },
+  {
+    "segment": "t10_pakistan",
+    "start": 56.0,
+    "seconds": 7.5,
+    "lines": [
+      "Then I looked at home.",
+      "Pakistan has solar on millions of roofs, but the grid can't see it.",
       "Go over two hundred units a month, and every unit gets re-priced."
     ]
   },
   {
-    "segment": "t10_sha_metrics",
-    "start": 58.0,
-    "seconds": 7.0,
+    "segment": "t11_sha_metrics",
+    "start": 63.5,
+    "seconds": 6.5,
     "lines": [
       "So I'm building a Solar Home Agent.",
       "It reads tomorrow's weather, then picks when to run the motor and the iron."
     ]
   },
   {
-    "segment": "t11_sha_month",
-    "start": 65.0,
-    "seconds": 5.0,
+    "segment": "t12_sha_month",
+    "start": 70.0,
+    "seconds": 4.5,
     "lines": [
       "Same habit: it remembers how wrong it's been."
     ]
   },
   {
-    "segment": "t12_sha_savings",
-    "start": 70.0,
+    "segment": "t13_sha_savings",
+    "start": 74.5,
     "seconds": 5.0,
     "lines": [
       "Moving a few jobs into the afternoon keeps this home under the limit.",
@@ -116,8 +124,8 @@
     ]
   },
   {
-    "segment": "t13_sha_grid",
-    "start": 75.0,
+    "segment": "t14_sha_grid",
+    "start": 79.5,
     "seconds": 5.0,
     "lines": [
       "Nearly nineteen thousand over the next six.",
@@ -125,52 +133,51 @@
     ]
   },
   {
-    "segment": "t14_sha_day",
-    "start": 80.0,
-    "seconds": 6.5,
+    "segment": "t15_sha_day",
+    "start": 84.5,
+    "seconds": 6.0,
     "lines": [
       "When it isn't sure, it says no,",
       "and tells you why."
     ]
   },
   {
-    "segment": "t15_sha_promises",
-    "start": 86.5,
-    "seconds": 3.8,
+    "segment": "t16_sha_promises",
+    "start": 90.5,
+    "seconds": 3.5,
     "lines": [
       "It keeps score against what the sun actually did."
     ]
   },
   {
-    "segment": "t16_sha_switches",
-    "start": 90.3,
-    "seconds": 4.0,
+    "segment": "t17_sha_switches",
+    "start": 94.0,
+    "seconds": 3.5,
     "lines": [
       "But look what it can't fix."
     ]
   },
   {
-    "segment": "t17_sha_assume",
-    "start": 94.3,
-    "seconds": 3.8,
+    "segment": "t18_sha_assume",
+    "start": 97.5,
+    "seconds": 3.5,
     "lines": [
       "It still wastes most of its midday sun, and buys after dark.",
       "Storage closes that."
     ]
   },
   {
-    "segment": "t18_next",
-    "start": 98.1,
-    "seconds": 10.0,
+    "segment": "t19_next",
+    "start": 101.0,
+    "seconds": 8.0,
     "lines": [
       "Next: five to ten homes in Islamabad, over WhatsApp.",
-      "I'm starting an Energy-and-AI circle at COMSATS, and I'd join IRENA NewGen.",
-      "Then add those homes into one neighbourhood forecast, with our distribution company."
+      "Then add them into one neighbourhood forecast, with our distribution company."
     ]
   },
   {
-    "segment": "t19_close",
-    "start": 108.1,
+    "segment": "t20_close",
+    "start": 109.0,
     "seconds": 6.0,
     "lines": [
       "The solar is already on Pakistan's roofs.",

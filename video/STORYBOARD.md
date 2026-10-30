@@ -37,12 +37,15 @@ aloud while recording the voiceover.
 | `demo_full.mp4` | 61.4s | The Solar Home Agent Streamlit app, 9 beats |
 | `clips_arbiter/*.mp4` | 7 clips | Per-beat Arbiter cuts |
 | `clips/*.mp4` | 9 clips | Per-beat Solar cuts |
-| `script_subtitles.srt` | 38 cues | The subtitles, editable if you want to retime them |
+| `script_subtitles.srt` | 38 cues | The subtitles as plain SRT, for any editor |
+| `script_subtitles.ass` | 38 cues | The styled version actually burned in (Arial 26 at 1080p) |
 
 ## Notes
 
 - Clips are **silent**. Record the voiceover separately.
-- To restyle the subtitles, re-burn `script_subtitles.srt` over the clips yourself, or ask me
-  for a caption-free export.
+- To restyle the subtitles, edit `script_subtitles.ass` and re-burn, or ask me for a caption-free
+  export. **Size is set in `.ass` as literal pixels** because `PlayResY: 1080` is declared; without
+  that line libass assumes 288 and scales the font up by about 3.75x, which is what made the first
+  version far too large.
 - The Arbiter app header reads *"LIVE agent is also attached"*, so the footage shows the
   deployed app with its live path available, not a replay.

@@ -115,8 +115,8 @@ def run_month(config: dict, scenario: dict, mode: str, weather: tuple | None = N
             generation = solar_kw(record["ghi_wm2"], scenario["solar_kw"], config["solar"]["derate"])
             outage = in_power_cut(hour, cuts)
 
-            result = dispatch_hour(load, generation, battery, outage, scenario["export_mode"],
-                                   plan["reserve_kwh"] if planner is not None else None)
+            reserve_floor = plan["reserve_kwh"].get(hour) if planner is not None else None
+            result = dispatch_hour(load, generation, battery, outage, scenario["export_mode"], reserve_floor)
             result.update(time=record["time"], hour=hour, temp_c=record["temp_c"], in_outage=outage)
             rows.append(result)
             month_units += result["grid_import_kwh"]

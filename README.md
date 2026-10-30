@@ -291,17 +291,28 @@ tests/                   41 pytest checks
 
 ## Next steps
 
-1. Replace assumptions with real figures: an electricity bill, survey results, and an inverter
-   export. `config/scenario.yaml` is designed so each is a one-line change.
-2. Measure pre-cooling in a real home instead of guessing it.
-3. Model several months, so the six-month protected-status penalty can be simulated properly.
-4. Add a tilt model and real load-shedding schedules.
-5. **Neighbourhood forecasting** - combine many homes' forecasts *and their margins* into one
-   neighbourhood solar forecast with a confidence band. Not built in v0. This is the part aimed at
-   the grid problem: helping the system operator see rooftop solar, and know how much to trust
-   what it sees.
+**Not built in this version.** Listed here so the gaps are explicit rather than implied.
 
----
+1. **More months.** Add July and August 2025 using the same day-ahead (`*_previous_day1`) forecasts
+   and report results per month. One summer month is the single biggest limitation: it cannot show
+   the six-month protected-status penalty actually playing out, and it says nothing about winter,
+   when solar is weak and the evening peak is driven by heating rather than cooling.
+2. **A neighbourhood view.** Combine many homes' forecasts *and their margins* into one
+   neighbourhood solar forecast with a confidence band, and show the aggregate evening peak
+   reduction. This is the part aimed squarely at the grid problem: helping the system operator see
+   rooftop solar, and know how much to trust what it sees. The scale-up arithmetic in the app is a
+   placeholder for this, not a substitute.
+3. **Urdu messages.** Every notification is currently English only, which rules out most of the
+   households this is meant to serve. The message text is already separated from the decision
+   logic, so translation is a presentation change rather than a rewrite.
+
+**Also worth doing**, in rough order of how much each would improve the results:
+
+4. Replace assumptions with real figures: an electricity bill, survey results, and an inverter
+   export. `config/scenario.yaml` is designed so each is a one-line change.
+5. Measure pre-cooling in a real home instead of guessing it.
+6. Verify every tariff rate and fixed charge against NEPRA rather than the reported figures.
+7. Add a tilt model and real load-shedding schedules.
 
 ## Licence and credits
 

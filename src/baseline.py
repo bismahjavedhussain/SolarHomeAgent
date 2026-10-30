@@ -8,7 +8,7 @@ import pandas as pd
 from .home import Appliance, appliance_hours, runs_today
 
 
-def _first_usable_hour(appliance: Appliance, cut_hours: Sequence[int]) -> int:
+def usual_hour_after_outages(appliance: Appliance, cut_hours: Sequence[int]) -> int:
     """Push the usual start past an outage, since only essentials run on backup."""
     hour = appliance.usual_start
     for _ in range(24):
@@ -25,7 +25,7 @@ def usual_plan(appliances: list[Appliance], day: pd.Timestamp,
     for appliance in appliances:
         if not runs_today(appliance, day):
             continue
-        for hour, kw in appliance_hours(_first_usable_hour(appliance, cut_hours), appliance).items():
+        for hour, kw in appliance_hours(usual_hour_after_outages(appliance, cut_hours), appliance).items():
             draw[hour] = draw.get(hour, 0.0) + kw
     return {
         "appliance_kw": draw,

@@ -66,16 +66,26 @@ def test_refused_appliances_keep_their_usual_time(plans):
             assert message["message"].strip()
 
 
-def test_appliance_draw_never_lands_outside_a_known_hour(plans):
-    """Every hour with appliance draw is either an allowed hour or a usual time."""
+def test_appliance_draw_never_lands_outside_a_known_hour(plans, config):
+    """Draw happens in an allowed hour, at a usual time, or just after an outage deferred it."""
     day_plans, appliances = plans
+    cut_hours = [h for start, end in config["power_cuts"] for h in range(start, end)]
     allowed = set()
     for appliance in appliances:
         allowed.update(range(appliance.allowed_start, appliance.allowed_end + 1))
         allowed.add(appliance.usual_start)
+    allowed.update((max(cut_hours) + 1) % 24 for _ in [0] if cut_hours)  # deferred past the cut
     for day, plan in day_plans:
         for hour in plan["appliance_kw"]:
             assert hour in allowed, f"{day.date()}: appliance ran at {hour}:00"
+
+
+def test_nothing_is_scheduled_into_an_outage(plans, config):
+    """Only essentials run on backup, so no appliance may be placed inside a power cut."""
+    day_plans, _ = plans
+    cut_hours = set(h for start, end in config["power_cuts"] for h in range(start, end))
+    for day, plan in day_plans:
+        assert not set(plan["appliance_kw"]) & cut_hours, f"{day.date()}: appliance inside an outage"
 
 
 def test_the_agent_does_move_some_appliances(plans):

@@ -56,4 +56,8 @@ def summarise(run: dict, config: dict, scenario: dict) -> dict:
         "refusals": run["refusals"],
         "mean_forecast_error_wm2": round(planner.mean_forecast_error(), 1) if planner else None,
         "mean_margin_kw": round(planner.mean_margin_kw(), 3) if planner else None,
+        "promises_made": len(planner.promises) if planner else 0,
+        "promises_kept_pct": planner.promises_kept_pct() if planner else None,
+        "suggestions_followed_pct": planner.followed_pct() if planner else None,
+        "guard_days": planner.guard_days if planner else 0,
     }

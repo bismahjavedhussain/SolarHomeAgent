@@ -168,6 +168,57 @@ elif not am["protected_kept"] and config["households"][household]["protected_eli
 
 st.divider()
 
+# --- family view: the few messages that matter, in money terms ---------------
+st.subheader("Family view")
+st.caption(
+    "What the household would actually see. The rupee figures split this scenario's **modelled** "
+    "monthly saving across the suggestions that moved energy, in proportion to how much each moved. "
+    "They are an attribution of a simulated total, not independently measured savings."
+)
+
+APPLIANCE_KWH = {name: spec["kw"] * spec["hours"] for name, spec in config["appliances"].items()}
+month_saving = um["energy_cost_rs"] - am["energy_cost_rs"]
+moved_total = sum(APPLIANCE_KWH.get(m["appliance"], 0.0)
+                  for m in agent["notifications"] if m["kind"] == "shifted")
+
+# Money-carrying suggestions lead; the rest fill the remaining cards.
+PRIORITY = {"shifted": 0, "guard": 1, "refused": 2, "precool": 3, "ignored": 4, "battery": 5}
+
+
+def rupees_for(message: dict) -> float | None:
+    """Share of the month's modelled saving attributed to one suggestion."""
+    if message["kind"] != "shifted" or moved_total <= 0:
+        return None
+    return month_saving * APPLIANCE_KWH.get(message["appliance"], 0.0) / moved_total
+
+
+family_days = sorted({m["date"] for m in agent["notifications"]})
+if family_days:
+    acted_days = [m["date"] for m in agent["notifications"] if m["kind"] == "shifted"]
+    opening = next((d for d in family_days if d in acted_days), family_days[len(family_days) // 2])
+    family_day = st.selectbox("Day", family_days, index=family_days.index(opening), key="family_day")
+    todays = sorted((m for m in agent["notifications"] if m["date"] == family_day),
+                    key=lambda m: (PRIORITY.get(m["kind"], 9), m["hour"]))[:3]
+    cards = st.columns(max(1, len(todays)))
+    for column, message in zip(cards, todays):
+        with column, st.container(border=True):
+            st.markdown("**" + message["time"] + "**")
+            st.markdown(message["message"])
+            amount = rupees_for(message)
+            if amount is not None:
+                st.metric("Estimated saving", f"Rs {amount:,.0f}", label_visibility="visible")
+            elif message["kind"] == "refused":
+                st.caption("Nothing moved, so nothing saved - the agent was not confident enough.")
+            else:
+                st.caption("No rupee figure attributed to this one.")
+    st.caption(
+        f"Whole month, this scenario: modelled cost of units bought falls from "
+        f"Rs {um['energy_cost_rs']:,.0f} to Rs {am['energy_cost_rs']:,.0f}, a difference of "
+        f"**Rs {month_saving:,.0f}**. Taxes, duty and fuel adjustments are excluded."
+    )
+
+st.divider()
+
 left, right = st.columns([1, 1])
 
 with left:

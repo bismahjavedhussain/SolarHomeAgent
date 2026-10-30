@@ -1,7 +1,9 @@
-pandas
-numpy
-requests
-matplotlib
-pyyaml
-streamlit
-pytest
+# Pinned for reproducible builds, including Streamlit Community Cloud.
+# Tested locally on Python 3.14 and pinned to work on Python 3.12 (see runtime.txt).
+# Weather is fetched with urllib from the standard library, so no HTTP package is needed.
+pandas==2.3.3
+numpy==2.4.4
+matplotlib==3.11.1
+PyYAML==6.0.3
+streamlit==1.58.0
+pytest==9.2.0

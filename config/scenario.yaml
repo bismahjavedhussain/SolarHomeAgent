@@ -56,6 +56,12 @@ households:
     ac_count: 1
     load_scale: 1.0        # replaced by config/calibration.json when calibrated
     protected_eligible: true
+  # A protected-eligible home that currently goes just over the 200-unit limit.
+  # This is where the band-edge guard actually matters.
+  at_risk:
+    ac_count: 1
+    load_scale: 1.0
+    protected_eligible: true
   high_use:
     ac_count: 2
     load_scale: 1.0
@@ -135,4 +141,7 @@ tariff:
   export_rate_net_billing: 11.0   # reported and contested
 
 calibration:
-  low_use_target_units: 175    # ASSUMED midpoint of 150-200; update from a real bill
+  # Monthly grid units each profile's usual-mode baseline is calibrated to.
+  # Both are ASSUMED. Update from a real bill and rerun with --calibrate.
+  low_use_target_units: 175    # assumed midpoint of the 150-200 protected band
+  at_risk_target_units: 215    # assumed: a home that crosses 200 by a little

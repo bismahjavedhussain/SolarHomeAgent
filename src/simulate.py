@@ -172,7 +172,8 @@ def build_scenarios(config: dict) -> list[dict]:
 def calibrate(config: dict, weather: tuple | None = None, verbose: bool = True) -> dict:
     """Find the load scale that puts a household's usual-mode grid units on its configured target."""
     weather = weather if weather is not None else load_weather(config)
-    targets = {"low_use": config["calibration"]["low_use_target_units"]}
+    targets = {key[: -len("_target_units")]: value
+               for key, value in config["calibration"].items() if key.endswith("_target_units")}
     scales, achieved = {}, {}
 
     for household, target in targets.items():
@@ -232,6 +233,7 @@ def write_headline(summary: dict, config: dict) -> str:
     entry = summary["scenarios"][key]
     usual, agent, scenario = entry["usual"], entry["agent"], entry["scenario"]
     threshold = config["agent"]["guard_threshold_units"]
+    months = config["tariff"]["protected_status_months"]
 
     def change(metric: str, unit: str = "units") -> str:
         before, after = usual[metric], agent[metric]
@@ -271,8 +273,10 @@ def write_headline(summary: dict, config: dict) -> str:
         f"{agent['load_wanted_kwh']:g} kWh the home wanted. Per 100 kWh actually served, grid units go "
         f"**{usual['grid_units_per_100kwh_served']:g} -> {agent['grid_units_per_100kwh_served']:g}**.",
         "",
-        f"Estimated bill: **Rs {usual['bill_rs']:,.0f} -> Rs {agent['bill_rs']:,.0f}** "
-        f"on {usual['pricing']} pricing. Tariff values are approximate and partly placeholders.",
+        f"Cost of the units bought: **Rs {usual['energy_cost_rs']:,.0f} -> Rs {agent['energy_cost_rs']:,.0f}** "
+        f"on {usual['pricing']} pricing (including Rs {agent['fixed_charge_rs']:,.0f} of fixed charges). "
+        f"Band rates are the reported S.R.O. 279(I)/2026 figures and still need verifying against NEPRA; "
+        f"taxes, duty and fuel adjustments are excluded, so a real bill would be higher.",
         "",
         "## How much the agent trusted itself",
         "",
@@ -280,6 +284,12 @@ def write_headline(summary: dict, config: dict) -> str:
         f"average solar held back as a safety margin: **{agent['mean_margin_kw']} kW per hour**.",
         f"- The agent sent **{agent['notifications']} messages** and "
         f"**refused to move an appliance {agent['refusals']} times** because it was not confident enough.",
+        f"- **Promises kept: {agent['promises_kept_pct']}%** of the {agent['promises_made']} times it said "
+        f"the panels would cover an appliance, the sun actually delivered. This is the agent marking its "
+        f"own homework against what really happened.",
+        f"- The family acted on **{agent['suggestions_followed_pct']}% of suggestions** in this run. "
+        f"Battery planning is automatic and always applies; appliance timing needs someone to act. "
+        f"The share is an assumption, to be set from the survey.",
         "",
         "## Solar that still goes to waste",
         "",
@@ -294,23 +304,28 @@ def write_headline(summary: dict, config: dict) -> str:
         "",
     ]
 
-    if agent["grid_units_month"] < threshold and usual["grid_units_month"] < threshold:
+    if usual["protected_loss_6mo_rs"] > 0 and agent["protected_loss_6mo_rs"] == 0:
+        lines.append(
+            f"Usual behaviour crosses the {threshold}-unit limit ({usual['grid_units_month']:g} units) and the "
+            f"agent stays under it ({agent['grid_units_month']:g} units). Crossing re-prices every unit at "
+            f"unprotected rates for {months} months, which on this month's usage would cost about "
+            f"**Rs {usual['protected_loss_6mo_rs']:,.0f} extra**. That figure assumes the month's usage repeats, "
+            f"which is an assumption, not a forecast."
+        )
+    elif agent["grid_units_month"] < threshold and usual["grid_units_month"] < threshold:
         lines.append(
             f"In this scenario both modes stay under the {threshold}-unit protected limit "
-            f"({usual['grid_units_month']:g} and {agent['grid_units_month']:g} units), so the agent's guard mode "
-            "was never needed. It is a safety net, not something this scenario demonstrates. "
-            "Tests confirm it activates when a protected-eligible home is on course to cross."
-        )
-    elif usual["grid_units_month"] > threshold >= agent["grid_units_month"]:
-        lines.append(
-            f"Usual behaviour crosses the {threshold}-unit limit ({usual['grid_units_month']:g} units) "
-            f"and the agent stays under it ({agent['grid_units_month']:g} units), keeping protected pricing."
+            f"({usual['grid_units_month']:g} and {agent['grid_units_month']:g} units), so the guard was never "
+            f"needed here. It is a safety net, not something this scenario demonstrates. Guard mode fired on "
+            f"**{agent['guard_days']} days** in this run; tests confirm it defends every non-telescopic band "
+            f"edge for homes that are on course to cross one."
         )
     else:
         lines.append(
             f"Both modes exceed the {threshold}-unit limit "
             f"({usual['grid_units_month']:g} and {agent['grid_units_month']:g} units), so this home pays "
-            "unprotected rates either way."
+            f"unprotected rates either way. Guard mode fired on **{agent['guard_days']} days**, defending the "
+            f"nearest band edge, because crossing one re-prices every unit used that month."
         )
 
     lines += ["", "---", "", f"Reproduce with `python -m src.simulate --all`. "

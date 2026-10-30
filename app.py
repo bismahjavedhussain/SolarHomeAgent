@@ -25,9 +25,10 @@ def _weather(month: str) -> tuple:
 
 @st.cache_data(show_spinner="Simulating the month...")
 def _simulate(household: str, has_battery: bool, export_mode: str, solar_kw: float,
-              power_cuts: bool) -> dict:
+              power_cuts: bool, followed_pct: int) -> dict:
     """Run both modes for one scenario and return frames, metrics and messages."""
-    config = _config()
+    base = _config()
+    config = dict(base, agent=dict(base["agent"], suggestions_followed_pct=followed_pct))
     scenario = base_scenario(config, household=household, has_battery=has_battery,
                              export_mode=export_mode, solar_kw=solar_kw, power_cuts=power_cuts)
     weather = _weather(str(config["month"]))
@@ -54,10 +55,16 @@ st.warning(
 
 with st.sidebar:
     st.header("Scenario")
+    household_labels = {
+        "low_use": "Low use - 1 AC, safely under 200 units",
+        "at_risk": "At risk - 1 AC, currently just over 200 units",
+        "high_use": "High use - 2 ACs, well over the limit",
+    }
     household = st.radio(
-        "Household", ["low_use", "high_use"],
-        format_func=lambda v: "Low use (1 AC, protected-eligible)" if v == "low_use" else "High use (2 ACs)",
-        help="Low use is calibrated to a configurable monthly target; see ASSUMPTIONS.md.",
+        "Household", list(config["households"]),
+        format_func=lambda v: household_labels.get(v, v),
+        help="Each profile's baseline is calibrated to a configurable monthly target of grid units. "
+             "Those targets are assumptions, to be set from a real bill. See ASSUMPTIONS.md.",
     )
     has_battery = st.toggle("Battery (5 kWh)", value=True)
     export_mode = st.selectbox(
@@ -70,9 +77,15 @@ with st.sidebar:
     )
     solar_kw = st.slider("Solar system size (kW)", 1.0, 10.0, float(config["solar_kw"]), 0.5)
     power_cuts = st.toggle("Daily power cut (20:00-21:00)", value=True)
+    followed_pct = st.slider(
+        "Suggestions the family acts on (%)", 0, 100,
+        int(config["agent"]["suggestions_followed_pct"]), 10,
+        help="Nobody follows every suggestion. Battery planning is automatic and always applies; "
+             "appliance timing and pre-cooling need someone to act. To be set from the survey.",
+    )
     st.caption("Runs from cached weather. No internet needed.")
 
-results = _simulate(household, has_battery, export_mode, solar_kw, power_cuts)
+results = _simulate(household, has_battery, export_mode, solar_kw, power_cuts, followed_pct)
 usual, agent = results["usual"], results["agent"]
 um, am = usual["metrics"], agent["metrics"]
 
@@ -103,7 +116,7 @@ columns[4].metric("Cost of units bought", f"Rs {am['energy_cost_rs']:,.0f}",
                   help=f"Usual behaviour: Rs {um['energy_cost_rs']:,.0f}. Excludes taxes, duties and "
                        f"fuel adjustments, so a real bill would be higher.")
 
-fair = st.columns(3)
+fair = st.columns(4)
 fair[0].metric("Units per 100 kWh actually served", f"{am['grid_units_per_100kwh_served']:g}",
                delta_text(um["grid_units_per_100kwh_served"], am["grid_units_per_100kwh_served"]),
                delta_color="inverse",
@@ -114,6 +127,9 @@ fair[1].metric("Solar wasted", f"{am['solar_wasted_kwh']:g} kWh",
                delta_color="inverse", help="Surplus the home could neither use, store nor sell")
 fair[2].metric("Agent refusals", f"{am['refusals']}",
                help="Times the agent declined to move an appliance because it was not confident enough")
+fair[3].metric("Promises kept", f"{am['promises_kept_pct']}%" if am["promises_kept_pct"] is not None else "-",
+               help=f"Of the {am['promises_made']} times it said your panels would cover an appliance, "
+                    f"how often the sun actually delivered. This is the agent marking its own homework.")
 
 if export_mode != "none":
     st.info(
@@ -135,9 +151,20 @@ if am["grid_units_month"] > um["grid_units_month"]:
         icon=":material/info:",
     )
 
-if not am["protected_kept"] and household == "low_use":
-    st.error(f"This home crosses the 200-unit limit, so it pays **unprotected** rates on every unit "
-             f"and loses protected status for six months.", icon=":material/warning:")
+if um["protected_loss_6mo_rs"] > 0 and am["protected_loss_6mo_rs"] == 0:
+    st.success(
+        f"**Usual behaviour crosses the {config['agent']['guard_threshold_units']}-unit limit and the "
+        f"agent does not.** Crossing re-prices every unit at unprotected rates for "
+        f"{config['tariff']['protected_status_months']} months, which on this month's usage would cost "
+        f"about **Rs {um['protected_loss_6mo_rs']:,.0f} extra**, assuming usage repeats.",
+        icon=":material/savings:")
+elif not am["protected_kept"] and config["households"][household]["protected_eligible"]:
+    st.error(
+        f"This home crosses the {config['agent']['guard_threshold_units']}-unit limit in both modes, so it "
+        f"pays **unprotected** rates on every unit and loses protected status for "
+        f"{config['tariff']['protected_status_months']} months - about "
+        f"**Rs {am['protected_loss_6mo_rs']:,.0f} extra**, if usage repeats.",
+        icon=":material/warning:")
 
 st.divider()
 
@@ -146,8 +173,12 @@ left, right = st.columns([1, 1])
 with left:
     st.subheader("A day in detail")
     days = sorted(agent["hourly"]["time"].dt.date.unique())
-    day = st.select_slider("Day", options=days, value=days[19],
+    refusal_dates = [m["date"] for m in agent["notifications"] if m["kind"] == "refused"]
+    default_day = next((d for d in days if str(d) in refusal_dates), days[len(days) // 2])
+    day = st.select_slider("Day", options=days, value=default_day,
                            format_func=lambda d: d.strftime("%d %b"))
+    if refusal_dates:
+        st.caption("Opens on a day the agent refused to move something - the decision worth seeing.")
     day_str = str(day)
 
     frames = []
@@ -194,12 +225,16 @@ with right:
     for message in sorted(messages, key=lambda m: m["hour"]):
         icon = {"shifted": ":material/schedule:", "refused": ":material/block:",
                 "precool": ":material/ac_unit:", "battery": ":material/battery_charging_full:",
-                "guard": ":material/warning:"}.get(message["kind"], ":material/info:")
+                "guard": ":material/warning:", "ignored": ":material/person_off:"}.get(
+                    message["kind"], ":material/info:")
         with st.container(border=True):
             st.markdown(f"{icon} **{message['time']} - {message['kind'].upper()}**  \n{message['message']}")
             st.caption(f"confidence {message['confidence_pct']}% - margin from {message['margin_source']}")
 
 st.divider()
+top_fixed_charge = config["tariff"]["fixed_charge_per_kw"][-1]
+essential_kw = config["power_cut_essential_load_kw"]
+protected_months = config["tariff"]["protected_status_months"]
 with st.expander("Assumptions and limits for this run"):
     st.markdown(
         f"""
@@ -207,12 +242,15 @@ with st.expander("Assumptions and limits for this run"):
   **{am['mean_forecast_error_wm2']} W/m2** on average, so the agent's margin and refusals are real.
 - The agent held back **{am['mean_margin_kw']} kW** per hour on average as a safety margin.
 - Pre-cooling (1.0 kWh spent to save 0.6 kWh in the evening) is **a rough estimate, not measured**.
-- Tariff: protected rates are as reported; **six of the eight unprotected band rates are
-  placeholders** (interpolated). Taxes and fuel adjustments are **excluded**, so bills here are
-  lower than real ones.
+- Tariff: band rates are the **reported S.R.O. 279(I)/2026** figures and still need checking
+  against NEPRA. Fixed charges of up to Rs {top_fixed_charge}/kW of sanctioned load apply above the lower bands. Taxes, duty and fuel
+  adjustments are **excluded**, so bills here are lower than real ones.
+- The family acts on **{followed_pct}%** of suggestions in this run, a deterministic pattern of days.
 - Net billing at ~Rs 11/unit is **reported and contested**, and is never used as a headline figure.
 - `low_use` is calibrated to a configurable monthly target (currently **assumed**, to be set from a
   real bill).
-- Assumes a **hybrid inverter** that keeps running in a power cut; many real systems shut down.
+- During a power cut only **essential loads** ({essential_kw} kW of fans, lights and router) run; the
+  AC and flexible appliances do not. Assumes a **hybrid inverter**; many real systems shut down
+  entirely.
 """
     )

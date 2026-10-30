@@ -9,30 +9,32 @@ These are results from a **simulation**, not measurements from a real home. They
 
 ## What the agent changed
 
-1. **Units bought from the grid:** **85.4 -> 63.6 units**, a fall of 21.8 (26% less).
-2. **Evening units (18:00-22:00), the hours that strain the grid:** **15.7 -> 0 units**, a fall of 15.7 (100% less).
-3. **Highest single-hour grid draw:** **1.02 -> 0.84 kW**, a fall of 0.2 (18% less).
-4. **Power-cut shortfall:** **11.2 -> 0 kWh**, a fall of 11.2 (100% less) (16 hours without backup, down to 0).
+1. **Units bought from the grid:** **69.7 -> 53.4 units**, a fall of 16.3 (23% less).
+2. **Evening units (18:00-22:00), the hours that strain the grid:** **10.1 -> 3.9 units**, a fall of 6.2 (61% less).
+3. **Highest single-hour grid draw:** **0.99 -> 0.95 kW**, a fall of 0.0 (4% less).
+4. **Power-cut shortfall:** **0 -> 0 kWh**, a fall of 0.0 (0 hours without backup, down to 0).
 
 ### Reading those numbers fairly
 
-During a power cut a home with nothing left in the battery simply goes dark, and load it never served never appears on the bill. So units bought must be read next to load actually served: **339.6 kWh usual vs 357.4 kWh agent**, out of 357.4 kWh the home wanted. Per 100 kWh actually served, grid units go **25.2 -> 17.8**.
+During a power cut a home with nothing left in the battery simply goes dark, and load it never served never appears on the bill. So units bought must be read next to load actually served: **311.3 kWh usual vs 315.6 kWh agent**, out of 315.6 kWh the home wanted. Per 100 kWh actually served, grid units go **22.4 -> 16.9**.
 
-Estimated bill: **Rs 900 -> Rs 670** on protected pricing. Tariff values are approximate and partly placeholders.
+Cost of the units bought: **Rs 735 -> Rs 563** on protected pricing (including Rs 0 of fixed charges). Band rates are the reported S.R.O. 279(I)/2026 figures and still need verifying against NEPRA; taxes, duty and fuel adjustments are excluded, so a real bill would be higher.
 
 ## How much the agent trusted itself
 
 - Average day-ahead forecast error: **52.7 W/m2**; average solar held back as a safety margin: **0.257 kW per hour**.
-- The agent sent **122 messages** and **refused to move an appliance 2 times** because it was not confident enough.
+- The agent sent **131 messages** and **refused to move an appliance 2 times** because it was not confident enough.
+- **Promises kept: 98.1%** of the 52 times it said the panels would cover an appliance, the sun actually delivered. This is the agent marking its own homework against what really happened.
+- The family acted on **70.0% of suggestions** in this run. Battery planning is automatic and always applies; appliance timing needs someone to act. The share is an assumption, to be set from the survey.
 
 ## Solar that still goes to waste
 
-- Generated: **738.3 kWh**. Used on site: **265.3 -> 304.7 kWh** (35.9% -> 41.3% of generation).
-- Still wasted: **472.9 -> 433.5 kWh**. Most noon solar is still thrown away, because an unregistered home cannot sell it and a 5 kWh battery cannot hold a whole sunny day.
+- Generated: **738.3 kWh**. Used on site: **252.7 -> 271.3 kWh** (34.2% -> 36.8% of generation).
+- Still wasted: **485.5 -> 466.9 kWh**. Most noon solar is still thrown away, because an unregistered home cannot sell it and a 5 kWh battery cannot hold a whole sunny day.
 
 ## The 200-unit threshold
 
-In this scenario both modes stay under the 200-unit protected limit (85.4 and 63.6 units), so the agent's guard mode was never needed. It is a safety net, not something this scenario demonstrates. Tests confirm it activates when a protected-eligible home is on course to cross.
+In this scenario both modes stay under the 200-unit protected limit (69.7 and 53.4 units), so the guard was never needed here. It is a safety net, not something this scenario demonstrates. Guard mode fired on **0 days** in this run; tests confirm it defends every non-telescopic band edge for homes that are on course to cross one.
 
 ---
 

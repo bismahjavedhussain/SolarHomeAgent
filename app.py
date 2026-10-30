@@ -10,6 +10,9 @@ from src.simulate import CALIBRATION_PATH, base_scenario, compare, run_month
 
 st.set_page_config(page_title="Solar Home Agent (Pakistan)", page_icon="sun", layout="wide")
 
+SCALE_UP_HOMES = 1_000  # illustrative only; see the caption under the metrics
+PARAGRAPH_BREAK = chr(10) + chr(10)
+
 
 def _settings_version() -> str:
     """Changes when the config or calibration file does, so cached results never go stale."""
@@ -197,6 +200,24 @@ elif not am["protected_kept"] and config["households"][household]["protected_eli
         f"unit and stays unprotected for {months} months. The agent reduces the bill but does not save the "
         f"protected status here.",
         icon=":material/warning:")
+
+# The gap between midday waste and night-time buying is the whole argument for storage.
+midday = agent["hourly"].query("10 <= hour < 16")["wasted_kwh"].sum()
+after_dark = agent["hourly"].query("hour >= 18 or hour < 6")["grid_import_kwh"].sum()
+evening_saved = um["evening_grid_units"] - am["evening_grid_units"]
+gap_paragraphs = [
+    f"**The gap, in one line.** This home throws away **{midday:,.0f} kWh** of its own solar "
+    f"between 10:00 and 16:00, and still buys **{after_dark:,.0f} units** from the grid after "
+    f"dark. Scheduling closes part of that gap but cannot close it: the sun is not shining when "
+    f"the house needs power most. Closing the rest needs **storage**, or a way for homes to "
+    f"**share surplus over the grid** instead of inverters curtailing it.",
+    f"**Rough scale-up, clearly labelled as such:** the **{evening_saved:,.1f} evening units** "
+    f"this agent saves in a month, repeated across **{SCALE_UP_HOMES:,} similar homes**, would "
+    f"be about **{evening_saved * SCALE_UP_HOMES / 1000:,.1f} MWh a month** off the evening "
+    f"peak. That is arithmetic, not a forecast: it assumes every home has this roof, this "
+    f"weather, this tariff and this family, which they do not.",
+]
+st.info(PARAGRAPH_BREAK.join(gap_paragraphs), icon=":material/insights:")
 
 st.divider()
 

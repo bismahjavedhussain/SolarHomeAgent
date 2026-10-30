@@ -1,132 +1,120 @@
 1
-00:00:00,220 --> 00:00:04,337
-Energy gets wasted for a boring reason:
+00:00:00,120 --> 00:00:02,726
+Energy gets wasted for a boring reason.
 
 2
-00:00:04,517 --> 00:00:06,870
-nobody trusts the forecast.
+00:00:02,846 --> 00:00:06,940
+Someone has a forecast, but nobody trusts it enough to act.
 
 3
-00:00:07,220 --> 00:00:09,870
-In September, I built Agentic Arbiter.
+00:00:07,120 --> 00:00:11,140
+In September I built Agentic Arbiter, an agent for data-centre cooling.
 
 4
-00:00:13,720 --> 00:00:18,870
-They run chillers even when the air outside is cold enough.
+00:00:11,320 --> 00:00:14,240
+It looks at 238 real data centres across America.
 
 5
-00:00:19,220 --> 00:00:24,370
-So it decides, each hour, when switching them off is safe.
+00:00:14,420 --> 00:00:19,240
+Data centres run chillers even when the air outside is already cold enough.
 
 6
-00:00:24,720 --> 00:00:27,431
-Here it made no unsafe calls.
+00:00:19,420 --> 00:00:24,240
+So it decides, hour by hour, when switching them off is actually safe.
 
 7
-00:00:27,611 --> 00:00:29,870
-The old controller made one.
+00:00:24,420 --> 00:00:28,840
+Here it made no unsafe calls, where the old controller made one.
 
 8
-00:00:30,220 --> 00:00:32,377
-And it grades itself.
+00:00:29,020 --> 00:00:32,340
+That is four hundred extra free-cooling hours a year.
 
 9
-00:00:32,557 --> 00:00:36,870
-Here it missed its target, and says so.
+00:00:32,520 --> 00:00:33,977
+And it grades itself.
 
 10
-00:00:37,220 --> 00:00:41,242
-Second of eight hundred and forty-two teams.
+00:00:34,097 --> 00:00:37,740
+Here it missed its own target, and it says so.
 
 11
-00:00:41,422 --> 00:00:44,870
-The UN-backed Cool Coalition featured it.
+00:00:37,920 --> 00:00:43,188
+Second of eight hundred and forty-two teams, out of nearly four thousand people.
 
 12
-00:00:45,220 --> 00:00:48,870
-Next, I want it running on real sites.
+00:00:43,308 --> 00:00:45,740
+The UN-backed Cool Coalition featured it.
 
 13
-00:00:49,220 --> 00:00:51,543
-Then I looked at home.
+00:00:45,920 --> 00:00:48,840
+Next I want it running on real sites.
 
 14
-00:00:51,723 --> 00:00:56,370
-Pakistan has solar everywhere, but the grid cannot see it.
+00:00:49,020 --> 00:00:51,020
+Then I looked at home.
 
 15
-00:00:56,720 --> 00:00:58,249
-I asked twenty-one families.
+00:00:51,140 --> 00:00:56,340
+Pakistan has solar on millions of roofs, but the grid cannot see it.
 
 16
-00:00:58,429 --> 00:01:01,870
-Seven of the ten with solar have changed habits.
+00:00:56,520 --> 00:00:57,987
+I asked twenty-one families.
 
 17
-00:01:02,220 --> 00:01:07,370
-So I am building a Solar Home Agent for those homes.
+00:00:58,107 --> 00:01:03,240
+Seven of the ten with solar have changed habits or are getting a battery.
 
 18
-00:01:07,720 --> 00:01:10,205
-Go over two hundred units,
+00:01:03,420 --> 00:01:09,340
+So I am building a Solar Home Agent, for homes that cannot sell their spare power.
 
 19
-00:01:10,385 --> 00:01:12,870
-and every unit costs more.
+00:01:09,520 --> 00:01:14,740
+Go over two hundred units in a month, and every single unit costs more.
 
 20
-00:01:13,220 --> 00:01:16,349
-It keeps this home under that line.
+00:01:14,920 --> 00:01:19,709
+Moving a few jobs into the sun keeps this home under that line.
 
 21
-00:01:16,529 --> 00:01:17,870
-Five thousand rupees.
+00:01:19,829 --> 00:01:22,040
+About five thousand rupees this month.
 
 22
-00:01:18,220 --> 00:01:21,349
-It picks when to run the motor,
+00:01:22,220 --> 00:01:25,840
+It picks when to run the motor, and says why.
 
 23
-00:01:21,529 --> 00:01:22,870
-and says why.
+00:01:26,020 --> 00:01:30,840
+Thirteen of them said they would only trust an app that explains itself.
 
 24
-00:01:23,220 --> 00:01:28,370
-Thirteen said they would only trust an app that explains itself.
+00:01:31,020 --> 00:01:35,840
+So when it is not sure, it says no, and tells you why.
 
 25
-00:01:28,720 --> 00:01:32,507
-So when it is not sure, it says no,
+00:01:36,020 --> 00:01:40,840
+It still wastes most of its midday sun. Storage is what closes that.
 
 26
-00:01:32,687 --> 00:01:34,370
-and tells you why.
-
-27
-00:01:34,720 --> 00:01:38,116
-It still wastes most of its midday sun.
-
-28
-00:01:38,296 --> 00:01:39,570
-Storage closes that.
-
-29
-00:01:39,920 --> 00:01:43,370
+00:01:41,020 --> 00:01:44,340
 This is a simulation, with every assumption written down.
 
+27
+00:01:44,520 --> 00:01:48,370
+Next, five to ten homes in Islamabad over WhatsApp.
+
+28
+00:01:48,490 --> 00:01:52,340
+Then one neighbourhood forecast, built with our distribution company.
+
+29
+00:01:52,520 --> 00:01:54,867
+The solar is already on Pakistan's roofs.
+
 30
-00:01:43,720 --> 00:01:48,474
-Next, five to ten homes in Islamabad.
-
-31
-00:01:48,654 --> 00:01:51,370
-Then one neighbourhood forecast.
-
-32
-00:01:51,720 --> 00:01:53,999
-The solar is already there.
-
-33
-00:01:54,179 --> 00:01:57,370
-I want the grid to trust it.
+00:01:54,987 --> 00:01:58,340
+I want the grid to see it, and trust it.
 

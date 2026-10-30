@@ -1,223 +1,296 @@
 [
   {
     "segment": "c1_title",
-    "start": 0.0,
+    "kind": "img",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\openingTitle(000_007).png",
+    "offset": 0,
     "seconds": 7.0,
     "lines": [
-      "Energy gets wasted for a boring reason:",
-      "nobody trusts the forecast."
+      "Energy gets wasted for a boring reason.",
+      "Someone has a forecast, but nobody trusts it enough to act."
     ],
-    "words": 11,
-    "wpm": 94
+    "words": 18,
+    "wpm": 154,
+    "start": 0.0
   },
   {
     "segment": "a1_landing",
-    "start": 7.0,
-    "seconds": 3.0,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a1_landing.mp4",
+    "offset": 0.6,
+    "seconds": 4.2,
     "lines": [
-      "In September, I built Agentic Arbiter."
+      "In September I built Agentic Arbiter, an agent for data-centre cooling."
     ],
-    "words": 6,
-    "wpm": 120
+    "words": 11,
+    "wpm": 157,
+    "start": 7.0
   },
   {
     "segment": "a2_site",
-    "start": 10.0,
-    "seconds": 3.5,
-    "lines": [],
-    "words": 0,
-    "wpm": 0
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a2_pick_site.mp4",
+    "offset": 0.5,
+    "seconds": 3.1,
+    "lines": [
+      "It looks at 238 real data centres across America."
+    ],
+    "words": 8,
+    "wpm": 155,
+    "start": 11.2
   },
   {
     "segment": "a3_config",
-    "start": 13.5,
-    "seconds": 5.5,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a3_configure.mp4",
+    "offset": 0.5,
+    "seconds": 5.0,
     "lines": [
-      "They run chillers even when the air outside is cold enough."
+      "Data centres run chillers even when the air outside is already cold enough."
     ],
-    "words": 11,
-    "wpm": 120
+    "words": 13,
+    "wpm": 156,
+    "start": 14.3
   },
   {
     "segment": "a4_working",
-    "start": 19.0,
-    "seconds": 5.5,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a4_agent_running.mp4",
+    "offset": 1.0,
+    "seconds": 5.0,
     "lines": [
-      "So it decides, each hour, when switching them off is safe."
+      "So it decides, hour by hour, when switching them off is actually safe."
     ],
-    "words": 11,
-    "wpm": 120
+    "words": 13,
+    "wpm": 156,
+    "start": 19.3
   },
   {
     "segment": "a5_schedule",
-    "start": 24.5,
-    "seconds": 5.5,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a5_schedule.mp4",
+    "offset": 2.8,
+    "seconds": 4.6,
     "lines": [
-      "Here it made no unsafe calls.",
-      "The old controller made one."
+      "Here it made no unsafe calls, where the old controller made one."
     ],
-    "words": 11,
-    "wpm": 120
+    "words": 12,
+    "wpm": 157,
+    "start": 24.3
+  },
+  {
+    "segment": "a6_economic",
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a6_economic.mp4",
+    "offset": 2.8,
+    "seconds": 3.5,
+    "lines": [
+      "That is four hundred extra free-cooling hours a year."
+    ],
+    "words": 9,
+    "wpm": 154,
+    "start": 28.9
   },
   {
     "segment": "a7_selfscore",
-    "start": 30.0,
-    "seconds": 7.0,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a7_selfscoring.mp4",
+    "offset": 2.3,
+    "seconds": 5.4,
     "lines": [
       "And it grades itself.",
-      "Here it missed its target, and says so."
+      "Here it missed its own target, and it says so."
     ],
-    "words": 12,
-    "wpm": 103
+    "words": 14,
+    "wpm": 156,
+    "start": 32.4
   },
   {
     "segment": "c2_coalition",
-    "start": 37.0,
+    "kind": "img",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\cool_coalition.png",
+    "offset": 0,
     "seconds": 8.0,
     "lines": [
-      "Second of eight hundred and forty-two teams.",
+      "Second of eight hundred and forty-two teams, out of nearly four thousand people.",
       "The UN-backed Cool Coalition featured it."
     ],
-    "words": 13,
-    "wpm": 98
+    "words": 19,
+    "wpm": 142,
+    "start": 37.8
   },
   {
     "segment": "a8_future",
-    "start": 45.0,
-    "seconds": 4.0,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a2_pick_site.mp4",
+    "offset": 4.0,
+    "seconds": 3.1,
     "lines": [
-      "Next, I want it running on real sites."
+      "Next I want it running on real sites."
     ],
     "words": 8,
-    "wpm": 120
+    "wpm": 155,
+    "start": 45.8
   },
   {
     "segment": "c3_pakistan",
-    "start": 49.0,
+    "kind": "img",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\Pakistanproblem(056_103).png",
+    "offset": 0,
     "seconds": 7.5,
     "lines": [
       "Then I looked at home.",
-      "Pakistan has solar everywhere, but the grid cannot see it."
+      "Pakistan has solar on millions of roofs, but the grid cannot see it."
     ],
-    "words": 15,
-    "wpm": 120
+    "words": 18,
+    "wpm": 144,
+    "start": 48.9
   },
   {
     "segment": "s1_demand",
-    "start": 56.5,
-    "seconds": 5.5,
+    "kind": "img",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\cards\\survey_demand.png",
+    "offset": 0,
+    "seconds": 6.9,
     "lines": [
       "I asked twenty-one families.",
-      "Seven of the ten with solar have changed habits."
+      "Seven of the ten with solar have changed habits or are getting a battery."
     ],
-    "words": 13,
-    "wpm": 142
+    "words": 18,
+    "wpm": 157,
+    "start": 56.4
   },
   {
     "segment": "h1_intro",
-    "start": 62.0,
-    "seconds": 5.5,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips\\01_metrics.mp4",
+    "offset": 0,
+    "seconds": 6.1,
     "lines": [
-      "So I am building a Solar Home Agent for those homes."
+      "So I am building a Solar Home Agent, for homes that cannot sell their spare power."
     ],
-    "words": 11,
-    "wpm": 120
+    "words": 16,
+    "wpm": 157,
+    "start": 63.3
   },
   {
     "segment": "h2_month",
-    "start": 67.5,
-    "seconds": 5.5,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips\\02_month_chart.mp4",
+    "offset": 0,
+    "seconds": 5.4,
     "lines": [
-      "Go over two hundred units,",
-      "and every unit costs more."
+      "Go over two hundred units in a month, and every single unit costs more."
     ],
-    "words": 10,
-    "wpm": 109
+    "words": 14,
+    "wpm": 156,
+    "start": 69.4
   },
   {
     "segment": "h3_savings",
-    "start": 73.0,
-    "seconds": 5.0,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\demo_full.mp4",
+    "offset": 19.3,
+    "seconds": 7.3,
     "lines": [
-      "It keeps this home under that line.",
-      "Five thousand rupees."
+      "Moving a few jobs into the sun keeps this home under that line.",
+      "About five thousand rupees this month."
     ],
-    "words": 10,
-    "wpm": 120
+    "words": 19,
+    "wpm": 156,
+    "start": 74.8
   },
   {
     "segment": "h4_family",
-    "start": 78.0,
-    "seconds": 5.0,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips\\05_family_view.mp4",
+    "offset": 0,
+    "seconds": 3.8,
     "lines": [
-      "It picks when to run the motor,",
-      "and says why."
+      "It picks when to run the motor, and says why."
     ],
     "words": 10,
-    "wpm": 120
+    "wpm": 158,
+    "start": 82.1
   },
   {
     "segment": "s2_trust",
-    "start": 83.0,
-    "seconds": 5.5,
+    "kind": "img",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\cards\\survey_trust.png",
+    "offset": 0,
+    "seconds": 5.0,
     "lines": [
-      "Thirteen said they would only trust an app that explains itself."
+      "Thirteen of them said they would only trust an app that explains itself."
     ],
-    "words": 11,
-    "wpm": 120
+    "words": 13,
+    "wpm": 156,
+    "start": 85.9
   },
   {
     "segment": "h5_day",
-    "start": 88.5,
-    "seconds": 6.0,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips\\06_day_detail.mp4",
+    "offset": 0,
+    "seconds": 5.0,
     "lines": [
-      "So when it is not sure, it says no,",
-      "and tells you why."
+      "So when it is not sure, it says no, and tells you why."
     ],
     "words": 13,
-    "wpm": 130
+    "wpm": 156,
+    "start": 90.9
   },
   {
     "segment": "h6_gap",
-    "start": 94.5,
-    "seconds": 5.2,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips\\04_grid_insight.mp4",
+    "offset": 0,
+    "seconds": 5.0,
     "lines": [
-      "It still wastes most of its midday sun.",
-      "Storage closes that."
+      "It still wastes most of its midday sun. Storage is what closes that."
     ],
-    "words": 11,
-    "wpm": 127
+    "words": 13,
+    "wpm": 156,
+    "start": 95.9
   },
   {
     "segment": "h7_assume",
-    "start": 99.7,
-    "seconds": 3.8,
+    "kind": "clip",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips\\09_assumptions.mp4",
+    "offset": 0,
+    "seconds": 3.5,
     "lines": [
       "This is a simulation, with every assumption written down."
     ],
     "words": 9,
-    "wpm": 142
+    "wpm": 154,
+    "start": 100.9
   },
   {
     "segment": "c4_next",
-    "start": 103.5,
+    "kind": "img",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\whatsNext.png",
+    "offset": 0,
     "seconds": 8.0,
     "lines": [
-      "Next, five to ten homes in Islamabad.",
-      "Then one neighbourhood forecast."
+      "Next, five to ten homes in Islamabad over WhatsApp.",
+      "Then one neighbourhood forecast, built with our distribution company."
     ],
-    "words": 11,
-    "wpm": 82
+    "words": 18,
+    "wpm": 135,
+    "start": 104.4
   },
   {
     "segment": "c5_close",
-    "start": 111.5,
+    "kind": "img",
+    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\closing_line(149_155).png",
+    "offset": 0,
     "seconds": 6.0,
     "lines": [
-      "The solar is already there.",
-      "I want the grid to trust it."
+      "The solar is already on Pakistan's roofs.",
+      "I want the grid to see it, and trust it."
     ],
-    "words": 12,
-    "wpm": 120
+    "words": 17,
+    "wpm": 170,
+    "start": 112.4
   }
 ]

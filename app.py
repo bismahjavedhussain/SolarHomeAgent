@@ -128,24 +128,30 @@ def delta_rupees(before: float, after: float) -> str:
 
 
 st.subheader("The month at a glance")
-columns = st.columns(5)
-columns[0].metric("Grid units bought", f"{am['grid_units_month']:g}",
-                  delta_text(um["grid_units_month"], am["grid_units_month"]),
-                  delta_color="inverse", help=f"Usual behaviour: {um['grid_units_month']:g} units")
-columns[1].metric("Evening units (18-22)", f"{am['evening_grid_units']:g}",
-                  delta_text(um["evening_grid_units"], am["evening_grid_units"]),
-                  delta_color="inverse", help=f"Usual behaviour: {um['evening_grid_units']:g} units")
-columns[2].metric("Peak grid draw", f"{am['peak_grid_kw']:g} kW",
-                  delta_text(um["peak_grid_kw"], am["peak_grid_kw"], " kW"),
-                  delta_color="inverse", help=f"Usual behaviour: {um['peak_grid_kw']:g} kW")
-columns[3].metric("Hours with no power", f"{am['unmet_hours']}",
+# "Hours with no power" cannot move without a battery, so it is only shown when there is one.
+cards = [
+    ("Grid units bought", f"{am['grid_units_month']:g}",
+     delta_text(um["grid_units_month"], am["grid_units_month"]),
+     f"Usual behaviour: {um['grid_units_month']:g} units"),
+    ("Evening units (18-22)", f"{am['evening_grid_units']:g}",
+     delta_text(um["evening_grid_units"], am["evening_grid_units"]),
+     f"Usual behaviour: {um['evening_grid_units']:g} units"),
+    ("Peak grid draw", f"{am['peak_grid_kw']:g} kW",
+     delta_text(um["peak_grid_kw"], am["peak_grid_kw"], " kW"),
+     f"Usual behaviour: {um['peak_grid_kw']:g} kW"),
+]
+if has_battery:
+    cards.append(("Hours with no power", f"{am['unmet_hours']}",
                   delta_text(um["unmet_hours"], am["unmet_hours"]),
-                  delta_color="inverse", help="During power cuts, when the battery cannot cover the load")
-columns[4].metric("Cost of units bought", f"Rs {am['energy_cost_rs']:,.0f}",
-                  delta_rupees(um["energy_cost_rs"], am["energy_cost_rs"]),
-                  delta_color="inverse",
-                  help=f"Usual behaviour: Rs {um['energy_cost_rs']:,.0f}. Excludes taxes, duties and "
-                       f"fuel adjustments, so a real bill would be higher.")
+                  "During power cuts, when the battery cannot cover the essential load"))
+cards.append(("Estimated bill (before taxes)", f"Rs {am['energy_cost_rs']:,.0f}",
+              delta_rupees(um["energy_cost_rs"], am["energy_cost_rs"]),
+              f"Usual behaviour: Rs {um['energy_cost_rs']:,.0f}. Units plus fixed charges. Excludes "
+              f"taxes, duties and fuel adjustments, so a real bill would be higher."))
+
+columns = st.columns(len(cards))
+for column, (label, value, delta, tip) in zip(columns, cards):
+    column.metric(label, value, delta, delta_color="inverse", help=tip)
 
 fair = st.columns(4)
 fair[0].metric("Share of electricity from the grid (%)", f"{am['grid_units_per_100kwh_served']:g}%",

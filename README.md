@@ -82,14 +82,15 @@ no battery, unregistered). This is where the tariff cliff bites:
 | Units bought from the grid | 215.0 | **181.4** | −16% |
 | Evening units (18:00–22:00) | 121.4 | **86.9** | −28% |
 | Pricing band | **unprotected** | **protected** | limit not crossed |
-| Cost of units bought | Rs 8,867 | **Rs 3,614** | −Rs 5,253 |
+| Estimated bill (before taxes) | Rs 8,867 | **Rs 3,614** | −Rs 5,253 |
 | Six months of unprotected pricing | Rs 18,788 | **Rs 0** | avoided |
 
-Costs include fixed charges of Rs 1,750 and Rs 1,500 respectively, on a 5 kW sanctioned load.
+Bills are units plus fixed charges (Rs 1,750 and Rs 1,500 respectively, on a 5 kW sanctioned
+load). Taxes, duties and fuel adjustments are excluded, so a real bill would be higher.
 
 Crossing the limit counts twice, and the two figures are different things:
 
-1. **This month: Rs 5,253 less** for the units bought.
+1. **This month: Rs 5,253 less** on the estimated bill.
 2. **The next six months: about Rs 18,788.** A home that crosses stays on unprotected rates for
    six months **even after its usage drops back under 200**. This prices those months at 181.4
    units — the agent's own monthly usage — and assumes it holds steady. An estimate, not a

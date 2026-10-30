@@ -292,7 +292,7 @@ def write_headline(summary: dict, config: dict) -> str:
         f"{agent['load_wanted_kwh']:g} kWh the home wanted. Per 100 kWh actually served, grid units go "
         f"**{usual['grid_units_per_100kwh_served']:g} -> {agent['grid_units_per_100kwh_served']:g}**.",
         "",
-        f"Cost of the units bought: **Rs {usual['energy_cost_rs']:,.0f} -> Rs {agent['energy_cost_rs']:,.0f}** "
+        f"Estimated bill before taxes: **Rs {usual['energy_cost_rs']:,.0f} -> Rs {agent['energy_cost_rs']:,.0f}** "
         f"({usual['pricing']} pricing for usual behaviour, {agent['pricing']} for the agent; "
         f"including Rs {usual['fixed_charge_rs']:,.0f} and Rs {agent['fixed_charge_rs']:,.0f} of fixed "
         f"charges respectively). "
@@ -334,8 +334,8 @@ def write_headline(summary: dict, config: dict) -> str:
             f"agent stays under it ({agent['grid_units_month']:g} units). That matters twice over, and the two "
             f"figures are different things:",
             "",
-            f"1. **This month: Rs {comparison['this_month_difference_rs']:,.0f} less** for the units bought "
-            f"(Rs {usual['energy_cost_rs']:,.0f} against Rs {agent['energy_cost_rs']:,.0f}).",
+            f"1. **This month: Rs {comparison['this_month_difference_rs']:,.0f} less** on the estimated bill "
+            f"(Rs {usual['energy_cost_rs']:,.0f} against Rs {agent['energy_cost_rs']:,.0f}, before taxes).",
             f"2. **The next {months} months: about Rs {comparison['six_month_penalty_rs']:,.0f}.** Once a home "
             f"crosses the limit it stays on unprotected rates for {months} months *even after its usage drops "
             f"back under 200*. This figure prices those months at "

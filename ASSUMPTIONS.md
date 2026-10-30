@@ -170,7 +170,19 @@ discharge, so a full cycle loses 10% in total.
 | Default outage | one hour daily, 20:00-21:00 | Assumed |
 | Grid import during an outage | forced to zero | By definition |
 | Exporting during an outage | not possible | By definition |
+| **Essential load on backup** | **0.30 kW** (fans, lights, router) | **Assumed** |
+| AC and flexible appliances during an outage | **do not run** | Assumed |
 | Load that cannot be served | counted as **unmet**, in kWh and hours | - |
+
+**Only essential loads run during a power cut.** The AC and the flexible appliances are treated as
+off, so the battery reserve is sized to the essential energy of the cut rather than to full
+household load. A home with a large battery that really would run its AC through an outage is not
+represented.
+
+An appliance whose habitual time falls inside an outage is **deferred to when power returns**, in
+both usual and agent modes. Without this the iron (usual 20:00, inside the default cut) silently
+never ran, removing about 15 kWh a month from the baseline and making the agent look worse than it
+is.
 
 **Simplification:** during an outage the home is assumed to keep running on solar plus battery,
 which requires a **hybrid inverter**. Many Pakistani rooftop systems use plain grid-tie
@@ -184,8 +196,8 @@ area and season.
 
 ## 8. Tariff
 
-Based on the 2026 tariff as reported (S.R.O. 279(I)/2026). Rates are revised periodically, so
-treat all of these as approximate.
+Based on the 2026 tariff as reported (S.R.O. 279(I)/2026). **Every rate below should be verified
+against NEPRA before being quoted anywhere.** Rates are revised periodically.
 
 ### Protected (telescopic, each slice at its own rate)
 
@@ -196,37 +208,49 @@ treat all of these as approximate.
 
 ### Unprotected (non-telescopic - the band reached sets the rate for *every* unit)
 
-| Band | Rate | Label |
-|---|---|---|
-| 1-100 | Rs 22.44 | Reported |
-| 101-200 | Rs 25.98 | **Placeholder** |
-| 201-300 | Rs 29.51 | **Placeholder** |
-| 301-400 | Rs 33.05 | **Placeholder** |
-| 401-500 | Rs 36.59 | **Placeholder** |
-| 501-600 | Rs 40.13 | **Placeholder** |
-| 601-700 | Rs 43.66 | **Placeholder** |
-| Over 700 | Rs 47.20 | Reported |
+| Band | Rate | Fixed charge | Label |
+|---|---|---|---|
+| 1-100 | Rs 22.44 | - | Reported |
+| 101-200 | Rs 28.91 | - | Reported |
+| 201-300 | Rs 33.10 | - | Reported |
+| 301-400 | Rs 36.46 | Rs 200/kW | Reported rate; fixed charge is the reported low end |
+| 401-500 | Rs 38.95 | Rs 400/kW | Reported rate; **fixed charge step not individually confirmed** |
+| 501-600 | Rs 40.22 | Rs 600/kW | Reported rate; **fixed charge step not individually confirmed** |
+| 601-700 | Rs 41.85 | Rs 675/kW | Reported rate; fixed charge is the reported high end |
+| Over 700 | Rs 47.20 | Rs 675/kW | Reported |
 
-Only the lowest and highest bands are reported values. **The six in between are straight-line
-interpolation between them** and are flagged as placeholders in the code
-(`rate_is_placeholder` in every result). They should be replaced from a real bill or the
-official notification before any figure is quoted.
+The earlier version of this project interpolated six of these eight rates and flagged them as
+placeholders. They are now the reported figures, used verbatim from `config/scenario.yaml` with no
+interpolation anywhere in the code.
+
+**Fixed charges** are Rs per kW of sanctioned load, applied to the band the month reaches.
+Sanctioned load defaults to **5 kW** (assumed). The reported range is Rs 200-675/kW; the two
+endpoints are as reported, but **the step pattern between them is not individually confirmed** and
+needs checking. Protected consumers are treated as exempt
+(`fixed_charge_applies_to_protected: false`).
+
+### The cost of crossing 200 units
+
+| Units | Pricing | Bill |
+|---|---|---|
+| 199 | protected | Rs 2,342 |
+| 201 | unprotected | Rs 6,653 |
+
+Two extra units, and the bill nearly triples, because all 201 are re-priced. The metric
+`protected_loss_6mo_rs` estimates the extra cost of the following months at unprotected rates by
+**assuming the month's usage repeats** - an assumption, not a forecast. For a home crossing at 215
+units that comes to about **Rs 27,400** over six months.
 
 ### Other tariff settings
 
 | Item | Value | Label |
 |---|---|---|
 | Protected threshold | 200 units | Reported |
-| Losing protected status | over 200 units sets `loses_protected_status_for_6_months` | Reported |
+| Months of unprotected pricing after crossing | 6 | Reported |
 | `taxes_multiplier` | 1.0 | **Assumed** - GST, duty, TV fee and fuel-price adjustments are **not** included, so every bill here is lower than a real one |
-| Net billing export rate | Rs 11/unit | **Reported but contested** - applies to new users from Feb 2026; existing users keep earlier terms until their 7-year contracts end. Never used as a headline number. |
+| Net billing export rate | Rs 11/unit | **Reported but contested** - applies to new users from Feb 2026; existing users keep earlier terms until their 7-year contracts end. Never used as a headline number, and shown separately from the cost of units bought rather than netted into one figure. |
 | Net metering | 1:1 unit offset | Comparison only - being withdrawn for new users |
 | Export under `none` | Rs 0, surplus wasted | By definition - an unregistered home cannot sell |
-
-The six-month protected penalty is **recorded as a flag but not simulated**, because v0 covers
-one month only. The real cost of crossing 200 units is therefore understated.
-
----
 
 ## 9. The agent
 
@@ -237,13 +261,25 @@ one month only. The real cost of crossing 200 units is therefore understated.
 | Days of history before the learned margin is used | 5 | Assumed |
 | Margin before then | `predicted solar x cloud-cover fraction` | Assumed |
 | Confidence shown to the family | `1 - total margin / total predicted solar`, as a percentage | Assumed |
-| Guard threshold | 200 units projected at the month's current rate | Assumed |
+| Guard threshold | 200 units, plus every non-telescopic band edge | Assumed |
+| Minimum days before the guard projects | 10 | **Assumed** - a projection from fewer days is off by hundreds of units in June |
+| Overshoot at which an edge is abandoned | 20% | Assumed |
+| Share of suggestions the family acts on | **70%**, in steps of 10, on a fixed pattern of days | **Assumed - to be set from the survey** |
 
 Every notification records which margin rule produced it, as `margin_source`:
 `cloud-cover` for the first five days, `learned` afterwards.
 
 Measured over the main scenario: mean forecast error **52.7 W/m2**, mean margin held back
-**0.257 kW per hour**, **2 refusals**, **122 messages**.
+**0.257 kW per hour**, **2 refusals**, **131 messages**, **52 promises made and 51 kept (98.1%)**.
+
+**Compliance.** Battery planning is automatic and always applies. Appliance timing and pre-cooling
+need someone to act, so on the 30% of days nobody does, those revert to habit and the agent logs
+an `ignored` message. The 70% figure is an assumption; at 100% the main scenario reaches 53.7
+units and at 30% it reaches 78.6, so the headline numbers are deliberately not a best case.
+
+**Promises.** Each shift the family acted on is recorded and later judged against *actual* solar,
+not against the forecast. The single broken promise in the main scenario was made at 57%
+confidence - the agent was least certain about the one it got wrong.
 
 ---
 
@@ -255,6 +291,7 @@ Measured over the main scenario: mean forecast error **52.7 W/m2**, mean margin 
 - Thermal physics - pre-cooling is a flat energy trade, not a heat model
 - Any behaviour other than the modelled appliances; nobody ignores a notification
 - Time-of-use pricing: the tariff is flat by hour, so moving demand between daytime hours has no direct bill effect
+- Whether a family would actually defer ironing to 21:00 rather than skip it
 - Taxes, duties, fuel-price adjustments and fixed charges
 - The six-month consequence of losing protected status
 - Day-to-day variation in load-shedding

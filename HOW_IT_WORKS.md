@@ -87,11 +87,16 @@ From this project's own tariff module:
 | Units used | Bill |
 |---|---|
 | 199 | Rs 2,342 |
-| 201 | Rs 5,932 |
+| 201 | Rs 6,653 |
 
-Two extra units, and the bill more than doubles - not because those two units are expensive, but
-because all 201 are suddenly re-priced. This is why the agent watches that threshold and warns
-the family *before* they cross it, rather than reporting it afterwards.
+Two extra units, and the bill nearly triples - not because those two units are expensive, but
+because all 201 are suddenly re-priced. And it lasts: six months of unprotected pricing on that
+usage is roughly **Rs 27,400 extra**. This is why the agent watches that threshold and warns the
+family *before* they cross it, rather than reporting it afterwards.
+
+Because unprotected pricing is non-telescopic, **every** band edge is a cliff, not just 200. The
+agent guards all of them - 100, 200, 300 and so on - though 200 is the big one, because it is also
+where protected status is lost.
 
 ### The evening peak, and why the grid cares
 
@@ -198,23 +203,52 @@ supposed to be saving for. A reserve you never spend is just an expensive empty 
 that the floor applies **during the day only**, and from 18:00 it drops to just the power-cut
 need.
 
-### Step 8: Guard the 200-unit threshold (`_guard_active`)
+### Step 8: Guard the band edges (`_guard_target`)
 
-For a protected-eligible home it tracks units used so far and projects the month's total. If the
-projection crosses 200 it enters guard mode: shifting more aggressively and accepting hours it
-would normally reject, and telling the family plainly:
+It tracks units used so far and projects the month's total. If the projection has crossed a band
+edge it enters guard mode: shifting more aggressively, accepting hours it would normally reject,
+and telling the family plainly:
 
-> 54 units used with 22 days left. Moving more jobs into the sun to try to stay under 200 units.
+> 128 units used with 20 days left. Going over 400 units re-prices every unit you used this month
+> at a higher rate. Moving more jobs into the sun to try to stay under 400.
 
-**In the main scenario this never fires**, because the agent keeps the home at 63.6 units - a long
-way below 200. That is reported as it is. The mechanism is verified by tests using a heavier home,
-where it fires on 22 of 30 days.
+**Two things had to be fixed here, and they are worth knowing.** The first version projected from
+as few as three days of data. In June that is off by *250 units*, because the month gets hotter as
+it goes, and it told a home that ended at 338 units to "stay under 100". It now waits for 10 days
+before projecting at all.
+
+The second attempt projected from the *recent* daily rate instead, to track the heat ramp. That
+overshot by 137 units and started warning about edges the home never reached - false alarms, which
+are exactly what destroys trust in a tool like this. It was reverted. The plain
+month-to-date projection, gated by a minimum number of days, turned out to be both simpler and
+more accurate.
+
+**In the main scenario the guard never fires**, because that home sits at 53 units, a long way
+below 200. That is reported as it is. It fires on 2 days for the `at_risk` home and 10-19 days for
+`high_use`.
 
 ### Step 9: Check its own work (`learn_from_day`)
 
 At the end of each day it compares what it predicted with what actually happened, and files the
-error. Tomorrow's margin is built from today's mistake. This is the loop that makes the
-confidence figure mean something.
+error. Tomorrow's margin is built from today's mistake. This is the loop that makes the confidence
+figure mean something.
+
+It also **marks its own homework**. Every time it tells the family "run the motor at 11:00, your
+panels should cover it", that is recorded as a promise. The next day it checks whether the sun
+actually delivered at that hour - against *reality*, not against its own forecast. In the main
+scenario it made 52 such promises and kept 51 of them, **98.1%**. The one it broke was made at 57%
+confidence: the agent was least sure about exactly the one it got wrong, which is what you would
+hope for.
+
+### Step 10: Accept that nobody follows every suggestion
+
+A tool that only works when the family obeys it every single time is not a useful tool. So the
+simulation assumes the family acts on only **70% of suggestions**, on a fixed pattern of days. On
+the other days the appliances run at their usual times and the agent logs that nobody acted.
+
+The battery is different: it plans itself, so it keeps working on every day regardless. That split
+- automatic things always happen, human things happen sometimes - is why the battery scenarios
+hold up better than the no-battery ones.
 
 ---
 

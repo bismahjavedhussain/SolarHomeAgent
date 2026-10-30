@@ -33,6 +33,11 @@ PERSONAL_HINTS = ["email", "name", "phone", "contact", "address", "timestamp"]
 
 MULTI_SELECT = {"appliance_times", "net_billing_awareness"}
 
+# Naming a town with one respondent can identify them in a sample this small,
+# so answers below this count are pooled for free-text-ish questions.
+SMALL_CELL = 3
+POOLED = {"city": "Other cities", "no_solar_reason": "Other reasons"}
+
 
 def find_columns(frame: pd.DataFrame) -> dict[str, str]:
     """Map each question key to the first matching column title."""
@@ -66,6 +71,19 @@ def tally(frame: pd.DataFrame, column: str | None, split: bool = False) -> tuple
             if part:
                 counts[part] += 1
     return counts, len(answers)
+
+
+def pool_small_cells(counts: Counter, label: str) -> Counter:
+    """Pool answers given by fewer than SMALL_CELL people, so no one is pinpointable."""
+    kept, pooled = Counter(), 0
+    for answer, count in counts.items():
+        if count < SMALL_CELL:
+            pooled += count
+        else:
+            kept[answer] = count
+    if pooled:
+        kept[f"{label} ({pooled} people, pooled)"] = pooled
+    return kept
 
 
 def format_counts(counts: Counter, responded: int, note: str = "") -> list[str]:
@@ -210,6 +228,8 @@ def build_report(frame: pd.DataFrame) -> str:
         lines.append("")
         source = solar_homes if key in ("net_metering", "battery") else frame
         counts, responded = tally(source, columns.get(key), split=key in MULTI_SELECT)
+        if key in POOLED:
+            counts = pool_small_cells(counts, POOLED[key])
         if key == "net_metering" and counts:
             unsure = sum(c for a, c in counts.items() if "know" in a.lower())
             note = (note + f" **{unsure} of {responded} said they do not know** whether they are "

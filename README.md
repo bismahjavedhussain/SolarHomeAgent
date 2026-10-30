@@ -186,6 +186,45 @@ All in [`config/scenario.yaml`](config/scenario.yaml):
 | `agent.suggestions_followed_pct` | share of advice the family acts on (default 70, **to be set from the survey**) |
 | `power_cut_essential_load_kw` | what runs on backup during an outage (default 0.30 kW) |
 
+## The survey
+
+I ran a short survey of Pakistani households to replace guesses with answers.
+
+**Blank form (questions only, no responses):**
+<!-- PLACEHOLDER: paste the Google Form link here. Share it as "anyone with the link can view",
+     NOT the edit link, and never the linked response spreadsheet. -->
+`https://forms.gle/<paste-the-blank-form-link-here>`
+
+**Snapshot: 21 responses, 30 Oct 2026.**
+
+**Results:** [survey/survey_summary.md](survey/survey_summary.md) — counts as "X of N" with
+percentages, blanks excluded from every denominator.
+
+### What it says, in short
+
+| Finding | Count |
+|---|---|
+| Households with solar | 10 of 21 |
+| Of those, registered for net metering | 9 of 10 |
+| Of those, with a battery | 7 of 10 |
+| Of those, who changed habits or got a battery since net billing | 7 of 10 |
+| Would only let an app act if it explains each decision | 13 of 21 |
+
+### Privacy
+
+Raw responses are **not in this repository** and never will be: `survey/*.csv` is gitignored. The
+generated summary contains **no personal data** — no names, emails, timestamps or free-text answers,
+and no cross-tabulations, so answers cannot be linked across questions. Any answer given by fewer
+than three people is pooled (for example "Other cities"), because naming a town with one respondent
+could identify them in a sample this small.
+
+### Honest limits of the sample
+
+21 households from my own student network, mostly better-off, and 12 of the 21 in Islamabad or
+Rawalpindi. The survey shows the **direction** of the idea, not the size of the opportunity. Next I
+want to survey beyond my own network, including renters and families with no solar at all, since
+those are the homes this fits least well today.
+
 ## Who this is for
 
 The agent helps most where there is something to fix: a home that is **unregistered, has no

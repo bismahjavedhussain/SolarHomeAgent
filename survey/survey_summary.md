@@ -12,12 +12,8 @@
 |---|---|---|
 | Islamabad | **7 of 20** | 35% |
 | Rawalpindi | **5 of 20** | 25% |
+| Other cities (5 people, pooled) | **5 of 20** | 25% |
 | Lahore | **3 of 20** | 15% |
-| Sadiqabad | **1 of 20** | 5% |
-| Hyderabad | **1 of 20** | 5% |
-| Raheem yar khan | **1 of 20** | 5% |
-| Karachi | **1 of 20** | 5% |
-| Wah Cantt | **1 of 20** | 5% |
 
 _Answered by 20 of the respondents._
 
@@ -99,10 +95,8 @@ _Answered by 10 of the respondents. Multiple answers allowed._
 | Answer | Count | Share of those who answered |
 |---|---|---|
 | Planning to install soon | **4 of 11** | 36% |
+| Other reasons (4 people, pooled) | **4 of 11** | 36% |
 | We rent our home | **3 of 11** | 27% |
-| Not interested | **2 of 11** | 18% |
-| Too expensive | **1 of 11** | 9% |
-| We live in army accommodation | **1 of 11** | 9% |
 
 _Answered by 11 of the respondents._
 
@@ -128,40 +122,6 @@ _Answered by 21 of the respondents._
 ## What people would need in order to trust the app
 
 _10 people answered this free-text question. Responses are not reproduced here, to avoid republishing anything identifying. Read them in the spreadsheet._
-
----
-
-## Who this is for
-
-I ran one extra scenario set up the way the survey's solar homes actually look: **battery on, net
-metering, water motor and washing machine already at midday, and a two-hour daily power cut.**
-
-| | Usual | Agent | Change |
-|---|---|---|---|
-| Grid units bought | 50.7 | 50.7 | none |
-| Evening units (18:00-22:00) | 0 | 0 | none |
-| **Hours without power** | **0** | **0** | none |
-| Solar exported | 411.9 kWh | 411.9 kWh | none |
-| Estimated bill before taxes | Rs 1,000 | Rs 1,000 | none |
-
-**The agent stands down for this home.** It sends 30 messages over the month, all
-of them saying it has nothing to suggest, and it makes no shifting recommendations.
-
-That rule exists because of what happened without it. The first version of this scenario had the
-agent buying **14.7 more units** than usual behaviour, holding a battery reserve for an evening that
-was already covered. Those units bought **nothing**: hours without power were **zero in both
-modes**, because a two-hour cut needs about 0.6 kWh of essential load against roughly 4 kWh of
-usable battery.
-
-So the agent now checks first. If a home is net-metered, has a battery, and already runs its
-flexible appliances by day, it manages only the power-cut reserve, sized to essential load, and
-stays quiet otherwise.
-
-**This is the honest scope of the idea.** The Solar Home Agent is for homes that are
-**unregistered, battery-less, or evening-heavy** - the national typical case, and the default
-scenario in this repository. For an already-optimised home it has little to add, and says so.
-
-Reproduce: see `results/survey_scenario.json`.
 
 ## Suggested scenario settings
 

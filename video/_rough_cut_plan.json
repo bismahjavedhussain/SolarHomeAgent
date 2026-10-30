@@ -1,0 +1,97 @@
+[
+  {
+    "segment": "00_title",
+    "seconds": 7,
+    "shows": "Opening title card"
+  },
+  {
+    "segment": "01_arb_landing",
+    "seconds": 5.0,
+    "shows": "Landing page: free-cooling decisions, hour by hour"
+  },
+  {
+    "segment": "02_arb_working",
+    "seconds": 6.0,
+    "shows": "The agent, working"
+  },
+  {
+    "segment": "03_arb_configure",
+    "seconds": 4.0,
+    "shows": "Configuration: what the agent may change"
+  },
+  {
+    "segment": "04_arb_schedule",
+    "seconds": 6.2,
+    "shows": "The decision: a schedule, hours refused, unsafe declarations 0 vs 1"
+  },
+  {
+    "segment": "05_arb_selfscore",
+    "seconds": 6.6,
+    "shows": "Self-scoring: the bound missing its own promise, margin moved unprompted"
+  },
+  {
+    "segment": "06_arb_economic",
+    "seconds": 6.4,
+    "shows": "Economic impact over five real years"
+  },
+  {
+    "segment": "07_arb_map",
+    "seconds": 3.6,
+    "shows": "The map of real campuses, standing in for the flexible-load idea"
+  },
+  {
+    "segment": "07b_pakistan",
+    "seconds": 10,
+    "shows": "PLACEHOLDER: Pakistan rooftops and the tariff cliff"
+  },
+  {
+    "segment": "08_sha_0_01_metrics",
+    "seconds": 7.0,
+    "shows": "Opens on the at-risk home: grid units, evening units, bill"
+  },
+  {
+    "segment": "08_sha_1_02_month_chart",
+    "seconds": 5.0,
+    "shows": "Cumulative units with the 200-unit line"
+  },
+  {
+    "segment": "08_sha_2_03_savings_box",
+    "seconds": 5.0,
+    "shows": "This month, and the next six months"
+  },
+  {
+    "segment": "08_sha_3_04_grid_insight",
+    "seconds": 5.0,
+    "shows": "Midday waste vs buying after dark, and the scale-up"
+  },
+  {
+    "segment": "08_sha_4_06_day_detail",
+    "seconds": 7.0,
+    "shows": "The day it refused, at 16% confidence"
+  },
+  {
+    "segment": "08_sha_5_07_promises",
+    "seconds": 3.5,
+    "shows": "Promises kept: 98.1%"
+  },
+  {
+    "segment": "08_sha_6_08_sidebar_switches",
+    "seconds": 5.5,
+    "shows": "Results move with how often the family acts"
+  },
+  {
+    "segment": "08_sha_7_09_assumptions",
+    "seconds": 2.0,
+    "shows": "Assumptions and limits, opened on camera"
+  },
+  {
+    "segment": "09_next_steps",
+    "seconds": 14,
+    "shows": "PLACEHOLDER: next steps visuals"
+  },
+  {
+    "segment": "10_close",
+    "seconds": 6,
+    "shows": "Closing card"
+  }
+]

@@ -1,0 +1,98 @@
+{
+  "raw": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\_raw_arbiter\\page@022f6be879b3194167d59ac1e9c21368.webm",
+  "total": 74.77,
+  "steps": [
+    {
+      "name": "a1_landing",
+      "start": 13.13,
+      "notes": [
+        "Landing page: free-cooling decisions, hour by hour. Clicks Initialize."
+      ],
+      "end": 26.25,
+      "duration": 13.12,
+      "clip": "a1_landing.mp4",
+      "clip_seconds": 13.6,
+      "video_start": 12.53,
+      "video_end": 26.11
+    },
+    {
+      "name": "a2_pick_site",
+      "start": 28.84,
+      "notes": [
+        "Picks one real data-centre campus from the map of 238."
+      ],
+      "end": 36.37,
+      "duration": 7.53,
+      "clip": "a2_pick_site.mp4",
+      "clip_seconds": 8.1,
+      "video_start": 27.95,
+      "video_end": 36.04
+    },
+    {
+      "name": "a3_configure",
+      "start": 36.57,
+      "notes": [
+        "Configuration: the temperature limit, humidity gate and switching rules."
+      ],
+      "end": 46.07,
+      "duration": 9.5,
+      "clip": "a3_configure.mp4",
+      "clip_seconds": 10.03,
+      "video_start": 35.54,
+      "video_end": 45.56
+    },
+    {
+      "name": "a4_agent_running",
+      "start": 46.34,
+      "notes": [
+        "The agent working through its stages on real data."
+      ],
+      "end": 55.01,
+      "duration": 8.67,
+      "clip": "a4_agent_running.mp4",
+      "clip_seconds": 9.23,
+      "video_start": 45.12,
+      "video_end": 54.33
+    },
+    {
+      "name": "a5_schedule",
+      "start": 55.21,
+      "notes": [
+        "The decision: a schedule, not a thermostat. Hours refused shown."
+      ],
+      "end": 61.3,
+      "duration": 6.09,
+      "clip": "a5_schedule.mp4",
+      "clip_seconds": 6.7,
+      "video_start": 53.83,
+      "video_end": 60.5
+    },
+    {
+      "name": "a6_economic",
+      "start": 61.58,
+      "notes": [
+        "Five real years: chiller-hours recovered and mechanical cooling cut."
+      ],
+      "end": 67.74,
+      "duration": 6.16,
+      "clip": "a6_economic.mp4",
+      "clip_seconds": 6.77,
+      "video_start": 60.08,
+      "video_end": 66.82
+    },
+    {
+      "name": "a7_selfscoring",
+      "start": 68.04,
+      "notes": [
+        "The self-scoring loop, including where the bound misses its 90% promise."
+      ],
+      "end": 74.45,
+      "duration": 6.41,
+      "clip": "a7_selfscoring.mp4",
+      "clip_seconds": 6.93,
+      "video_start": 66.42,
+      "video_end": 73.37
+    }
+  ],
+  "video_seconds": 73.37
+}

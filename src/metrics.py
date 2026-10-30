@@ -16,6 +16,8 @@ def summarise(run: dict, config: dict, scenario: dict) -> dict:
 
     import_units = hourly["grid_import_kwh"].sum()
     export_units = hourly["exported_kwh"].sum()
+    # Unmet load must be reported with grid units: a home that goes dark looks artificially frugal.
+    load_served = hourly["load_kwh"].sum() - hourly["unmet_kwh"].sum()
     bill = estimate_bill(
         import_units, export_units, scenario["export_mode"],
         run["profile"]["protected_eligible"], config["tariff"],
@@ -26,6 +28,9 @@ def summarise(run: dict, config: dict, scenario: dict) -> dict:
         "grid_units_month": round(import_units, 1),
         "evening_grid_units": round(evening["grid_import_kwh"].sum(), 1),
         "peak_grid_kw": round(hourly["grid_import_kwh"].max(), 2),
+        "load_wanted_kwh": round(hourly["load_kwh"].sum(), 1),
+        "load_served_kwh": round(load_served, 1),
+        "grid_units_per_100kwh_served": round(100 * import_units / max(1e-9, load_served), 1),
         "solar_generated_kwh": round(hourly["solar_kwh"].sum(), 1),
         "solar_used_kwh": round(hourly["solar_used_kwh"].sum(), 1),
         "solar_wasted_kwh": round(hourly["wasted_kwh"].sum(), 1),

@@ -44,7 +44,7 @@ def _simulate(household: str, has_battery: bool, export_mode: str, solar_kw: flo
 
 config = _config()
 
-st.title("Solar Home Agent - Pakistan (prototype v0)")
+st.title("Solar Home Agent - Pakistan (prototype)")
 st.warning(
     "**This is a simulation, not a real home.** It runs one real month of Islamabad weather "
     "(June 2025) against modelled appliances. Several inputs are rough estimates and some tariff "

@@ -1,4 +1,4 @@
-# Solar Home Agent (Pakistan) - prototype v0
+# Solar Home Agent (Pakistan) - prototype
 
 **A simulation of a rooftop-solar home in Islamabad, run twice: once the way families behave
 today, and once with an agent that plans each day from the weather forecast and refuses to act

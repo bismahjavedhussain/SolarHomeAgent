@@ -4,16 +4,23 @@ from __future__ import annotations
 import pandas as pd
 import streamlit as st
 
-from src.fetch_weather import load_config, load_weather
+from src.fetch_weather import CONFIG_PATH, load_config, load_weather
 from src.metrics import summarise
-from src.simulate import base_scenario, run_month
+from src.simulate import CALIBRATION_PATH, base_scenario, run_month
 
 st.set_page_config(page_title="Solar Home Agent (Pakistan)", page_icon="sun", layout="wide")
 
 
-@st.cache_data(show_spinner=False)
+def _settings_version() -> str:
+    """Changes when the config or calibration file does, so cached results never go stale."""
+    stamps = []
+    for path in (CONFIG_PATH, CALIBRATION_PATH):
+        stamps.append(str(path.stat().st_mtime_ns) if path.exists() else "-")
+    return "|".join(stamps)
+
+
 def _config() -> dict:
-    """Load the scenario config once."""
+    """Read the scenario config. Deliberately uncached: it is a small file and must stay current."""
     return load_config()
 
 
@@ -25,7 +32,7 @@ def _weather(month: str) -> tuple:
 
 @st.cache_data(show_spinner="Simulating the month...")
 def _simulate(household: str, has_battery: bool, export_mode: str, solar_kw: float,
-              power_cuts: bool, followed_pct: int) -> dict:
+              power_cuts: bool, followed_pct: int, settings_version: str) -> dict:
     """Run both modes for one scenario and return frames, metrics and messages."""
     base = _config()
     config = dict(base, agent=dict(base["agent"], suggestions_followed_pct=followed_pct))
@@ -48,8 +55,10 @@ config = _config()
 st.title("Solar Home Agent - Pakistan (prototype)")
 st.warning(
     "**This is a simulation, not a real home.** It runs one real month of Islamabad weather "
-    "(June 2025) against modelled appliances. Several inputs are rough estimates and some tariff "
-    "rates are placeholders. No claim is made about real-world savings. See ASSUMPTIONS.md.",
+    "(June 2025) against modelled appliances. Tariff rates are the reported 2026 figures and still "
+    "need verifying against NEPRA; taxes and fuel adjustments are excluded, so bills shown here are "
+    "lower than real ones. Several inputs, including pre-cooling and how often the family acts, are "
+    "assumptions. No claim is made about real-world savings. See ASSUMPTIONS.md.",
     icon=":material/warning:",
 )
 
@@ -85,7 +94,8 @@ with st.sidebar:
     )
     st.caption("Runs from cached weather. No internet needed.")
 
-results = _simulate(household, has_battery, export_mode, solar_kw, power_cuts, followed_pct)
+results = _simulate(household, has_battery, export_mode, solar_kw, power_cuts, followed_pct,
+                    _settings_version())
 usual, agent = results["usual"], results["agent"]
 um, am = usual["metrics"], agent["metrics"]
 

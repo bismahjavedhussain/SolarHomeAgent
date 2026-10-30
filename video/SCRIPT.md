@@ -133,9 +133,10 @@ I watched your demo by pulling frames out of `D:\FGHackathon\AGENTIC-ARBITER-dem
    line happens to match the new one.
 2. **Mute it.** The file carries your original voice track. Export video-only, or set its volume to
    zero in the timeline.
-3. **Resolution differs.** The Arbiter video is 2560x1440; the Solar Home Agent recording is
-   1920x1080. Set the project to 1080p and scale the Arbiter clips down, or the cut will jump in
-   sharpness halfway through.
+3. **The two sources are different sizes**, because the Arbiter demo was captured at 2560x1440 and
+   30 fps while the Solar Home Agent recording is 1920x1080 at 25 fps. **Set the project to 1080p
+   and 30 fps.** The Arbiter clips then scale down, which looks clean. Only the reverse would be a
+   problem: in a 1440p project the Solar Home Agent footage has to scale up and goes soft.
 
 ## Numbers in this script
 

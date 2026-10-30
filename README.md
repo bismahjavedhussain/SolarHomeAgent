@@ -82,12 +82,14 @@ no battery, unregistered). This is where the tariff cliff bites:
 | Units bought from the grid | 215.0 | **181.4** | −16% |
 | Evening units (18:00–22:00) | 121.4 | **86.9** | −28% |
 | Pricing band | **unprotected** | **protected** | limit not crossed |
-| Cost of units bought | Rs 7,117 | **Rs 2,114** | −Rs 5,003 |
+| Cost of units bought | Rs 8,867 | **Rs 3,614** | −Rs 5,253 |
 | Six months of unprotected pricing | Rs 18,788 | **Rs 0** | avoided |
+
+Costs include fixed charges of Rs 1,750 and Rs 1,500 respectively, on a 5 kW sanctioned load.
 
 Crossing the limit counts twice, and the two figures are different things:
 
-1. **This month: Rs 5,003 less** for the units bought.
+1. **This month: Rs 5,253 less** for the units bought.
 2. **The next six months: about Rs 18,788.** A home that crosses stays on unprotected rates for
    six months **even after its usage drops back under 200**. This prices those months at 181.4
    units — the agent's own monthly usage — and assumes it holds steady. An estimate, not a
@@ -96,15 +98,18 @@ Crossing the limit counts twice, and the two figures are different things:
 A month above the limit can never itself be billed at protected rates, so the penalty is not that
 month's own gap; it is what the *following* months cost. The agent's guard fired on 2 days.
 
-**The main scenario** in `config/scenario.yaml` is a low-use home with a 5 kWh battery, already
-comfortably under the limit, so there is no cliff to avoid and the gains are smaller:
+That `at_risk` scenario is the **default** in `config/scenario.yaml` and the one the app opens on.
+The 215-unit starting point is an **assumption** (`calibration.at_risk_target_units`), to be set
+from a real bill.
+
+**A low-use home with a battery**, already comfortably under the limit, has no cliff to avoid, so
+its gains are smaller and purely about quantity:
 
 | | Usual | Agent | Change |
 |---|---|---|---|
 | Units bought from the grid | 69.7 | **53.4** | −23% |
 | Evening units (18:00–22:00) | 10.1 | **3.9** | −61% |
-| Units per 100 kWh actually served | 22.4 | **16.9** | −25% |
-| Cost of units bought | Rs 735 | Rs 563 | protected rate kept in both |
+| Share of electricity from the grid | 22.4% | **16.9%** | −5.5 pts |
 
 Across all **18 scenarios** (household × battery × export mode), the agent reduces **both total
 and evening grid units in every single one**.
@@ -117,14 +122,15 @@ and evening grid units in every single one**.
 - **Refused to move an appliance twice**, because no hour was sunny enough to be confident.
 - **The family acts on only 70% of suggestions** in these runs, a deliberate assumption. Battery
   planning is automatic and always applies; appliance timing needs someone to act. At 100%
-  compliance the main scenario reaches 53.7 units, at 30% it reaches 78.6 — so the headline
+  compliance the low-use scenario reaches 53.7 units, at 30% it reaches 78.6 — so the headline
   numbers are *not* a best case.
 - Average day-ahead forecast error **52.7 W/m²**, average margin held back **0.257 kW per hour**.
 
 ### What the agent does not fix
 
-The main-scenario home still **wastes 466.9 kWh of solar** in the month (down from 485.5). It
-generates 738.3 kWh and uses only 36.8% of it on site. A 5 kWh battery cannot absorb a sunny June
+The default home still **wastes 540.0 kWh of solar** in the month (down from 578.6). It generates
+738.3 kWh and uses only 26.9% of it on site. It throws away **371 kWh between 10:00 and 16:00**
+while still buying **178 units after dark**. A 5 kWh battery cannot absorb a sunny June
 day, and an unregistered home cannot sell the rest. **Most surplus noon solar is still thrown
 away** — no amount of household scheduling fixes that. It needs registration, bigger storage, or a
 grid that can see and use it.

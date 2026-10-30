@@ -191,11 +191,10 @@ All in [`config/scenario.yaml`](config/scenario.yaml):
 I ran a short survey of Pakistani households to replace guesses with answers.
 
 **Blank form (questions only, no responses):**
-<!-- PLACEHOLDER: paste the Google Form link here. Share it as "anyone with the link can view",
-     NOT the edit link, and never the linked response spreadsheet. -->
-`https://forms.gle/<paste-the-blank-form-link-here>`
+[Solar & Electricity at Home: Student Survey (Pakistan)](https://docs.google.com/forms/d/e/1FAIpQLSf04UxaaCJCjRNvdmxJ3nM3seYnAolf8qAyh0N31nGVN7cg9A/viewform)
 
-**Snapshot: 21 responses, 30 Oct 2026.**
+**Snapshot: 21 responses, 30 Oct 2026.** The form is still open, so the live response count may be
+higher than the snapshot this summary was generated from.
 
 **Results:** [survey/survey_summary.md](survey/survey_summary.md) — counts as "X of N" with
 percentages, blanks excluded from every denominator.

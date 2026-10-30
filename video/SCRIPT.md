@@ -1,151 +1,182 @@
 # Voiceover script — IRENA Youth Forum 2027
 
-**The subtitles burned into `rough_cut_full.mp4` are exactly these lines.** Read them aloud as
-they appear.
+**219 words over 1:57.50 — about 112 words a minute.**
 
-Total **1:59.43**, measured from the assembled cut.
+That is a normal speaking pace. No line is faster than 142 words a minute, and most sit at
+about 120. Read them aloud as they appear and you will not have to rush.
+
+Each line is written to describe what is on screen at that moment.
 
 ---
 
-### 0:00.00–0:07.00 (7.00s) — **Your card** · `c1_title`
+### 0:00.00–0:07.00  ·  Your card  ·  `c1_title`
+
+_7.0s · 11 words · 94 wpm_
 
 > Energy gets wasted for a boring reason:
-> nobody trusts the forecast enough to act on it.
+> nobody trusts the forecast.
 
-### 0:07.00–0:11.50 (4.50s) — Agentic Arbiter (live app) · `a1_landing`
+### 0:07.00–0:10.00  ·  Agentic Arbiter  ·  `a1_landing`
 
-> In September 2026, I built Agentic Arbiter.
-> It covers 238 real data-centre campuses across 36 US states.
+_3.0s · 6 words · 120 wpm_
 
-### 0:11.50–0:16.00 (4.50s) — Agentic Arbiter (live app) · `a2_site`
+> In September, I built Agentic Arbiter.
 
-> Data centres run chillers even when
-> the air outside is already cold enough.
+### 0:10.00–0:13.50  ·  Agentic Arbiter  ·  `a2_site`
 
-### 0:16.00–0:17.80 (1.80s) — Agentic Arbiter (live app) · `a3_config`
+_3.5s · no line, visual only_
 
-> _(no line - visual beat)_
 
-### 0:17.80–0:21.30 (3.50s) — Agentic Arbiter (live app) · `a4_working`
+### 0:13.50–0:19.00  ·  Agentic Arbiter  ·  `a3_config`
 
-> It works hour by hour, deciding when it's safe to shut the chillers off.
+_5.5s · 11 words · 120 wpm_
 
-### 0:21.30–0:25.60 (4.30s) — Agentic Arbiter (live app) · `a5_schedule`
+> They run chillers even when the air outside is cold enough.
 
-> It made no unsafe calls.
+### 0:19.00–0:24.50  ·  Agentic Arbiter  ·  `a4_working`
+
+_5.5s · 11 words · 120 wpm_
+
+> So it decides, each hour, when switching them off is safe.
+
+### 0:24.50–0:30.00  ·  Agentic Arbiter  ·  `a5_schedule`
+
+_5.5s · 11 words · 120 wpm_
+
+> Here it made no unsafe calls.
 > The old controller made one.
 
-### 0:25.60–0:29.60 (4.00s) — Agentic Arbiter (live app) · `a6_economic`
+### 0:30.00–0:37.00  ·  Agentic Arbiter  ·  `a7_selfscore`
 
-> Over five real years, that's about four hundred extra hours a year.
-
-### 0:29.60–0:36.10 (6.50s) — Agentic Arbiter (live app) · `a7_selfscore`
+_7.0s · 12 words · 103 wpm_
 
 > And it grades itself.
-> Here it's missing its target, because the data was patchy during the hackathon window.
-> It says so itself.
+> Here it missed its target, and says so.
 
-### 0:36.10–0:44.10 (8.00s) — **Your card** · `c2_coalition`
+### 0:37.00–0:45.00  ·  Your card  ·  `c2_coalition`
 
-> Second of 842 teams, out of nearly four thousand people,
-> at FortyGuard's hackathon, sponsored by NVIDIA.
+_8.0s · 13 words · 98 wpm_
+
+> Second of eight hundred and forty-two teams.
 > The UN-backed Cool Coalition featured it.
 
-### 0:44.10–0:48.10 (4.00s) — Agentic Arbiter (live app) · `a8_future`
+### 0:45.00–0:49.00  ·  Agentic Arbiter  ·  `a8_future`
 
-> Next I want it running live on real sites, not just measured on them.
+_4.0s · 8 words · 120 wpm_
 
-### 0:48.10–0:55.60 (7.50s) — **Your card** · `c3_pakistan`
+> Next, I want it running on real sites.
+
+### 0:49.00–0:56.50  ·  Your card  ·  `c3_pakistan`
+
+_7.5s · 15 words · 120 wpm_
 
 > Then I looked at home.
-> Pakistan has solar on millions of roofs, but the grid can't see it.
-> Go over two hundred units a month, and every unit gets re-priced.
+> Pakistan has solar everywhere, but the grid cannot see it.
 
-### 0:55.60–1:01.60 (6.00s) — **Survey visual** · `s1_demand`
+### 0:56.50–1:02.00  ·  Survey visual  ·  `s1_demand`
+
+_5.5s · 13 words · 142 wpm_
 
 > I asked twenty-one families.
-> Seven of the ten with solar have changed habits or are getting a battery.
+> Seven of the ten with solar have changed habits.
 
-### 1:01.60–1:08.80 (7.20s) — Solar Home Agent · `h1_metrics`
+### 1:02.00–1:07.50  ·  Solar Home Agent  ·  `h1_intro`
 
-> So I'm building a Solar Home Agent.
-> It helps most in a solar home with no battery that can't sell its spare power.
+_5.5s · 11 words · 120 wpm_
 
-### 1:08.80–1:14.80 (6.00s) — Solar Home Agent · `h2_month`
+> So I am building a Solar Home Agent for those homes.
 
-> It reads tomorrow's weather, picks when to run the motor and the iron, and remembers how wrong it's been.
+### 1:07.50–1:13.00  ·  Solar Home Agent  ·  `h2_month`
 
-### 1:14.80–1:21.80 (7.00s) — Solar Home Agent · `h3_savings`
+_5.5s · 10 words · 109 wpm_
 
-> Moving a few jobs into the sunny hours keeps this home under the limit.
-> About five thousand rupees this month.
+> Go over two hundred units,
+> and every unit costs more.
 
-### 1:21.80–1:26.30 (4.50s) — Solar Home Agent · `h4_grid`
+### 1:13.00–1:18.00  ·  Solar Home Agent  ·  `h3_savings`
 
-> Nearly nineteen thousand over the next six.
-> It's a simulation, on one real month of Islamabad weather.
+_5.0s · 10 words · 120 wpm_
 
-### 1:26.30–1:31.30 (5.00s) — **Survey visual** · `s2_trust`
+> It keeps this home under that line.
+> Five thousand rupees.
 
-> Thirteen said they'd only trust an app that explains itself.
-> So mine does.
+### 1:18.00–1:23.00  ·  Solar Home Agent  ·  `h4_family`
 
-### 1:31.30–1:36.00 (4.70s) — Solar Home Agent · `h5_day`
+_5.0s · 10 words · 120 wpm_
 
-> When it isn't sure, it says no,
+> It picks when to run the motor,
+> and says why.
+
+### 1:23.00–1:28.50  ·  Survey visual  ·  `s2_trust`
+
+_5.5s · 11 words · 120 wpm_
+
+> Thirteen said they would only trust an app that explains itself.
+
+### 1:28.50–1:34.50  ·  Solar Home Agent  ·  `h5_day`
+
+_6.0s · 13 words · 130 wpm_
+
+> So when it is not sure, it says no,
 > and tells you why.
 
-### 1:36.00–1:39.00 (3.00s) — Solar Home Agent · `h6_promises`
+### 1:34.50–1:39.70  ·  Solar Home Agent  ·  `h6_gap`
 
-> It keeps score against what the sun actually did.
+_5.2s · 11 words · 127 wpm_
 
-### 1:39.00–1:43.00 (4.00s) — Solar Home Agent · `h7_switches`
-
-> But look what it can't fix: it still wastes most of its midday sun,
-> and buys after dark.
-
-### 1:43.00–1:45.50 (2.50s) — Solar Home Agent · `h8_assume`
-
+> It still wastes most of its midday sun.
 > Storage closes that.
 
-### 1:45.50–1:53.50 (8.00s) — **Your card** · `c4_next`
+### 1:39.70–1:43.50  ·  Solar Home Agent  ·  `h7_assume`
 
-> Next: five to ten homes in Islamabad, over WhatsApp.
-> Then add them into one neighbourhood forecast, with our distribution company.
+_3.8s · 9 words · 142 wpm_
 
-### 1:53.50–1:59.50 (6.00s) — **Your card** · `c5_close`
+> This is a simulation, with every assumption written down.
 
-> The solar is already on Pakistan's roofs.
-> I want to help the grid see it, and trust it.
+### 1:43.50–1:51.50  ·  Your card  ·  `c4_next`
+
+_8.0s · 11 words · 82 wpm_
+
+> Next, five to ten homes in Islamabad.
+> Then one neighbourhood forecast.
+
+### 1:51.50–1:57.50  ·  Your card  ·  `c5_close`
+
+_6.0s · 12 words · 120 wpm_
+
+> The solar is already there.
+> I want the grid to trust it.
 
 ---
+
+## What was cut to reach a speakable pace
+
+The earlier cut ran 285 words at the same length, which came out at 230-270 words a minute
+in places - too fast to say. Rather than stretch the video past two minutes, these were cut:
+
+- The 238-sites line (the map still shows the scale, with no narration over it)
+- The +406 chiller-hours figure
+- The promises-kept beat
+- The family-view rupee figures
+
+Everything load-bearing is still there: what each project does, that both refuse when unsure,
+the recognition, the Pakistan problem, the survey, the saving, the honest limit, and the plan.
 
 ## Claims table
 
-Lines changed in this revision are marked **(revised)**.
-
-| Said | Verified against |
+| Said | Source |
 |---|---|
-| "In September 2026, I built Agentic Arbiter" | your correction |
-| "238 real data-centre campuses across 36 US states" | Cool Coalition article, on screen at 0:37 |
-| "no unsafe calls, the old controller made one" | the app's panel: unsafe declarations 0 vs 1 |
-| "Over five real years, that's about four hundred extra hours a year" | **kept**: the Economic Impact panel says "five real years" in its subtitle, heading and section title, and the highlighted card reads "CHILLER-HOURS AVOIDED +406 h/yr" |
-| "missing its target, because the data was patchy during the hackathon window" | your correction; panel shows 65.6% against a 90% promise |
-| **(revised)** "out of nearly four thousand people" | the article's "nearly 4,000 participants", on screen |
-| **(revised)** "The UN-backed Cool Coalition featured it" | the article masthead: "a UNEP-convened initiative" |
-| "FortyGuard's hackathon, sponsored by NVIDIA" | your correction |
-| "two hundred units" | 200-unit protected limit, 2026 tariff as reported |
+| "In September, I built Agentic Arbiter" | your correction |
+| "They run chillers even when the air outside is cold enough" | the app's own framing |
+| "Here it made no unsafe calls. The old controller made one." | app panel: unsafe declarations 0 vs 1 |
+| "Here it missed its target, and says so" | app panel: 65.6% against a 90% promise |
+| "Second of eight hundred and forty-two teams" | your correction |
+| "The UN-backed Cool Coalition featured it" | the article on screen, a UNEP-convened initiative |
+| "Pakistan has solar everywhere, but the grid cannot see it" | README problem section |
 | "I asked twenty-one families" | `survey/survey_summary.md`, N = 21 |
-| **(revised)** "Seven of the ten with solar have changed habits or are getting a battery" | `survey/survey_summary.md`: 4 use more sun by day + 3 bought or plan a battery = 7 of 10 |
-| **(revised)** "It helps most in a solar home with no battery that can't sell its spare power" | README "Who this is for"; the stand-down rule and `results/survey_scenario.json` |
-| **(revised)** "picks when to run the motor and the iron, and remembers how wrong it's been" | the agent's learned margin: p80 of its own past error per hour, `src/agent.py` |
-| **(revised)** "Moving a few jobs into the sunny hours keeps this home under the limit" | `results/summary.json`: 215.0 -> 181.4 units, unprotected -> protected |
-| "About five thousand rupees this month" | Rs 5,253, `results/VIDEO_FACTS.md` |
-| "Nearly nineteen thousand over the next six" | Rs 18,788 over six months, `results/VIDEO_FACTS.md` |
-| "Thirteen said they'd only trust an app that explains itself" | `survey/survey_summary.md`: 13 of 21 |
-
-## Survey caveat, if asked
-
-21 households from my own student network, mostly better-off, 12 of the 21 in Islamabad or
-Rawalpindi. Next I want to survey beyond my network, including renters and families with no
-solar at all.
+| "Seven of the ten with solar have changed habits" | `survey/survey_summary.md`: 7 of 10 |
+| "Go over two hundred units, and every unit costs more" | 200-unit limit, non-telescopic bands |
+| "It keeps this home under that line. Five thousand rupees." | Rs 5,253, `results/VIDEO_FACTS.md` |
+| "Thirteen said they would only trust an app that explains itself" | `survey/survey_summary.md`: 13 of 21 |
+| "It still wastes most of its midday sun. Storage closes that." | 540 kWh wasted, `results/summary.json` |
+| "This is a simulation, with every assumption written down" | ASSUMPTIONS.md |

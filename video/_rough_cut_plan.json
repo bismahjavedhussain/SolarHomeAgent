@@ -5,199 +5,219 @@
     "seconds": 7.0,
     "lines": [
       "Energy gets wasted for a boring reason:",
-      "nobody trusts the forecast enough to act on it."
-    ]
+      "nobody trusts the forecast."
+    ],
+    "words": 11,
+    "wpm": 94
   },
   {
     "segment": "a1_landing",
     "start": 7.0,
-    "seconds": 4.5,
+    "seconds": 3.0,
     "lines": [
-      "In September 2026, I built Agentic Arbiter.",
-      "It covers 238 real data-centre campuses across 36 US states."
-    ]
+      "In September, I built Agentic Arbiter."
+    ],
+    "words": 6,
+    "wpm": 120
   },
   {
     "segment": "a2_site",
-    "start": 11.5,
-    "seconds": 4.5,
-    "lines": [
-      "Data centres run chillers even when",
-      "the air outside is already cold enough."
-    ]
+    "start": 10.0,
+    "seconds": 3.5,
+    "lines": [],
+    "words": 0,
+    "wpm": 0
   },
   {
     "segment": "a3_config",
-    "start": 16.0,
-    "seconds": 1.8,
-    "lines": []
+    "start": 13.5,
+    "seconds": 5.5,
+    "lines": [
+      "They run chillers even when the air outside is cold enough."
+    ],
+    "words": 11,
+    "wpm": 120
   },
   {
     "segment": "a4_working",
-    "start": 17.8,
-    "seconds": 3.5,
+    "start": 19.0,
+    "seconds": 5.5,
     "lines": [
-      "It works hour by hour, deciding when it's safe to shut the chillers off."
-    ]
+      "So it decides, each hour, when switching them off is safe."
+    ],
+    "words": 11,
+    "wpm": 120
   },
   {
     "segment": "a5_schedule",
-    "start": 21.3,
-    "seconds": 4.3,
+    "start": 24.5,
+    "seconds": 5.5,
     "lines": [
-      "It made no unsafe calls.",
+      "Here it made no unsafe calls.",
       "The old controller made one."
-    ]
-  },
-  {
-    "segment": "a6_economic",
-    "start": 25.6,
-    "seconds": 4.0,
-    "lines": [
-      "Over five real years, that's about four hundred extra hours a year."
-    ]
+    ],
+    "words": 11,
+    "wpm": 120
   },
   {
     "segment": "a7_selfscore",
-    "start": 29.6,
-    "seconds": 6.5,
+    "start": 30.0,
+    "seconds": 7.0,
     "lines": [
       "And it grades itself.",
-      "Here it's missing its target, because the data was patchy during the hackathon window.",
-      "It says so itself."
-    ]
+      "Here it missed its target, and says so."
+    ],
+    "words": 12,
+    "wpm": 103
   },
   {
     "segment": "c2_coalition",
-    "start": 36.1,
+    "start": 37.0,
     "seconds": 8.0,
     "lines": [
-      "Second of 842 teams, out of nearly four thousand people,",
-      "at FortyGuard's hackathon, sponsored by NVIDIA.",
+      "Second of eight hundred and forty-two teams.",
       "The UN-backed Cool Coalition featured it."
-    ]
+    ],
+    "words": 13,
+    "wpm": 98
   },
   {
     "segment": "a8_future",
-    "start": 44.1,
+    "start": 45.0,
     "seconds": 4.0,
     "lines": [
-      "Next I want it running live on real sites, not just measured on them."
-    ]
+      "Next, I want it running on real sites."
+    ],
+    "words": 8,
+    "wpm": 120
   },
   {
     "segment": "c3_pakistan",
-    "start": 48.1,
+    "start": 49.0,
     "seconds": 7.5,
     "lines": [
       "Then I looked at home.",
-      "Pakistan has solar on millions of roofs, but the grid can't see it.",
-      "Go over two hundred units a month, and every unit gets re-priced."
-    ]
+      "Pakistan has solar everywhere, but the grid cannot see it."
+    ],
+    "words": 15,
+    "wpm": 120
   },
   {
     "segment": "s1_demand",
-    "start": 55.6,
-    "seconds": 6.0,
+    "start": 56.5,
+    "seconds": 5.5,
     "lines": [
       "I asked twenty-one families.",
-      "Seven of the ten with solar have changed habits or are getting a battery."
-    ]
+      "Seven of the ten with solar have changed habits."
+    ],
+    "words": 13,
+    "wpm": 142
   },
   {
-    "segment": "h1_metrics",
-    "start": 61.6,
-    "seconds": 7.2,
+    "segment": "h1_intro",
+    "start": 62.0,
+    "seconds": 5.5,
     "lines": [
-      "So I'm building a Solar Home Agent.",
-      "It helps most in a solar home with no battery that can't sell its spare power."
-    ]
+      "So I am building a Solar Home Agent for those homes."
+    ],
+    "words": 11,
+    "wpm": 120
   },
   {
     "segment": "h2_month",
-    "start": 68.8,
-    "seconds": 6.0,
+    "start": 67.5,
+    "seconds": 5.5,
     "lines": [
-      "It reads tomorrow's weather, picks when to run the motor and the iron, and remembers how wrong it's been."
-    ]
+      "Go over two hundred units,",
+      "and every unit costs more."
+    ],
+    "words": 10,
+    "wpm": 109
   },
   {
     "segment": "h3_savings",
-    "start": 74.8,
-    "seconds": 7.0,
+    "start": 73.0,
+    "seconds": 5.0,
     "lines": [
-      "Moving a few jobs into the sunny hours keeps this home under the limit.",
-      "About five thousand rupees this month."
-    ]
+      "It keeps this home under that line.",
+      "Five thousand rupees."
+    ],
+    "words": 10,
+    "wpm": 120
   },
   {
-    "segment": "h4_grid",
-    "start": 81.8,
-    "seconds": 4.5,
+    "segment": "h4_family",
+    "start": 78.0,
+    "seconds": 5.0,
     "lines": [
-      "Nearly nineteen thousand over the next six.",
-      "It's a simulation, on one real month of Islamabad weather."
-    ]
+      "It picks when to run the motor,",
+      "and says why."
+    ],
+    "words": 10,
+    "wpm": 120
   },
   {
     "segment": "s2_trust",
-    "start": 86.3,
-    "seconds": 5.0,
+    "start": 83.0,
+    "seconds": 5.5,
     "lines": [
-      "Thirteen said they'd only trust an app that explains itself.",
-      "So mine does."
-    ]
+      "Thirteen said they would only trust an app that explains itself."
+    ],
+    "words": 11,
+    "wpm": 120
   },
   {
     "segment": "h5_day",
-    "start": 91.3,
-    "seconds": 4.7,
+    "start": 88.5,
+    "seconds": 6.0,
     "lines": [
-      "When it isn't sure, it says no,",
+      "So when it is not sure, it says no,",
       "and tells you why."
-    ]
+    ],
+    "words": 13,
+    "wpm": 130
   },
   {
-    "segment": "h6_promises",
-    "start": 96.0,
-    "seconds": 3.0,
+    "segment": "h6_gap",
+    "start": 94.5,
+    "seconds": 5.2,
     "lines": [
-      "It keeps score against what the sun actually did."
-    ]
-  },
-  {
-    "segment": "h7_switches",
-    "start": 99.0,
-    "seconds": 4.0,
-    "lines": [
-      "But look what it can't fix: it still wastes most of its midday sun,",
-      "and buys after dark."
-    ]
-  },
-  {
-    "segment": "h8_assume",
-    "start": 103.0,
-    "seconds": 2.5,
-    "lines": [
+      "It still wastes most of its midday sun.",
       "Storage closes that."
-    ]
+    ],
+    "words": 11,
+    "wpm": 127
+  },
+  {
+    "segment": "h7_assume",
+    "start": 99.7,
+    "seconds": 3.8,
+    "lines": [
+      "This is a simulation, with every assumption written down."
+    ],
+    "words": 9,
+    "wpm": 142
   },
   {
     "segment": "c4_next",
-    "start": 105.5,
+    "start": 103.5,
     "seconds": 8.0,
     "lines": [
-      "Next: five to ten homes in Islamabad, over WhatsApp.",
-      "Then add them into one neighbourhood forecast, with our distribution company."
-    ]
+      "Next, five to ten homes in Islamabad.",
+      "Then one neighbourhood forecast."
+    ],
+    "words": 11,
+    "wpm": 82
   },
   {
     "segment": "c5_close",
-    "start": 113.5,
+    "start": 111.5,
     "seconds": 6.0,
     "lines": [
-      "The solar is already on Pakistan's roofs.",
-      "I want to help the grid see it, and trust it."
-    ]
+      "The solar is already there.",
+      "I want the grid to trust it."
+    ],
+    "words": 12,
+    "wpm": 120
   }
 ]

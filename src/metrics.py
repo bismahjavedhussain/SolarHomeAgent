@@ -39,6 +39,8 @@ def summarise(run: dict, config: dict, scenario: dict) -> dict:
             100 * hourly["solar_used_kwh"].sum() / max(1e-9, hourly["solar_kwh"].sum()), 1
         ),
         "bill_rs": round(bill["bill_rs"], 0),
+        "energy_cost_rs": round(bill["energy_cost_rs"], 0),
+        "export_credit_rs": round(bill["export_credit_rs"], 0),
         "pricing": bill["pricing"],
         "protected_kept": bill["protected_kept"],
         "loses_protected_status_for_6_months": bill["loses_protected_status_for_6_months"],

@@ -4,13 +4,13 @@
     "kind": "img",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\openingTitle(000_007).png",
     "offset": 0,
-    "seconds": 7.0,
+    "seconds": 6.1,
     "lines": [
       "Energy gets wasted for a boring reason.",
-      "Someone has a forecast, but nobody trusts it enough to act."
+      "Nobody trusts the forecast enough to act on it."
     ],
-    "words": 18,
-    "wpm": 154,
+    "words": 16,
+    "wpm": 157,
     "start": 0.0
   },
   {
@@ -24,20 +24,7 @@
     ],
     "words": 11,
     "wpm": 157,
-    "start": 7.0
-  },
-  {
-    "segment": "a2_site",
-    "kind": "clip",
-    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a2_pick_site.mp4",
-    "offset": 0.5,
-    "seconds": 3.1,
-    "lines": [
-      "It looks at 238 real data centres across America."
-    ],
-    "words": 8,
-    "wpm": 155,
-    "start": 11.2
+    "start": 6.1
   },
   {
     "segment": "a3_config",
@@ -50,7 +37,7 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 14.3
+    "start": 10.3
   },
   {
     "segment": "a4_working",
@@ -63,7 +50,7 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 19.3
+    "start": 15.3
   },
   {
     "segment": "a5_schedule",
@@ -76,7 +63,7 @@
     ],
     "words": 12,
     "wpm": 157,
-    "start": 24.3
+    "start": 20.3
   },
   {
     "segment": "a6_economic",
@@ -89,35 +76,36 @@
     ],
     "words": 9,
     "wpm": 154,
-    "start": 28.9
+    "start": 24.9
   },
   {
     "segment": "a7_selfscore",
     "kind": "clip",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips_arbiter\\a7_selfscoring.mp4",
-    "offset": 2.3,
-    "seconds": 5.4,
+    "offset": 2.0,
+    "seconds": 5.68,
     "lines": [
       "And it grades itself.",
-      "Here it missed its own target, and it says so."
+      "Here it missed its target, because the data was patchy, and says so."
     ],
-    "words": 14,
-    "wpm": 156,
-    "start": 32.4
+    "words": 17,
+    "wpm": 180,
+    "start": 28.4
   },
   {
     "segment": "c2_coalition",
     "kind": "img",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\cool_coalition.png",
     "offset": 0,
-    "seconds": 8.0,
+    "seconds": 9.6,
     "lines": [
-      "Second of eight hundred and forty-two teams, out of nearly four thousand people.",
+      "Second of eight hundred and forty-two teams, out of nearly four thousand people,",
+      "at FortyGuard's hackathon, sponsored by NVIDIA.",
       "The UN-backed Cool Coalition featured it."
     ],
-    "words": 19,
-    "wpm": 142,
-    "start": 37.8
+    "words": 25,
+    "wpm": 156,
+    "start": 34.08
   },
   {
     "segment": "a8_future",
@@ -130,21 +118,21 @@
     ],
     "words": 8,
     "wpm": 155,
-    "start": 45.8
+    "start": 43.68
   },
   {
     "segment": "c3_pakistan",
     "kind": "img",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\Pakistanproblem(056_103).png",
     "offset": 0,
-    "seconds": 7.5,
+    "seconds": 6.9,
     "lines": [
       "Then I looked at home.",
       "Pakistan has solar on millions of roofs, but the grid cannot see it."
     ],
     "words": 18,
-    "wpm": 144,
-    "start": 48.9
+    "wpm": 157,
+    "start": 46.78
   },
   {
     "segment": "s1_demand",
@@ -158,7 +146,7 @@
     ],
     "words": 18,
     "wpm": 157,
-    "start": 56.4
+    "start": 53.68
   },
   {
     "segment": "h1_intro",
@@ -171,7 +159,7 @@
     ],
     "words": 16,
     "wpm": 157,
-    "start": 63.3
+    "start": 60.58
   },
   {
     "segment": "h2_month",
@@ -184,34 +172,21 @@
     ],
     "words": 14,
     "wpm": 156,
-    "start": 69.4
+    "start": 66.68
   },
   {
     "segment": "h3_savings",
     "kind": "clip",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\demo_full.mp4",
-    "offset": 19.3,
+    "offset": 19.4,
     "seconds": 7.3,
     "lines": [
-      "Moving a few jobs into the sun keeps this home under that line.",
-      "About five thousand rupees this month."
+      "That keeps this home under the line.",
+      "Five thousand rupees this month, and nineteen thousand over the next six."
     ],
     "words": 19,
     "wpm": 156,
-    "start": 74.8
-  },
-  {
-    "segment": "h4_family",
-    "kind": "clip",
-    "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips\\05_family_view.mp4",
-    "offset": 0,
-    "seconds": 3.8,
-    "lines": [
-      "It picks when to run the motor, and says why."
-    ],
-    "words": 10,
-    "wpm": 158,
-    "start": 82.1
+    "start": 72.08
   },
   {
     "segment": "s2_trust",
@@ -224,7 +199,7 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 85.9
+    "start": 79.38
   },
   {
     "segment": "h5_day",
@@ -237,7 +212,7 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 90.9
+    "start": 84.38
   },
   {
     "segment": "h6_gap",
@@ -250,47 +225,48 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 95.9
+    "start": 89.38
   },
   {
     "segment": "h7_assume",
     "kind": "clip",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips\\09_assumptions.mp4",
     "offset": 0,
-    "seconds": 3.5,
+    "seconds": 3.83,
     "lines": [
-      "This is a simulation, with every assumption written down."
+      "This is a simulation, on one real month of Islamabad weather."
     ],
-    "words": 9,
-    "wpm": 154,
-    "start": 100.9
+    "words": 11,
+    "wpm": 172,
+    "start": 94.38
   },
   {
     "segment": "c4_next",
     "kind": "img",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\whatsNext.png",
     "offset": 0,
-    "seconds": 8.0,
+    "seconds": 13.0,
     "lines": [
-      "Next, five to ten homes in Islamabad over WhatsApp.",
-      "Then one neighbourhood forecast, built with our distribution company."
+      "Next, five to ten homes in Islamabad, with the agent messaging them on WhatsApp.",
+      "An Energy and AI circle at COMSATS, and I would join IRENA NewGen.",
+      "Then one neighbourhood forecast, built with IESCO."
     ],
-    "words": 18,
-    "wpm": 135,
-    "start": 104.4
+    "words": 34,
+    "wpm": 157,
+    "start": 98.21
   },
   {
     "segment": "c5_close",
     "kind": "img",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\closing_line(149_155).png",
     "offset": 0,
-    "seconds": 6.0,
+    "seconds": 6.5,
     "lines": [
       "The solar is already on Pakistan's roofs.",
       "I want the grid to see it, and trust it."
     ],
     "words": 17,
-    "wpm": 170,
-    "start": 112.4
+    "wpm": 157,
+    "start": 111.21
   }
 ]

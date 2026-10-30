@@ -1,0 +1,108 @@
+# Scenario switches for the Solar Home Agent (Pakistan) v0 simulation.
+# Every value here is an assumption or an approximation - see ASSUMPTIONS.md.
+
+month: 2025-06
+
+location:
+  name: Islamabad
+  latitude: 33.6844
+  longitude: 73.0479
+  timezone: Asia/Karachi
+
+# The scenario reported in results/HEADLINE.md.
+main_scenario:
+  has_battery: true
+  export_mode: none
+  household: low_use
+
+# Switches for a single run (the scenario matrix overrides these).
+has_battery: true
+export_mode: none        # none | net_billing | net_metering
+household: low_use       # low_use | high_use
+solar_kw: 5
+
+# Daily outage windows as [start_hour, end_hour); [] means no power cuts.
+power_cuts:
+  - [20, 21]
+
+# Usual start hours in "usual" mode. Replace from survey results.
+usual_times:
+  water_motor: 19
+  washing_machine: 18
+  iron: 20
+
+solar:
+  derate: 0.80           # heat, dust and wiring losses
+
+base_load_kw:            # fridge, fans, lights
+  night: 0.30            # 00:00-06:00
+  day: 0.40              # 06:00-18:00
+  evening: 0.60          # 18:00-24:00
+
+ac:
+  kw_per_unit: 1.5
+  temp_threshold_c: 30   # below this the AC is off
+  full_duty_temp_c: 40   # at or above this the duty is 1.0
+  day_window: [13, 18]   # half duty
+  day_duty_factor: 0.5
+  night_window: [18, 6]  # full duty, wraps past midnight
+
+households:
+  low_use:
+    ac_count: 1
+    base_load_scale: 1.0   # replaced by config/calibration.json when calibrated
+    protected_eligible: true
+  high_use:
+    ac_count: 2
+    base_load_scale: 1.0
+    protected_eligible: false
+
+appliances:
+  water_motor:
+    kw: 0.75
+    hours: 1.0
+    days_per_week: 7
+    allowed: [8, 18]
+  washing_machine:
+    kw: 0.5
+    hours: 1.0
+    days_per_week: 4
+    allowed: [9, 17]
+  iron:
+    kw: 1.0
+    hours: 0.5
+    days_per_week: 7
+    allowed: [9, 18]
+
+precooling:
+  extra_kwh: 1.0
+  evening_saving_kwh: 0.6      # ROUGH ESTIMATE, assumed - not measured
+  window: [14, 17]
+  trigger_evening_temp_c: 35
+
+battery:
+  capacity_kwh: 5.0
+  max_charge_kw: 2.5
+  max_discharge_kw: 2.5
+  round_trip_efficiency: 0.90
+  min_soc_frac: 0.20
+  start_soc_frac: 0.50
+
+agent:
+  margin_percentile: 80
+  min_history_days: 5          # before this, margin comes from cloud cover
+  guard_threshold_units: 200
+
+tariff:
+  protected_bands:             # [upper_unit_limit, rate] - telescopic
+    - [100, 10.54]
+    - [200, 13.01]
+  unprotected_lowest: 22.44    # reported
+  unprotected_highest: 47.20   # reported
+  unprotected_band_limits: [100, 200, 300, 400, 500, 600, 700, 100000]
+  protected_limit_units: 200
+  taxes_multiplier: 1.0        # GST, duty and fuel adjustments NOT included in v0
+  export_rate_net_billing: 11.0   # reported and contested
+
+calibration:
+  low_use_target_units: 175    # ASSUMED midpoint of 150-200; update from a real bill

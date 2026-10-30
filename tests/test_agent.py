@@ -182,3 +182,31 @@ def test_message_wording_gets_more_cautious_as_confidence_falls(config, weather)
     assert "probably" in planner._coverage_phrase(70)
     assert "shaky" in planner._coverage_phrase(30)
     assert len({planner._coverage_phrase(c) for c in (90, 70, 30)}) == 3
+
+
+def test_six_month_penalty_is_reported_separately_from_this_month(config, weather):
+    """The penalty for losing protected status is not folded into the month's own difference."""
+    from src.simulate import run_pair
+
+    scenario = base_scenario(config, household="at_risk", has_battery=False, export_mode="none")
+    pair = run_pair(config, scenario, weather)
+    usual, agent = pair["metrics"]["usual"], pair["metrics"]["agent"]
+    comparison = pair["comparison"]
+
+    assert usual["crosses_protected_limit"] and not agent["crosses_protected_limit"]
+    assert comparison["protected_status_avoided"]
+    assert comparison["this_month_difference_rs"] > 0
+    assert comparison["six_month_penalty_rs"] > 0
+    # Priced on the agent's units, which are back under the limit, not on the crossing month's.
+    assert comparison["penalty_priced_at_units"] == agent["grid_units_month"]
+    assert comparison["penalty_priced_at_units"] < config["agent"]["guard_threshold_units"]
+
+
+def test_no_penalty_when_neither_mode_crosses(config, weather):
+    """A home comfortably under the limit has no protected status to lose."""
+    from src.simulate import run_pair
+
+    scenario = base_scenario(config, household="low_use", has_battery=True, export_mode="none")
+    comparison = run_pair(config, scenario, weather)["comparison"]
+    assert not comparison["protected_status_avoided"]
+    assert comparison["six_month_penalty_rs"] == 0

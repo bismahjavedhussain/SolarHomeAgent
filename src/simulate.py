@@ -13,6 +13,7 @@ from .battery import Battery
 from .fetch_weather import ROOT, load_config, load_weather
 from .home import ac_component_kw, build_appliances, fixed_load_kw
 from .metrics import summarise
+from .tariff import protected_loss_cost
 from .solar import solar_kw
 
 RESULTS_DIR = ROOT / "results"
@@ -205,13 +206,28 @@ def calibrate(config: dict, weather: tuple | None = None, verbose: bool = True) 
     return payload
 
 
+def compare(usual: dict, agent: dict, config: dict) -> dict:
+    """This month's difference, and the separate penalty for losing protected status."""
+    avoided = usual["crosses_protected_limit"] and not agent["crosses_protected_limit"]
+    # Priced on the agent's usage, because that is what the later months would look like.
+    penalty = protected_loss_cost(agent["grid_units_month"], config["tariff"]) if avoided else 0.0
+    return {
+        "this_month_difference_rs": round(usual["energy_cost_rs"] - agent["energy_cost_rs"], 0),
+        "protected_status_avoided": bool(avoided),
+        "six_month_penalty_rs": round(penalty, 0),
+        "penalty_priced_at_units": agent["grid_units_month"] if avoided else None,
+    }
+
+
 def run_pair(config: dict, scenario: dict, weather: tuple) -> dict:
     """Run one scenario in both modes and summarise each."""
     runs = {mode: run_month(config, scenario, mode, weather) for mode in ("usual", "agent")}
+    metrics = {mode: summarise(run, config, scenario) for mode, run in runs.items()}
     return {
         "scenario": scenario,
         "runs": runs,
-        "metrics": {mode: summarise(run, config, scenario) for mode, run in runs.items()},
+        "metrics": metrics,
+        "comparison": compare(metrics["usual"], metrics["agent"], config),
     }
 
 
@@ -232,6 +248,7 @@ def write_headline(summary: dict, config: dict) -> str:
     key = summary["main_scenario_key"]
     entry = summary["scenarios"][key]
     usual, agent, scenario = entry["usual"], entry["agent"], entry["scenario"]
+    comparison = entry["comparison"]
     threshold = config["agent"]["guard_threshold_units"]
     months = config["tariff"]["protected_status_months"]
 
@@ -304,14 +321,23 @@ def write_headline(summary: dict, config: dict) -> str:
         "",
     ]
 
-    if usual["protected_loss_6mo_rs"] > 0 and agent["protected_loss_6mo_rs"] == 0:
-        lines.append(
+    if comparison["protected_status_avoided"]:
+        lines += [
             f"Usual behaviour crosses the {threshold}-unit limit ({usual['grid_units_month']:g} units) and the "
-            f"agent stays under it ({agent['grid_units_month']:g} units). Crossing re-prices every unit at "
-            f"unprotected rates for {months} months, which on this month's usage would cost about "
-            f"**Rs {usual['protected_loss_6mo_rs']:,.0f} extra**. That figure assumes the month's usage repeats, "
-            f"which is an assumption, not a forecast."
-        )
+            f"agent stays under it ({agent['grid_units_month']:g} units). That matters twice over, and the two "
+            f"figures are different things:",
+            "",
+            f"1. **This month: Rs {comparison['this_month_difference_rs']:,.0f} less** for the units bought "
+            f"(Rs {usual['energy_cost_rs']:,.0f} against Rs {agent['energy_cost_rs']:,.0f}).",
+            f"2. **The next {months} months: about Rs {comparison['six_month_penalty_rs']:,.0f}.** Once a home "
+            f"crosses the limit it stays on unprotected rates for {months} months *even after its usage drops "
+            f"back under 200*. This figure prices those months at "
+            f"{comparison['penalty_priced_at_units']:g} units, the agent's own monthly usage, and assumes it "
+            f"holds steady. It is an estimate, not a forecast.",
+            "",
+            f"A month above the limit can never itself be billed at protected rates, so the penalty is not "
+            f"that month's own gap - it is what the *following* months cost.",
+        ]
     elif agent["grid_units_month"] < threshold and usual["grid_units_month"] < threshold:
         lines.append(
             f"In this scenario both modes stay under the {threshold}-unit protected limit "
@@ -353,12 +379,13 @@ def run_all(config: dict, do_calibrate: bool = False, verbose: bool = True) -> d
     for scenario in build_scenarios(config):
         key = scenario_key(scenario)
         pair = run_pair(config, scenario, weather)
-        scenarios_out[key] = {"scenario": scenario, **pair["metrics"]}
+        scenarios_out[key] = {"scenario": scenario, "comparison": pair["comparison"], **pair["metrics"]}
         flat_rows.append({
             "scenario": key, "household": scenario["household"],
             "has_battery": scenario["has_battery"], "export_mode": scenario["export_mode"],
             **{f"{mode}_{name}": value for mode, metrics in pair["metrics"].items()
                for name, value in metrics.items()},
+            **{f"compare_{name}": value for name, value in pair["comparison"].items()},
         })
         save_notifications(pair["runs"]["agent"]["notifications"], key)
         if key == target_key:

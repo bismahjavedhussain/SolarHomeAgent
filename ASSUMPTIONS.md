@@ -236,10 +236,14 @@ needs checking. Protected consumers are treated as exempt
 | 199 | protected | Rs 2,342 |
 | 201 | unprotected | Rs 6,653 |
 
-Two extra units, and the bill nearly triples, because all 201 are re-priced. The metric
-`protected_loss_6mo_rs` estimates the extra cost of the following months at unprotected rates by
-**assuming the month's usage repeats** - an assumption, not a forecast. For a home crossing at 215
-units that comes to about **Rs 27,400** over six months.
+Two extra units, and the bill nearly triples, because all 201 are re-priced.
+
+`six_month_penalty_rs` estimates what the **following** months cost. A month above the limit can
+never itself be billed at protected rates, so the penalty is not that month's own gap. It is the
+cost of staying unprotected for six months even once usage is back under 200, priced at the
+agent's own monthly usage and **assuming that usage holds steady** - an assumption, not a forecast.
+For the `at_risk` home, which the agent brings down to 181.4 units, that is about **Rs 18,788**.
+It is reported separately from the crossing month's own difference of Rs 5,003.
 
 ### Other tariff settings
 

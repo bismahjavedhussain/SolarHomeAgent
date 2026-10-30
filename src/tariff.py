@@ -45,11 +45,18 @@ def fixed_charge(units: float, protected: bool, cfg: dict) -> float:
     return per_kw * cfg["sanctioned_load_kw"]
 
 
-def protected_loss_cost(units: float, cfg: dict) -> float:
-    """Extra cost of the months at unprotected rates after crossing, if usage repeats."""
-    unprotected, _ = unprotected_cost(units, cfg)
-    unprotected += fixed_charge(units, False, cfg)
-    monthly_extra = (unprotected - protected_cost(units, cfg)) * cfg["taxes_multiplier"]
+def protected_loss_cost(future_units: float, cfg: dict) -> float:
+    """Cost of the months spent on unprotected rates after crossing, at a later month's usage.
+
+    A month over the limit cannot itself be priced as protected, so the penalty is not that
+    month's gap. It is what the following months cost while the home is still unprotected,
+    even once its usage is back under the limit.
+    """
+    unprotected_energy, _ = unprotected_cost(future_units, cfg)
+    monthly_extra = (
+        (unprotected_energy - protected_cost(future_units, cfg)) * cfg["taxes_multiplier"]
+        + fixed_charge(future_units, False, cfg) - fixed_charge(future_units, True, cfg)
+    )
     return max(0.0, monthly_extra) * cfg["protected_status_months"]
 
 

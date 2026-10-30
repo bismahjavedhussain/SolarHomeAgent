@@ -83,11 +83,18 @@ no battery, unregistered). This is where the tariff cliff bites:
 | Evening units (18:00–22:00) | 121.4 | **86.9** | −28% |
 | Pricing band | **unprotected** | **protected** | limit not crossed |
 | Cost of units bought | Rs 7,117 | **Rs 2,114** | −Rs 5,003 |
-| Extra cost of 6 months unprotected | Rs 27,400 | **Rs 0** | avoided |
+| Six months of unprotected pricing | Rs 18,788 | **Rs 0** | avoided |
 
-Crossing 200 units re-prices *every* unit for six months. On this month's usage that is about
-**Rs 27,400** — a figure that assumes the month's usage repeats, which is an assumption, not a
-forecast. The agent's guard fired on 2 days.
+Crossing the limit counts twice, and the two figures are different things:
+
+1. **This month: Rs 5,003 less** for the units bought.
+2. **The next six months: about Rs 18,788.** A home that crosses stays on unprotected rates for
+   six months **even after its usage drops back under 200**. This prices those months at 181.4
+   units — the agent's own monthly usage — and assumes it holds steady. An estimate, not a
+   forecast.
+
+A month above the limit can never itself be billed at protected rates, so the penalty is not that
+month's own gap; it is what the *following* months cost. The agent's guard fired on 2 days.
 
 **The main scenario** in `config/scenario.yaml` is a low-use home with a 5 kWh battery, already
 comfortably under the limit, so there is no cliff to avoid and the gains are smaller:

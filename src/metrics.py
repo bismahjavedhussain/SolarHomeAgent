@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from .tariff import estimate_bill, protected_loss_cost
+from .tariff import estimate_bill
 
 EVENING_START, EVENING_END = 18, 22
 
@@ -22,10 +22,6 @@ def summarise(run: dict, config: dict, scenario: dict) -> dict:
         import_units, export_units, scenario["export_mode"],
         run["profile"]["protected_eligible"], config["tariff"],
     )
-
-    # What crossing the protected limit would cost over the following months, if usage repeats.
-    loss_cost = (protected_loss_cost(import_units, config["tariff"])
-                 if bill["loses_protected_status_for_6_months"] else 0.0)
 
     planner = run.get("planner")
     return {
@@ -49,7 +45,7 @@ def summarise(run: dict, config: dict, scenario: dict) -> dict:
         "pricing": bill["pricing"],
         "protected_kept": bill["protected_kept"],
         "loses_protected_status_for_6_months": bill["loses_protected_status_for_6_months"],
-        "protected_loss_6mo_rs": round(loss_cost, 0),
+        "crosses_protected_limit": bill["loses_protected_status_for_6_months"],
         "unmet_kwh": round(outage["unmet_kwh"].sum(), 2),
         "unmet_hours": int((outage["unmet_kwh"] > 1e-6).sum()),
         "notifications": len(run["notifications"]),

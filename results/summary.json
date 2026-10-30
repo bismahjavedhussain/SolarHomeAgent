@@ -27,6 +27,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 449.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 175.0,
         "evening_grid_units": 103.2,
@@ -46,7 +52,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 0,
@@ -77,7 +83,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 101,
@@ -98,6 +104,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 449.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 175.0,
         "evening_grid_units": 103.2,
@@ -117,7 +129,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 0,
@@ -148,7 +160,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 101,
@@ -169,6 +181,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 0.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 175.0,
         "evening_grid_units": 103.2,
@@ -188,7 +206,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 0,
@@ -219,7 +237,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 101,
@@ -240,6 +258,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 172.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 69.7,
         "evening_grid_units": 10.1,
@@ -259,7 +283,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.0,
         "unmet_hours": 0,
         "notifications": 0,
@@ -290,7 +314,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.0,
         "unmet_hours": 0,
         "notifications": 131,
@@ -311,6 +335,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 172.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 69.7,
         "evening_grid_units": 10.1,
@@ -330,7 +360,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.0,
         "unmet_hours": 0,
         "notifications": 0,
@@ -361,7 +391,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.0,
         "unmet_hours": 0,
         "notifications": 131,
@@ -382,6 +412,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 0.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 69.7,
         "evening_grid_units": 10.1,
@@ -401,7 +437,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.0,
         "unmet_hours": 0,
         "notifications": 0,
@@ -432,7 +468,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.0,
         "unmet_hours": 0,
         "notifications": 131,
@@ -453,6 +489,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 5003.0,
+        "protected_status_avoided": true,
+        "six_month_penalty_rs": 18788.0,
+        "penalty_priced_at_units": 181.4
+      },
       "usual": {
         "grid_units_month": 215.0,
         "evening_grid_units": 121.4,
@@ -472,7 +514,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": true,
-        "protected_loss_6mo_rs": 27400.0,
+        "crosses_protected_limit": true,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 0,
@@ -503,7 +545,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 104,
@@ -524,6 +566,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 5003.0,
+        "protected_status_avoided": true,
+        "six_month_penalty_rs": 18788.0,
+        "penalty_priced_at_units": 181.4
+      },
       "usual": {
         "grid_units_month": 215.0,
         "evening_grid_units": 121.4,
@@ -543,7 +591,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": true,
-        "protected_loss_6mo_rs": 27400.0,
+        "crosses_protected_limit": true,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 0,
@@ -574,7 +622,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 104,
@@ -595,6 +643,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 0.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 215.0,
         "evening_grid_units": 121.4,
@@ -614,7 +668,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 0,
@@ -645,7 +699,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 104,
@@ -666,6 +720,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 233.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 108.4,
         "evening_grid_units": 23.4,
@@ -685,7 +745,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.71,
         "unmet_hours": 5,
         "notifications": 0,
@@ -716,7 +776,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.33,
         "unmet_hours": 2,
         "notifications": 138,
@@ -737,6 +797,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 233.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 108.4,
         "evening_grid_units": 23.4,
@@ -756,7 +822,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.71,
         "unmet_hours": 5,
         "notifications": 0,
@@ -787,7 +853,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.33,
         "unmet_hours": 2,
         "notifications": 138,
@@ -808,6 +874,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 0.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 108.4,
         "evening_grid_units": 23.4,
@@ -827,7 +899,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.71,
         "unmet_hours": 5,
         "notifications": 0,
@@ -858,7 +930,7 @@
         "pricing": "protected",
         "protected_kept": true,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 0.33,
         "unmet_hours": 2,
         "notifications": 138,
@@ -879,6 +951,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 1154.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 479.2,
         "evening_grid_units": 240.6,
@@ -898,7 +976,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 0,
@@ -929,7 +1007,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 104,
@@ -950,6 +1028,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 1154.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 479.2,
         "evening_grid_units": 240.6,
@@ -969,7 +1053,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 0,
@@ -1000,7 +1084,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 104,
@@ -1021,6 +1105,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": -48.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 479.2,
         "evening_grid_units": 240.6,
@@ -1040,7 +1130,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 0,
@@ -1071,7 +1161,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 9.0,
         "unmet_hours": 30,
         "notifications": 104,
@@ -1092,6 +1182,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 958.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 365.0,
         "evening_grid_units": 162.2,
@@ -1111,7 +1207,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 7.8,
         "unmet_hours": 26,
         "notifications": 0,
@@ -1142,7 +1238,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 6.6,
         "unmet_hours": 22,
         "notifications": 127,
@@ -1163,6 +1259,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": 958.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 365.0,
         "evening_grid_units": 162.2,
@@ -1182,7 +1284,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 7.8,
         "unmet_hours": 26,
         "notifications": 0,
@@ -1213,7 +1315,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 6.6,
         "unmet_hours": 22,
         "notifications": 127,
@@ -1234,6 +1336,12 @@
         "solar_kw": 5,
         "power_cuts": true
       },
+      "comparison": {
+        "this_month_difference_rs": -35.0,
+        "protected_status_avoided": false,
+        "six_month_penalty_rs": 0.0,
+        "penalty_priced_at_units": null
+      },
       "usual": {
         "grid_units_month": 365.0,
         "evening_grid_units": 162.2,
@@ -1253,7 +1361,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 7.8,
         "unmet_hours": 26,
         "notifications": 0,
@@ -1284,7 +1392,7 @@
         "pricing": "unprotected",
         "protected_kept": false,
         "loses_protected_status_for_6_months": false,
-        "protected_loss_6mo_rs": 0.0,
+        "crosses_protected_limit": false,
         "unmet_kwh": 6.6,
         "unmet_hours": 22,
         "notifications": 127,

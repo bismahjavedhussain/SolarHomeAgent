@@ -98,15 +98,31 @@ def test_fixed_charge_appears_in_the_bill(config):
     assert result["energy_cost_rs"] == pytest.approx(energy * cfg["taxes_multiplier"] + result["fixed_charge_rs"])
 
 
-def test_six_month_loss_is_the_monthly_gap_times_the_months(config):
-    """Losing protected status costs the protected-to-unprotected gap, every month it lasts."""
+def test_six_month_penalty_is_priced_on_a_month_back_under_the_limit(config):
+    """The penalty is the later months paying unprotected rates on usage that is back under 200."""
     cfg = config["tariff"]
-    units = 210
-    unprotected, _ = unprotected_cost(units, cfg)
-    gap = unprotected + fixed_charge(units, False, cfg) - protected_cost(units, cfg)
-    expected = gap * cfg["taxes_multiplier"] * cfg["protected_status_months"]
-    assert protected_loss_cost(units, cfg) == pytest.approx(expected)
-    assert protected_loss_cost(units, cfg) > 0
+    later = 180  # under the limit, which is the whole point: still billed as unprotected
+    assert later < cfg["protected_limit_units"]
+    unprotected_energy, _ = unprotected_cost(later, cfg)
+    gap = ((unprotected_energy - protected_cost(later, cfg)) * cfg["taxes_multiplier"]
+           + fixed_charge(later, False, cfg) - fixed_charge(later, True, cfg))
+    expected = gap * cfg["protected_status_months"]
+    assert protected_loss_cost(later, cfg) == pytest.approx(expected)
+    assert protected_loss_cost(later, cfg) > 0
+
+
+def test_six_month_penalty_grows_with_the_later_months_usage(config):
+    """Using more in the penalty months costs more, since every unit is re-priced."""
+    cfg = config["tariff"]
+    assert protected_loss_cost(190, cfg) > protected_loss_cost(120, cfg)
+
+
+def test_crossing_month_is_never_priced_as_protected(config):
+    """A month over the limit cannot be billed protected, so it is not the counterfactual."""
+    cfg = config["tariff"]
+    over = estimate_bill(cfg["protected_limit_units"] + 10, 0, "none", True, cfg)
+    assert over["pricing"] == "unprotected"
+    assert over["crosses_protected_limit"] if "crosses_protected_limit" in over else True
 
 
 def test_export_values_by_mode(config):

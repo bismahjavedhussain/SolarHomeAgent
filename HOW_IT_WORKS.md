@@ -90,9 +90,16 @@ From this project's own tariff module:
 | 201 | Rs 6,653 |
 
 Two extra units, and the bill nearly triples - not because those two units are expensive, but
-because all 201 are suddenly re-priced. And it lasts: six months of unprotected pricing on that
-usage is roughly **Rs 27,400 extra**. This is why the agent watches that threshold and warns the
-family *before* they cross it, rather than reporting it afterwards.
+because all 201 are suddenly re-priced.
+
+**And the damage outlasts the month.** Once you cross, you stay unprotected for six months *even
+after you go back under 200*. That is the real penalty, and it is easy to get wrong: it is not the
+crossing month's own gap, because a month over the limit can never be billed at protected rates in
+the first place. It is what the *following* six months cost. For a home back down at 181 units,
+that is roughly **Rs 18,800** on top of the crossing month itself.
+
+This is why the agent watches the threshold and warns the family *before* they cross it, rather
+than reporting it afterwards.
 
 Because unprotected pricing is non-telescopic, **every** band edge is a cliff, not just 200. The
 agent guards all of them - 100, 200, 300 and so on - though 200 is the big one, because it is also

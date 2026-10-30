@@ -6,7 +6,7 @@ import streamlit as st
 
 from src.fetch_weather import CONFIG_PATH, load_config, load_weather
 from src.metrics import summarise
-from src.simulate import CALIBRATION_PATH, base_scenario, run_month
+from src.simulate import CALIBRATION_PATH, base_scenario, compare, run_month
 
 st.set_page_config(page_title="Solar Home Agent (Pakistan)", page_icon="sun", layout="wide")
 
@@ -47,6 +47,7 @@ def _simulate(household: str, has_battery: bool, export_mode: str, solar_kw: flo
             "metrics": summarise(run, config, scenario),
             "notifications": run["notifications"],
         }
+    out["comparison"] = compare(out["usual"]["metrics"], out["agent"]["metrics"], config)
     return out
 
 
@@ -98,6 +99,7 @@ results = _simulate(household, has_battery, export_mode, solar_kw, power_cuts, f
                     _settings_version())
 usual, agent = results["usual"], results["agent"]
 um, am = usual["metrics"], agent["metrics"]
+comparison = results["comparison"]
 
 
 def delta_text(before: float, after: float, unit: str = "") -> str:
@@ -161,19 +163,22 @@ if am["grid_units_month"] > um["grid_units_month"]:
         icon=":material/info:",
     )
 
-if um["protected_loss_6mo_rs"] > 0 and am["protected_loss_6mo_rs"] == 0:
+limit = config["agent"]["guard_threshold_units"]
+months = config["tariff"]["protected_status_months"]
+if comparison["protected_status_avoided"]:
     st.success(
-        f"**Usual behaviour crosses the {config['agent']['guard_threshold_units']}-unit limit and the "
-        f"agent does not.** Crossing re-prices every unit at unprotected rates for "
-        f"{config['tariff']['protected_status_months']} months, which on this month's usage would cost "
-        f"about **Rs {um['protected_loss_6mo_rs']:,.0f} extra**, assuming usage repeats.",
+        f"**Usual behaviour crosses the {limit}-unit limit and the agent does not.** That counts twice: "
+        f"**Rs {comparison['this_month_difference_rs']:,.0f} less this month**, and about "
+        f"**Rs {comparison['six_month_penalty_rs']:,.0f} over the next {months} months**, because a home that "
+        f"crosses stays on unprotected rates for {months} months even after its usage drops back under "
+        f"{limit}. The second figure prices those months at {comparison['penalty_priced_at_units']:g} units, "
+        f"the agent's own usage, and assumes it holds steady - an estimate, not a forecast.",
         icon=":material/savings:")
 elif not am["protected_kept"] and config["households"][household]["protected_eligible"]:
     st.error(
-        f"This home crosses the {config['agent']['guard_threshold_units']}-unit limit in both modes, so it "
-        f"pays **unprotected** rates on every unit and loses protected status for "
-        f"{config['tariff']['protected_status_months']} months - about "
-        f"**Rs {am['protected_loss_6mo_rs']:,.0f} extra**, if usage repeats.",
+        f"This home crosses the {limit}-unit limit in **both** modes, so it pays unprotected rates on every "
+        f"unit and stays unprotected for {months} months. The agent reduces the bill but does not save the "
+        f"protected status here.",
         icon=":material/warning:")
 
 st.divider()

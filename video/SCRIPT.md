@@ -1,58 +1,57 @@
 # Voiceover script — IRENA Youth Forum 2027
 
-**310 words over 1:57.71 — 158 words a minute.**
+**313 words over 1:58.36 — 159 words a minute.**
 
-Paced to your Agentic Arbiter hackathon demo, measured at about 176 wpm with captions on
-screen 95% of the time. This cut: 154-180 wpm, captions on screen 96% of the time, no silent
-gaps. Each line describes what is on screen and the cursor is on the thing being named.
+Paced to the Agentic Arbiter hackathon demo (measured: ~176 wpm, captions on screen 95% of
+the time). This cut: 154-180 wpm, captions on screen 96% of the time, no silent gaps.
 
 ---
 
-### 0:00.00–0:06.10  ·  Your card  ·  `c1_title`
+### 0:00.00–0:05.40  ·  Your card  ·  `c1_title`
 
-_6.10s · 16 words · 157 wpm_
+_5.40s · 14 words · 156 wpm_
 
 > Energy gets wasted for a boring reason.
-> Nobody trusts the forecast enough to act on it.
+> Nobody trusts the forecast enough to act.
 
-### 0:06.10–0:10.30  ·  Agentic Arbiter  ·  `a1_landing`
+### 0:05.40–0:09.60  ·  Agentic Arbiter  ·  `a1_landing`
 
 _4.20s · 11 words · 157 wpm_
 
 > In September I built Agentic Arbiter, an agent for data-centre cooling.
 
-### 0:10.30–0:15.30  ·  Agentic Arbiter  ·  `a3_config`
+### 0:09.60–0:14.60  ·  Agentic Arbiter  ·  `a3_config`
 
 _5.00s · 13 words · 156 wpm_
 
 > Data centres run chillers even when the air outside is already cold enough.
 
-### 0:15.30–0:20.30  ·  Agentic Arbiter  ·  `a4_working`
+### 0:14.60–0:19.60  ·  Agentic Arbiter  ·  `a4_working`
 
 _5.00s · 13 words · 156 wpm_
 
 > So it decides, hour by hour, when switching them off is actually safe.
 
-### 0:20.30–0:24.90  ·  Agentic Arbiter  ·  `a5_schedule`
+### 0:19.60–0:24.20  ·  Agentic Arbiter  ·  `a5_schedule`
 
 _4.60s · 12 words · 157 wpm_
 
 > Here it made no unsafe calls, where the old controller made one.
 
-### 0:24.90–0:28.40  ·  Agentic Arbiter  ·  `a6_economic`
+### 0:24.20–0:27.70  ·  Agentic Arbiter  ·  `a6_economic`
 
 _3.50s · 9 words · 154 wpm_
 
 > That is four hundred extra free-cooling hours a year.
 
-### 0:28.40–0:34.08  ·  Agentic Arbiter  ·  `a7_selfscore`
+### 0:27.70–0:33.38  ·  Agentic Arbiter  ·  `a7_selfscore`
 
 _5.68s · 17 words · 180 wpm_
 
 > And it grades itself.
 > Here it missed its target, because the data was patchy, and says so.
 
-### 0:34.08–0:43.68  ·  Your card  ·  `c2_coalition`
+### 0:33.38–0:42.98  ·  Your card  ·  `c2_coalition`
 
 _9.60s · 25 words · 156 wpm_
 
@@ -60,78 +59,79 @@ _9.60s · 25 words · 156 wpm_
 > at FortyGuard's hackathon, sponsored by NVIDIA.
 > The UN-backed Cool Coalition featured it.
 
-### 0:43.68–0:46.78  ·  Agentic Arbiter  ·  `a8_future`
+### 0:42.98–0:46.08  ·  Agentic Arbiter  ·  `a8_future`
 
 _3.10s · 8 words · 155 wpm_
 
 > Next I want it running on real sites.
 
-### 0:46.78–0:53.68  ·  Your card  ·  `c3_pakistan`
+### 0:46.08–0:52.98  ·  Your card  ·  `c3_pakistan`
 
 _6.90s · 18 words · 157 wpm_
 
 > Then I looked at home.
-> Pakistan has solar on millions of roofs, but the grid cannot see it.
+> Pakistan has solar on millions of roofs, but the grid can't see it.
 
-### 0:53.68–1:00.58  ·  Survey visual  ·  `s1_demand`
+### 0:52.98–0:59.88  ·  Survey visual  ·  `s1_demand`
 
 _6.90s · 18 words · 157 wpm_
 
 > I asked twenty-one families.
 > Seven of the ten with solar have changed habits or are getting a battery.
 
-### 1:00.58–1:06.68  ·  Solar Home Agent  ·  `h1_intro`
+### 0:59.88–1:05.98  ·  Solar Home Agent  ·  `h1_intro`
 
 _6.10s · 16 words · 157 wpm_
 
 > So I am building a Solar Home Agent, for homes that cannot sell their spare power.
 
-### 1:06.68–1:12.08  ·  Solar Home Agent  ·  `h2_month`
+### 1:05.98–1:12.33  ·  Solar Home Agent  ·  `h2_month`
 
-_5.40s · 14 words · 156 wpm_
+_6.35s · 18 words · 170 wpm_
 
-> Go over two hundred units in a month, and every single unit costs more.
+> Under Pakistan's tariff, go over two hundred units once,
+> and you lose the cheap rate for six months.
 
-### 1:12.08–1:19.38  ·  Solar Home Agent  ·  `h3_savings`
+### 1:12.33–1:19.63  ·  Solar Home Agent  ·  `h3_savings`
 
 _7.30s · 19 words · 156 wpm_
 
 > That keeps this home under the line.
 > Five thousand rupees this month, and nineteen thousand over the next six.
 
-### 1:19.38–1:24.38  ·  Survey visual  ·  `s2_trust`
+### 1:19.63–1:24.63  ·  Survey visual  ·  `s2_trust`
 
 _5.00s · 13 words · 156 wpm_
 
 > Thirteen of them said they would only trust an app that explains itself.
 
-### 1:24.38–1:29.38  ·  Solar Home Agent  ·  `h5_day`
+### 1:24.63–1:29.63  ·  Solar Home Agent  ·  `h5_day`
 
 _5.00s · 13 words · 156 wpm_
 
 > So when it is not sure, it says no, and tells you why.
 
-### 1:29.38–1:34.38  ·  Solar Home Agent  ·  `h6_gap`
+### 1:29.63–1:34.63  ·  Solar Home Agent  ·  `h6_gap`
 
 _5.00s · 13 words · 156 wpm_
 
 > It still wastes most of its midday sun. Storage is what closes that.
 
-### 1:34.38–1:38.21  ·  Solar Home Agent  ·  `h7_assume`
+### 1:34.63–1:38.46  ·  Solar Home Agent  ·  `h7_assume`
 
 _3.83s · 11 words · 172 wpm_
 
 > This is a simulation, on one real month of Islamabad weather.
 
-### 1:38.21–1:51.21  ·  Your card  ·  `c4_next`
+### 1:38.46–1:51.86  ·  Your card  ·  `c4_next`
 
-_13.00s · 34 words · 157 wpm_
+_13.40s · 35 words · 157 wpm_
 
-> Next, five to ten homes in Islamabad, with the agent messaging them on WhatsApp.
+> Next, five to ten homes in Islamabad, starting on WhatsApp, before it becomes an app.
 > An Energy and AI circle at COMSATS, and I would join IRENA NewGen.
 > Then one neighbourhood forecast, built with IESCO.
 
-### 1:51.21–1:57.71  ·  Your card  ·  `c5_close`
+### 1:51.86–1:58.36  ·  Your card  ·  `c5_close`
 
 _6.50s · 17 words · 157 wpm_
 
@@ -147,16 +147,17 @@ _6.50s · 17 words · 157 wpm_
 | "In September I built Agentic Arbiter" | your correction |
 | "no unsafe calls, where the old controller made one" | app panel: unsafe declarations 0 vs 1 |
 | "four hundred extra free-cooling hours a year" | app panel: chiller-hours avoided +406 h/yr |
-| "missed its target, because the data was patchy, and says so" | your correction; panel shows 65.6% against a 90% promise |
+| "missed its target, because the data was patchy, and says so" | app panel: 65.6% against a 90% promise, 4 calibration days where about 10 are needed |
 | "Second of 842 teams, out of nearly four thousand people" | your correction; article on screen |
 | "at FortyGuard's hackathon, sponsored by NVIDIA" | your correction |
 | "The UN-backed Cool Coalition featured it" | the article, a UNEP-convened initiative |
-| "solar on millions of roofs, but the grid cannot see it" | README problem section |
+| "solar on millions of roofs, but the grid can't see it" | README problem section; 27-33 GW estimated, about 7 GW net-metered |
+| **"go over two hundred units once, and you lose the cheap rate for six months"** | **Pakistan's domestic tariff (S.R.O. 279(I)/2026, as reported): protected status lost for 6 months after a month above 200 units** |
 | "I asked twenty-one families" | `survey/survey_summary.md`, N = 21 |
-| "Seven of the ten with solar have changed habits or are getting a battery" | survey: 4 + 3 = 7 of 10 |
-| "Go over two hundred units... every single unit costs more" | 200-unit limit, non-telescopic bands |
+| "Seven of the ten with solar have changed habits or are getting a battery" | survey: 4 use more sun by day + 3 battery = 7 of 10 |
 | "Five thousand rupees this month, and nineteen thousand over the next six" | Rs 5,253 and Rs 18,788, `results/VIDEO_FACTS.md` |
 | "Thirteen of them said they would only trust an app that explains itself" | survey: 13 of 21 |
-| "It still wastes most of its midday sun" | 540 kWh wasted, `results/summary.json` |
+| "It still wastes most of its midday sun" | 540 kWh wasted of 738.3 generated, `results/summary.json` |
 | "a simulation, on one real month of Islamabad weather" | June 2025, ASSUMPTIONS.md |
+| "starting on WhatsApp, before it becomes an app" | pilot plan; no mobile app exists yet, so the pilot delivers suggestions as messages |
 | "COMSATS... IRENA NewGen... IESCO" | your plans, as shown on the What's next card |

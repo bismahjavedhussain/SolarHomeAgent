@@ -11,33 +11,34 @@ Style: Caption,Arial,26,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,-1,0,0,0,100
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
-Dialogue: 0,0:00:00.12,0:00:02.66,Caption,,0,0,0,,Energy gets wasted for a boring reason.
-Dialogue: 0,0:00:02.78,0:00:06.04,Caption,,0,0,0,,Nobody trusts the forecast enough to act on it.
-Dialogue: 0,0:00:06.22,0:00:10.24,Caption,,0,0,0,,In September I built Agentic Arbiter, an agent for data-centre cooling.
-Dialogue: 0,0:00:10.42,0:00:15.24,Caption,,0,0,0,,Data centres run chillers even when the air outside is already cold enough.
-Dialogue: 0,0:00:15.42,0:00:20.24,Caption,,0,0,0,,So it decides, hour by hour, when switching them off is actually safe.
-Dialogue: 0,0:00:20.42,0:00:24.84,Caption,,0,0,0,,Here it made no unsafe calls, where the old controller made one.
-Dialogue: 0,0:00:25.02,0:00:28.34,Caption,,0,0,0,,That is four hundred extra free-cooling hours a year.
-Dialogue: 0,0:00:28.52,0:00:29.79,Caption,,0,0,0,,And it grades itself.
-Dialogue: 0,0:00:29.91,0:00:34.02,Caption,,0,0,0,,Here it missed its target, because the data was patchy, and says so.
-Dialogue: 0,0:00:34.20,0:00:38.97,Caption,,0,0,0,,Second of eight hundred and forty-two teams, out of nearly four thousand people,
-Dialogue: 0,0:00:39.09,0:00:41.30,Caption,,0,0,0,,at FortyGuard's hackathon, sponsored by NVIDIA.
-Dialogue: 0,0:00:41.42,0:00:43.62,Caption,,0,0,0,,The UN-backed Cool Coalition featured it.
-Dialogue: 0,0:00:43.80,0:00:46.72,Caption,,0,0,0,,Next I want it running on real sites.
-Dialogue: 0,0:00:46.90,0:00:48.73,Caption,,0,0,0,,Then I looked at home.
-Dialogue: 0,0:00:48.85,0:00:53.62,Caption,,0,0,0,,Pakistan has solar on millions of roofs, but the grid cannot see it.
-Dialogue: 0,0:00:53.80,0:00:55.27,Caption,,0,0,0,,I asked twenty-one families.
-Dialogue: 0,0:00:55.39,0:01:00.52,Caption,,0,0,0,,Seven of the ten with solar have changed habits or are getting a battery.
-Dialogue: 0,0:01:00.70,0:01:06.62,Caption,,0,0,0,,So I am building a Solar Home Agent, for homes that cannot sell their spare power.
-Dialogue: 0,0:01:06.80,0:01:12.02,Caption,,0,0,0,,Go over two hundred units in a month, and every single unit costs more.
-Dialogue: 0,0:01:12.20,0:01:14.78,Caption,,0,0,0,,That keeps this home under the line.
-Dialogue: 0,0:01:14.90,0:01:19.32,Caption,,0,0,0,,Five thousand rupees this month, and nineteen thousand over the next six.
-Dialogue: 0,0:01:19.50,0:01:24.32,Caption,,0,0,0,,Thirteen of them said they would only trust an app that explains itself.
-Dialogue: 0,0:01:24.50,0:01:29.32,Caption,,0,0,0,,So when it is not sure, it says no, and tells you why.
-Dialogue: 0,0:01:29.50,0:01:34.32,Caption,,0,0,0,,It still wastes most of its midday sun. Storage is what closes that.
-Dialogue: 0,0:01:34.50,0:01:38.15,Caption,,0,0,0,,This is a simulation, on one real month of Islamabad weather.
-Dialogue: 0,0:01:38.33,0:01:43.51,Caption,,0,0,0,,Next, five to ten homes in Islamabad, with the agent messaging them on WhatsApp.
-Dialogue: 0,0:01:43.63,0:01:48.44,Caption,,0,0,0,,An Energy and AI circle at COMSATS, and I would join IRENA NewGen.
-Dialogue: 0,0:01:48.56,0:01:51.15,Caption,,0,0,0,,Then one neighbourhood forecast, built with IESCO.
-Dialogue: 0,0:01:51.33,0:01:53.88,Caption,,0,0,0,,The solar is already on Pakistan's roofs.
-Dialogue: 0,0:01:54.00,0:01:57.65,Caption,,0,0,0,,I want the grid to see it, and trust it.
+Dialogue: 0,0:00:00.12,0:00:02.67,Caption,,0,0,0,,Energy gets wasted for a boring reason.
+Dialogue: 0,0:00:02.79,0:00:05.34,Caption,,0,0,0,,Nobody trusts the forecast enough to act.
+Dialogue: 0,0:00:05.52,0:00:09.54,Caption,,0,0,0,,In September I built Agentic Arbiter, an agent for data-centre cooling.
+Dialogue: 0,0:00:09.72,0:00:14.54,Caption,,0,0,0,,Data centres run chillers even when the air outside is already cold enough.
+Dialogue: 0,0:00:14.72,0:00:19.54,Caption,,0,0,0,,So it decides, hour by hour, when switching them off is actually safe.
+Dialogue: 0,0:00:19.72,0:00:24.14,Caption,,0,0,0,,Here it made no unsafe calls, where the old controller made one.
+Dialogue: 0,0:00:24.32,0:00:27.64,Caption,,0,0,0,,That is four hundred extra free-cooling hours a year.
+Dialogue: 0,0:00:27.82,0:00:29.09,Caption,,0,0,0,,And it grades itself.
+Dialogue: 0,0:00:29.21,0:00:33.32,Caption,,0,0,0,,Here it missed its target, because the data was patchy, and says so.
+Dialogue: 0,0:00:33.50,0:00:38.27,Caption,,0,0,0,,Second of eight hundred and forty-two teams, out of nearly four thousand people,
+Dialogue: 0,0:00:38.39,0:00:40.60,Caption,,0,0,0,,at FortyGuard's hackathon, sponsored by NVIDIA.
+Dialogue: 0,0:00:40.72,0:00:42.92,Caption,,0,0,0,,The UN-backed Cool Coalition featured it.
+Dialogue: 0,0:00:43.10,0:00:46.02,Caption,,0,0,0,,Next I want it running on real sites.
+Dialogue: 0,0:00:46.20,0:00:48.03,Caption,,0,0,0,,Then I looked at home.
+Dialogue: 0,0:00:48.15,0:00:52.92,Caption,,0,0,0,,Pakistan has solar on millions of roofs, but the grid can't see it.
+Dialogue: 0,0:00:53.10,0:00:54.57,Caption,,0,0,0,,I asked twenty-one families.
+Dialogue: 0,0:00:54.69,0:00:59.82,Caption,,0,0,0,,Seven of the ten with solar have changed habits or are getting a battery.
+Dialogue: 0,0:01:00.00,0:01:05.92,Caption,,0,0,0,,So I am building a Solar Home Agent, for homes that cannot sell their spare power.
+Dialogue: 0,0:01:06.10,0:01:09.13,Caption,,0,0,0,,Under Pakistan's tariff, go over two hundred units once,
+Dialogue: 0,0:01:09.25,0:01:12.27,Caption,,0,0,0,,and you lose the cheap rate for six months.
+Dialogue: 0,0:01:12.45,0:01:15.03,Caption,,0,0,0,,That keeps this home under the line.
+Dialogue: 0,0:01:15.15,0:01:19.57,Caption,,0,0,0,,Five thousand rupees this month, and nineteen thousand over the next six.
+Dialogue: 0,0:01:19.75,0:01:24.57,Caption,,0,0,0,,Thirteen of them said they would only trust an app that explains itself.
+Dialogue: 0,0:01:24.75,0:01:29.57,Caption,,0,0,0,,So when it is not sure, it says no, and tells you why.
+Dialogue: 0,0:01:29.75,0:01:34.57,Caption,,0,0,0,,It still wastes most of its midday sun. Storage is what closes that.
+Dialogue: 0,0:01:34.75,0:01:38.40,Caption,,0,0,0,,This is a simulation, on one real month of Islamabad weather.
+Dialogue: 0,0:01:38.58,0:01:44.14,Caption,,0,0,0,,Next, five to ten homes in Islamabad, starting on WhatsApp, before it becomes an app.
+Dialogue: 0,0:01:44.26,0:01:49.08,Caption,,0,0,0,,An Energy and AI circle at COMSATS, and I would join IRENA NewGen.
+Dialogue: 0,0:01:49.20,0:01:51.80,Caption,,0,0,0,,Then one neighbourhood forecast, built with IESCO.
+Dialogue: 0,0:01:51.98,0:01:54.53,Caption,,0,0,0,,The solar is already on Pakistan's roofs.
+Dialogue: 0,0:01:54.65,0:01:58.30,Caption,,0,0,0,,I want the grid to see it, and trust it.

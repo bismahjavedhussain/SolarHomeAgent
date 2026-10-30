@@ -4,13 +4,13 @@
     "kind": "img",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\openingTitle(000_007).png",
     "offset": 0,
-    "seconds": 6.1,
+    "seconds": 5.4,
     "lines": [
       "Energy gets wasted for a boring reason.",
-      "Nobody trusts the forecast enough to act on it."
+      "Nobody trusts the forecast enough to act."
     ],
-    "words": 16,
-    "wpm": 157,
+    "words": 14,
+    "wpm": 156,
     "start": 0.0
   },
   {
@@ -24,7 +24,7 @@
     ],
     "words": 11,
     "wpm": 157,
-    "start": 6.1
+    "start": 5.4
   },
   {
     "segment": "a3_config",
@@ -37,7 +37,7 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 10.3
+    "start": 9.6
   },
   {
     "segment": "a4_working",
@@ -50,7 +50,7 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 15.3
+    "start": 14.6
   },
   {
     "segment": "a5_schedule",
@@ -63,7 +63,7 @@
     ],
     "words": 12,
     "wpm": 157,
-    "start": 20.3
+    "start": 19.6
   },
   {
     "segment": "a6_economic",
@@ -76,7 +76,7 @@
     ],
     "words": 9,
     "wpm": 154,
-    "start": 24.9
+    "start": 24.2
   },
   {
     "segment": "a7_selfscore",
@@ -90,7 +90,7 @@
     ],
     "words": 17,
     "wpm": 180,
-    "start": 28.4
+    "start": 27.7
   },
   {
     "segment": "c2_coalition",
@@ -105,7 +105,7 @@
     ],
     "words": 25,
     "wpm": 156,
-    "start": 34.08
+    "start": 33.38
   },
   {
     "segment": "a8_future",
@@ -118,7 +118,7 @@
     ],
     "words": 8,
     "wpm": 155,
-    "start": 43.68
+    "start": 42.98
   },
   {
     "segment": "c3_pakistan",
@@ -128,11 +128,11 @@
     "seconds": 6.9,
     "lines": [
       "Then I looked at home.",
-      "Pakistan has solar on millions of roofs, but the grid cannot see it."
+      "Pakistan has solar on millions of roofs, but the grid can't see it."
     ],
     "words": 18,
     "wpm": 157,
-    "start": 46.78
+    "start": 46.08
   },
   {
     "segment": "s1_demand",
@@ -146,7 +146,7 @@
     ],
     "words": 18,
     "wpm": 157,
-    "start": 53.68
+    "start": 52.98
   },
   {
     "segment": "h1_intro",
@@ -159,20 +159,21 @@
     ],
     "words": 16,
     "wpm": 157,
-    "start": 60.58
+    "start": 59.88
   },
   {
     "segment": "h2_month",
     "kind": "clip",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\clips\\02_month_chart.mp4",
     "offset": 0,
-    "seconds": 5.4,
+    "seconds": 6.35,
     "lines": [
-      "Go over two hundred units in a month, and every single unit costs more."
+      "Under Pakistan's tariff, go over two hundred units once,",
+      "and you lose the cheap rate for six months."
     ],
-    "words": 14,
-    "wpm": 156,
-    "start": 66.68
+    "words": 18,
+    "wpm": 170,
+    "start": 65.98
   },
   {
     "segment": "h3_savings",
@@ -186,7 +187,7 @@
     ],
     "words": 19,
     "wpm": 156,
-    "start": 72.08
+    "start": 72.33
   },
   {
     "segment": "s2_trust",
@@ -199,7 +200,7 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 79.38
+    "start": 79.63
   },
   {
     "segment": "h5_day",
@@ -212,7 +213,7 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 84.38
+    "start": 84.63
   },
   {
     "segment": "h6_gap",
@@ -225,7 +226,7 @@
     ],
     "words": 13,
     "wpm": 156,
-    "start": 89.38
+    "start": 89.63
   },
   {
     "segment": "h7_assume",
@@ -238,22 +239,22 @@
     ],
     "words": 11,
     "wpm": 172,
-    "start": 94.38
+    "start": 94.63
   },
   {
     "segment": "c4_next",
     "kind": "img",
     "source": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\assets\\whatsNext.png",
     "offset": 0,
-    "seconds": 13.0,
+    "seconds": 13.4,
     "lines": [
-      "Next, five to ten homes in Islamabad, with the agent messaging them on WhatsApp.",
+      "Next, five to ten homes in Islamabad, starting on WhatsApp, before it becomes an app.",
       "An Energy and AI circle at COMSATS, and I would join IRENA NewGen.",
       "Then one neighbourhood forecast, built with IESCO."
     ],
-    "words": 34,
+    "words": 35,
     "wpm": 157,
-    "start": 98.21
+    "start": 98.46
   },
   {
     "segment": "c5_close",
@@ -267,6 +268,6 @@
     ],
     "words": 17,
     "wpm": 157,
-    "start": 111.21
+    "start": 111.86
   }
 ]

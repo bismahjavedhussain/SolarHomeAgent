@@ -186,6 +186,38 @@ All in [`config/scenario.yaml`](config/scenario.yaml):
 | `agent.suggestions_followed_pct` | share of advice the family acts on (default 70, **to be set from the survey**) |
 | `power_cut_essential_load_kw` | what runs on backup during an outage (default 0.30 kW) |
 
+## Who this is for
+
+The agent helps most where there is something to fix: a home that is **unregistered, has no
+battery, or runs its appliances in the evening**. That is the national typical case, and it is the
+default scenario in this repository.
+
+A home that is **net-metered, has a battery, and already runs its flexible appliances by day** has
+little left to gain. It already exports surplus at one for one, already covers the evening from
+storage, and already runs the motor and washing machine in the sun. **For that home the agent
+stands down:** it makes no shifting suggestions at all and only holds back the energy tonight's
+scheduled power cut actually needs.
+
+I checked this against the survey's own typical solar home - net metering, battery, midday
+appliances, a two-hour daily cut:
+
+| | Usual | Agent |
+|---|---|---|
+| Grid units bought | 50.7 | **50.7** |
+| Evening units | 0 | 0 |
+| Hours without power | 0 | 0 |
+| Estimated bill before taxes | Rs 1,000 | Rs 1,000 |
+
+**Identical on every measure**, with the agent sending 30 plain messages saying it
+has nothing to suggest.
+
+Before the stand-down rule existed, the agent made this home **worse**: it bought 14.7 more units
+holding a battery reserve for an evening that never needed defending. Those units bought nothing at
+all - **hours without power were zero in both modes either way**, because a two-hour cut needs about
+0.6 kWh of essential load against roughly 4 kWh of usable battery. A test now enforces the rule:
+the agent may not buy more grid units than usual behaviour unless it measurably reduces hours
+without power.
+
 ### Why the default scenario ignores the survey's solar homes
 
 My survey of 21 households found that among the 10 with solar, **9 of 10 are net-metered**, **7 of

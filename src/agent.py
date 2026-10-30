@@ -36,6 +36,27 @@ class AgentPlanner:
         self.pending_promises: list[dict] = []
         cuts = config["power_cuts"] if scenario.get("power_cuts", True) else []
         self.cut_hours = [h for start, end in cuts for h in range(start, end)]
+        self.standing_down = self._should_stand_down()
+        self.stand_down_days = 0
+
+    def _should_stand_down(self) -> bool:
+        """True when the home already exports at 1:1, stores, and runs appliances by day."""
+        cfg = self.agent_cfg.get("stand_down", {})
+        if not cfg.get("enabled", True):
+            return False
+        if self.scenario["export_mode"] != "net_metering" or not self.scenario["has_battery"]:
+            return False
+        start, end = cfg.get("daytime_window", [9, 17])
+        return all(start <= a.usual_start < end for a in self.appliances)
+
+    def _cut_only_reserve(self) -> dict[int, float]:
+        """Hold back just the essential energy the scheduled cut needs, and nothing more."""
+        if not self.scenario["has_battery"] or not self.cut_hours:
+            return {hour: 0.0 for hour in range(24)}
+        need = min(self.config["power_cut_essential_load_kw"] * len(self.cut_hours),
+                   self.config["battery"]["capacity_kwh"])
+        first = min(self.cut_hours)
+        return {hour: (round(need, 3) if hour < first else 0.0) for hour in range(24)}
 
     # --- forecasting -------------------------------------------------------
 
@@ -120,6 +141,19 @@ class AgentPlanner:
         """Decide tomorrow's appliance times, pre-cooling and battery reserve, with messages."""
         if day_forecast.empty:
             return usual_plan(self.appliances, day, self.cut_hours)
+
+        if self.standing_down:
+            # Nothing to shift and nothing wasted, so only the power-cut reserve is managed.
+            self.stand_down_days += 1
+            plan = usual_plan(self.appliances, day, self.cut_hours)
+            plan["reserve_kwh"] = self._cut_only_reserve()
+            plan["notifications"] = [self._message(
+                day, PLANNING_HOUR, "stand_down",
+                "Nothing to suggest today. Your solar already exports one for one, your battery "
+                "covers the evening, and the motor and washing machine already run in the sun. "
+                "Holding only what tonight's power cut needs.", 100)]
+            plan["standing_down"] = True
+            return plan
 
         self.planned_days += 1
         surplus, margins = self.conservative_surplus(day_forecast)
@@ -390,6 +424,10 @@ class AgentPlanner:
         if not judged:
             return None
         return round(100 * sum(1 for p in judged if p["kept"]) / len(judged), 1)
+
+    def stood_down(self) -> bool:
+        """Whether the agent judged it had nothing to add for this home."""
+        return self.standing_down
 
     def followed_pct(self) -> float | None:
         """Share of planned days on which the family acted on the advice."""

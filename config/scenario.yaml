@@ -109,8 +109,15 @@ agent:
   guard_min_days: 10           # a projection from only a few days is far too unreliable
   # Share of days the family acts on the advice. Battery planning is automatic and
   # always applies; appliance timing and pre-cooling need someone to act.
-  # Steps of 10%. TO BE SET FROM THE SURVEY.
+  # Steps of 10%. Survey said about 80%; 70 is deliberately conservative.
   suggestions_followed_pct: 70
+
+  # A home that already exports at 1:1, stores, and runs its flexible appliances by
+  # day has nothing left for the agent to shift, so it stops making suggestions and
+  # only holds a reserve for scheduled power cuts.
+  stand_down:
+    enabled: true
+    daytime_window: [9, 17]   # usual start hours counted as "already in the sun"
 
 tariff:
   # Protected: telescopic - each slice of units is charged at its own rate.

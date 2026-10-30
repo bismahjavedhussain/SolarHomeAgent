@@ -1,9 +1,11 @@
 """The agent's rules: export discipline, refusals, margins and messages."""
 from __future__ import annotations
 
+import copy
+
 import pytest
 
-from src.simulate import base_scenario, run_month
+from src.simulate import base_scenario, main_scenario, run_month
 
 TOLERANCE = 1e-9
 
@@ -210,3 +212,50 @@ def test_no_penalty_when_neither_mode_crosses(config, weather):
     comparison = run_pair(config, scenario, weather)["comparison"]
     assert not comparison["protected_status_avoided"]
     assert comparison["six_month_penalty_rs"] == 0
+
+
+def _survey_matched(config):
+    """The survey's typical solar home: net-metered, battery, appliances by day, 2h cut."""
+    probe = copy.deepcopy(config)
+    probe["power_cuts"] = [[19, 21]]
+    probe["usual_times"] = {"water_motor": 12, "washing_machine": 12, "iron": 12}
+    scenario = base_scenario(probe, household="at_risk", has_battery=True,
+                             export_mode="net_metering")
+    return probe, scenario
+
+
+def test_agent_stands_down_for_an_already_optimised_home(config, weather):
+    """Net-metered, battery, daytime habits: nothing left to shift, so it makes no suggestions."""
+    probe, scenario = _survey_matched(config)
+    run = run_month(probe, scenario, "agent", weather)
+    planner = run["planner"]
+
+    assert planner.stood_down()
+    assert planner.stand_down_days > 0
+    assert planner.refusals == 0
+    kinds = {m["kind"] for m in run["notifications"]}
+    assert kinds == {"stand_down"}, f"expected only stand-down messages, got {kinds}"
+
+
+def test_standing_down_never_costs_units_without_buying_backup(config, weather):
+    """The rule that matters: no extra grid units unless they measurably reduce dark hours."""
+    probe, scenario = _survey_matched(config)
+    usual = run_month(probe, scenario, "usual", weather)["hourly"]
+    agent = run_month(probe, scenario, "agent", weather)["hourly"]
+
+    extra_units = agent["grid_import_kwh"].sum() - usual["grid_import_kwh"].sum()
+    dark_usual = int((usual["unmet_kwh"] > 1e-6).sum())
+    dark_agent = int((agent["unmet_kwh"] > 1e-6).sum())
+
+    if extra_units > TOLERANCE:
+        assert dark_agent < dark_usual, (
+            f"agent bought {extra_units:.1f} more units without reducing hours without power "
+            f"({dark_usual} -> {dark_agent})")
+
+
+def test_stand_down_does_not_apply_to_the_default_scenario(config, weather):
+    """The national-typical home is unregistered with no battery, so the agent must still work."""
+    scenario = main_scenario(config)
+    planner = run_month(config, scenario, "agent", weather)["planner"]
+    assert not planner.stood_down()
+    assert planner.promises

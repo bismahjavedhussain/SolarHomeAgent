@@ -38,17 +38,17 @@
     "guard_days": 0
   },
   "agent": {
-    "grid_units_month": 65.4,
+    "grid_units_month": 50.7,
     "evening_grid_units": 0.0,
     "peak_grid_kw": 1.06,
-    "load_wanted_kwh": 369.4,
-    "load_served_kwh": 369.4,
-    "grid_units_per_100kwh_served": 17.7,
+    "load_wanted_kwh": 364.9,
+    "load_served_kwh": 364.9,
+    "grid_units_per_100kwh_served": 13.9,
     "solar_generated_kwh": 738.3,
-    "solar_used_kwh": 314.2,
+    "solar_used_kwh": 326.4,
     "solar_wasted_kwh": 0.0,
-    "solar_exported_kwh": 424.0,
-    "self_consumption_pct": 42.6,
+    "solar_exported_kwh": 411.9,
+    "self_consumption_pct": 44.2,
     "bill_rs": 1000.0,
     "energy_cost_rs": 1000.0,
     "fixed_charge_rs": 1000,
@@ -59,13 +59,13 @@
     "crosses_protected_limit": false,
     "unmet_kwh": 0.0,
     "unmet_hours": 0,
-    "notifications": 114,
-    "refusals": 2,
+    "notifications": 30,
+    "refusals": 0,
     "mean_forecast_error_wm2": 52.7,
-    "mean_margin_kw": 0.257,
-    "promises_made": 39,
-    "promises_kept_pct": 97.4,
-    "suggestions_followed_pct": 70.0,
+    "mean_margin_kw": 0.0,
+    "promises_made": 0,
+    "promises_kept_pct": null,
+    "suggestions_followed_pct": null,
     "guard_days": 0
   },
   "comparison": {
@@ -74,6 +74,8 @@
     "six_month_penalty_rs": 0.0,
     "penalty_priced_at_units": null
   },
+  "stood_down": true,
+  "stand_down_days": 30,
   "overrides": {
     "power_cuts": [
       [

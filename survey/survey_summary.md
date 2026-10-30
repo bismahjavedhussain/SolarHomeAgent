@@ -131,39 +131,35 @@ _10 people answered this free-text question. Responses are not reproduced here, 
 
 ---
 
-## What happens if the simulation matches the survey's typical solar home
+## Who this is for
 
 I ran one extra scenario set up the way the survey's solar homes actually look: **battery on, net
 metering, water motor and washing machine already at midday, and a two-hour daily power cut.**
 
 | | Usual | Agent | Change |
 |---|---|---|---|
-| Grid units bought | 50.7 | **65.4** | **+14.7** |
-| Evening units (18:00-22:00) | 0 | 0 | no change |
-| Solar exported | 411.9 kWh | 424 kWh | +12.1 |
-| Solar wasted | 0 kWh | 0 kWh | no change |
-| Estimated bill before taxes | Rs 1,000 | Rs 1,000 | no change |
-| Hours with no power | 0 | 0 | no change |
+| Grid units bought | 50.7 | 50.7 | none |
+| Evening units (18:00-22:00) | 0 | 0 | none |
+| **Hours without power** | **0** | **0** | none |
+| Solar exported | 411.9 kWh | 411.9 kWh | none |
+| Estimated bill before taxes | Rs 1,000 | Rs 1,000 | none |
 
-**The agent makes this home slightly worse, and that is worth saying plainly.** It buys
-**14.7 more units** and saves nothing at all on the bill.
+**The agent stands down for this home.** It sends 30 messages over the month, all
+of them saying it has nothing to suggest, and it makes no shifting recommendations.
 
-The reason is that this home has already done everything the agent would suggest:
+That rule exists because of what happened without it. The first version of this scenario had the
+agent buying **14.7 more units** than usual behaviour, holding a battery reserve for an evening that
+was already covered. Those units bought **nothing**: hours without power were **zero in both
+modes**, because a two-hour cut needs about 0.6 kWh of essential load against roughly 4 kWh of
+usable battery.
 
-- It **already runs the motor and washing machine at midday**, so there is nothing left to shift.
-- It **already has a battery**, so the evening is covered either way - evening grid units are
-  0 in *both* modes.
-- It is **already net-metered**, so surplus solar is credited rather than wasted. Solar wasted is
-  0 kWh in both modes, and the bill is the fixed charge alone in both.
+So the agent now checks first. If a home is net-metered, has a battery, and already runs its
+flexible appliances by day, it manages only the power-cut reserve, sized to essential load, and
+stays quiet otherwise.
 
-The extra units come from the agent holding battery charge back for an evening that never needed
-defending, so it buys a little more during the day instead.
-
-**This is the honest boundary of the idea.** The Solar Home Agent is for the home that is
-**unregistered, has no battery, and runs its appliances in the evening** - which is the national
-typical case and the default scenario in this repository. For a home that is registered,
-battery-equipped and already shifting load by day, it has nothing to add. That is why this scenario
-is reported here and **is not used in the video or as the headline**.
+**This is the honest scope of the idea.** The Solar Home Agent is for homes that are
+**unregistered, battery-less, or evening-heavy** - the national typical case, and the default
+scenario in this repository. For an already-optimised home it has little to add, and says so.
 
 Reproduce: see `results/survey_scenario.json`.
 

@@ -297,6 +297,28 @@ confidence - the agent was least certain about the one it got wrong.
 
 ---
 
+## Why the main scenario does not follow the survey
+
+The survey (21 households, October 2026, `survey/survey_summary.md`) found that among the 10 homes
+with solar, **9 of 10 are registered for net metering**, **7 of 10 have a battery**, and most
+already run the water motor and washing machine **by day**.
+
+**The main `at_risk` scenario deliberately keeps none of that.** It stays unregistered, with no
+battery and evening appliance times, because it is meant to stand for the **national typical**
+home: the large majority of Pakistan's rooftop solar is not net-metered, and that is the case this
+project exists to address. The survey's solar homes are the opposite - registered, battery-equipped
+and already shifting load - which is itself a sign of who answered: a student network, mostly
+better-off, 12 of the 21 in Islamabad or Rawalpindi.
+
+So the survey is used to **check the direction of the idea**, not to set the headline scenario. A
+scenario matching the survey's typical solar home is reported separately in
+`survey/survey_summary.md` rather than being made the default.
+
+**One thing the survey did change:** nothing, on purpose. `suggestions_followed_pct` stays at
+**70**. Families reported they would follow a message like this "usually" (16 of 21) or "sometimes"
+(5 of 21), which weights to roughly **80%**. The simulation keeps 70% so the headline numbers stay
+on the conservative side of what people said about themselves.
+
 ## 10. What is not modelled at all
 
 - Tilt, azimuth, shading, soiling and panel ageing

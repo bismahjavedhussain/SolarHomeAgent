@@ -9,3 +9,7 @@ venv/
 video/*.mp4
 video/clips/*.mp4
 video/_raw/
+
+# Raw survey answers stay private; only survey_summary.md is published.
+survey/responses.csv
+survey/*.csv

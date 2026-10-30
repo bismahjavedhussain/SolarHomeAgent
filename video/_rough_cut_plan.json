@@ -1,6 +1,6 @@
 [
   {
-    "segment": "t00",
+    "segment": "c1_title",
     "start": 0.0,
     "seconds": 7.0,
     "lines": [
@@ -9,60 +9,58 @@
     ]
   },
   {
-    "segment": "t01_landing",
+    "segment": "a1_landing",
     "start": 7.0,
-    "seconds": 5.5,
+    "seconds": 5.0,
     "lines": [
       "In September 2026, I built Agentic Arbiter.",
       "It covers 238 real data-centre campuses across 36 US states."
     ]
   },
   {
-    "segment": "t02_site",
-    "start": 12.5,
-    "seconds": 5.0,
+    "segment": "a2_site",
+    "start": 12.0,
+    "seconds": 4.5,
     "lines": [
       "Data centres run chillers even when",
       "the air outside is already cold enough."
     ]
   },
   {
-    "segment": "t03_config",
-    "start": 17.5,
-    "seconds": 4.5,
+    "segment": "a3_config",
+    "start": 16.5,
+    "seconds": 3.0,
+    "lines": []
+  },
+  {
+    "segment": "a4_working",
+    "start": 19.5,
+    "seconds": 3.5,
     "lines": [
-      "I pick a real site, and the plant's own limits."
+      "It works hour by hour, deciding when it's safe to shut the chillers off."
     ]
   },
   {
-    "segment": "t04_working",
-    "start": 22.0,
-    "seconds": 4.0,
-    "lines": [
-      "Then it works hour by hour, deciding when it's safe to shut the chillers off."
-    ]
-  },
-  {
-    "segment": "t05_schedule",
-    "start": 26.0,
-    "seconds": 6.0,
+    "segment": "a5_schedule",
+    "start": 23.0,
+    "seconds": 5.5,
     "lines": [
       "It made no unsafe calls.",
       "The old controller made one."
     ]
   },
   {
-    "segment": "t06_economic",
-    "start": 32.0,
-    "seconds": 4.5,
+    "segment": "a6_economic",
+    "start": 28.5,
+    "seconds": 4.0,
     "lines": [
       "Over five real years, that's about four hundred extra hours a year."
     ]
   },
   {
-    "segment": "t07_selfscore",
-    "start": 36.5,
-    "seconds": 7.0,
+    "segment": "a7_selfscore",
+    "start": 32.5,
+    "seconds": 6.5,
     "lines": [
       "And it grades itself.",
       "Here it's missing its target, because the data was patchy during the hackathon window.",
@@ -70,8 +68,8 @@
     ]
   },
   {
-    "segment": "t08_coalition",
-    "start": 43.5,
+    "segment": "c2_coalition",
+    "start": 39.0,
     "seconds": 8.0,
     "lines": [
       "Second of 842 teams, out of more than four thousand people,",
@@ -80,16 +78,16 @@
     ]
   },
   {
-    "segment": "t09_future",
-    "start": 51.5,
-    "seconds": 4.5,
+    "segment": "a8_future",
+    "start": 47.0,
+    "seconds": 4.0,
     "lines": [
       "Next I want it running live on real sites, not just measured on them."
     ]
   },
   {
-    "segment": "t10_pakistan",
-    "start": 56.0,
+    "segment": "c3_pakistan",
+    "start": 51.0,
     "seconds": 7.5,
     "lines": [
       "Then I looked at home.",
@@ -98,77 +96,95 @@
     ]
   },
   {
-    "segment": "t11_sha_metrics",
+    "segment": "s1_demand",
+    "start": 58.5,
+    "seconds": 5.0,
+    "lines": [
+      "I asked twenty-one families.",
+      "Seven of the ten with solar are already trying to use more sun by day."
+    ]
+  },
+  {
+    "segment": "h1_metrics",
     "start": 63.5,
-    "seconds": 6.5,
+    "seconds": 6.0,
     "lines": [
       "So I'm building a Solar Home Agent.",
       "It reads tomorrow's weather, then picks when to run the motor and the iron."
     ]
   },
   {
-    "segment": "t12_sha_month",
-    "start": 70.0,
-    "seconds": 4.5,
+    "segment": "h2_month",
+    "start": 69.5,
+    "seconds": 4.0,
     "lines": [
       "Same habit: it remembers how wrong it's been."
     ]
   },
   {
-    "segment": "t13_sha_savings",
-    "start": 74.5,
-    "seconds": 5.0,
+    "segment": "h3_savings",
+    "start": 73.5,
+    "seconds": 4.5,
     "lines": [
       "Moving a few jobs into the afternoon keeps this home under the limit.",
       "About five thousand rupees this month."
     ]
   },
   {
-    "segment": "t14_sha_grid",
-    "start": 79.5,
-    "seconds": 5.0,
+    "segment": "h4_grid",
+    "start": 78.0,
+    "seconds": 4.5,
     "lines": [
       "Nearly nineteen thousand over the next six.",
       "It's a simulation, on one real month of Islamabad weather."
     ]
   },
   {
-    "segment": "t15_sha_day",
-    "start": 84.5,
-    "seconds": 6.0,
+    "segment": "s2_trust",
+    "start": 82.5,
+    "seconds": 5.0,
+    "lines": [
+      "Thirteen said they'd only trust an app that explains itself.",
+      "So mine does."
+    ]
+  },
+  {
+    "segment": "h5_day",
+    "start": 87.5,
+    "seconds": 5.5,
     "lines": [
       "When it isn't sure, it says no,",
       "and tells you why."
     ]
   },
   {
-    "segment": "t16_sha_promises",
-    "start": 90.5,
-    "seconds": 3.5,
+    "segment": "h6_promises",
+    "start": 93.0,
+    "seconds": 3.0,
     "lines": [
       "It keeps score against what the sun actually did."
     ]
   },
   {
-    "segment": "t17_sha_switches",
-    "start": 94.0,
-    "seconds": 3.5,
+    "segment": "h7_switches",
+    "start": 96.0,
+    "seconds": 4.0,
     "lines": [
-      "But look what it can't fix."
+      "But look what it can't fix: it still wastes most of its midday sun,",
+      "and buys after dark."
     ]
   },
   {
-    "segment": "t18_sha_assume",
-    "start": 97.5,
-    "seconds": 3.5,
+    "segment": "h8_assume",
+    "start": 100.0,
+    "seconds": 3.8,
     "lines": [
-      "It still wastes most of its midday sun, and buys after dark.",
       "Storage closes that."
     ]
   },
   {
-    "segment": "t19_next",
-    "start": 101.0,
+    "segment": "c4_next",
+    "start": 103.8,
     "seconds": 8.0,
     "lines": [
       "Next: five to ten homes in Islamabad, over WhatsApp.",
@@ -176,8 +192,8 @@
     ]
   },
   {
-    "segment": "t20_close",
-    "start": 109.0,
+    "segment": "c5_close",
+    "start": 111.8,
     "seconds": 6.0,
     "lines": [
       "The solar is already on Pakistan's roofs.",

@@ -69,12 +69,12 @@ def tally(frame: pd.DataFrame, column: str | None, split: bool = False) -> tuple
 
 
 def format_counts(counts: Counter, responded: int, note: str = "") -> list[str]:
-    """Render counts as a markdown table with percentages of those who answered."""
+    """Render counts as 'X of N' plus the share of those who answered."""
     if not responded:
         return ["_No responses to this question yet._", ""]
     lines = ["| Answer | Count | Share of those who answered |", "|---|---|---|"]
     for answer, count in counts.most_common():
-        lines.append(f"| {answer} | {count} | {100 * count / responded:.0f}% |")
+        lines.append(f"| {answer} | **{count} of {responded}** | {100 * count / responded:.0f}% |")
     lines.append("")
     lines.append(f"_Answered by {responded} of the respondents.{(' ' + note) if note else ''}_")
     lines.append("")
@@ -159,6 +159,12 @@ def build_report(frame: pd.DataFrame) -> str:
     total = len(frame)
 
     missing = [key for key in QUESTIONS if key not in columns]
+    # Counted here so the caveat quotes a computed figure rather than a typed one.
+    city_column = columns.get("city")
+    TWIN_CITY = 0
+    if city_column:
+        cities = frame[city_column].dropna().astype(str).str.strip().str.lower()
+        TWIN_CITY = int(cities.isin(["islamabad", "rawalpindi"]).sum())
 
     lines = [
         "# Survey summary",
@@ -167,11 +173,14 @@ def build_report(frame: pd.DataFrame) -> str:
         "",
         f"**Responses: {total}**",
         "",
-        "> **A small, non-representative sample.** These responses come from a convenience sample "
-        "collected through personal and university networks. They are not a random or weighted "
-        "sample of Pakistani households, so the percentages below describe only the people who "
-        "answered. They are used to choose plausible settings for the simulation, not to make "
-        "claims about the country.",
+        f"> **A small, non-representative sample, and I want to say exactly how.** These "
+        f"{total} households came from my own student network and are mostly better-off homes; "
+        f"{TWIN_CITY} of the {total} are in Islamabad or Rawalpindi. They are not a random or "
+        f"weighted sample of Pakistani households, so every figure below describes only the people "
+        f"who answered. **Next I want to survey beyond my own network, including renters and "
+        f"families with no solar at all**, because those are the homes this is least likely to fit "
+        f"today. These answers are used to choose plausible settings for the simulation, not to "
+        f"make claims about the country.",
         "",
     ]
     if missing:
@@ -203,9 +212,11 @@ def build_report(frame: pd.DataFrame) -> str:
         counts, responded = tally(source, columns.get(key), split=key in MULTI_SELECT)
         if key == "net_metering" and counts:
             unsure = sum(c for a, c in counts.items() if "know" in a.lower())
-            if unsure:
-                note = (note + f" **{unsure} of {responded} said they do not know**, which is itself a "
-                        f"finding about how visible registration is.").strip()
+            note = (note + f" **{unsure} of {responded} said they do not know** whether they are "
+                    f"registered"
+                    + (", which is itself a finding about how visible registration is."
+                       if unsure else
+                       " - so in this sample, solar owners did know their own status.")).strip()
         lines += format_counts(counts, responded, note)
 
     if "trust" in columns:

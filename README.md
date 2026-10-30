@@ -186,6 +186,22 @@ All in [`config/scenario.yaml`](config/scenario.yaml):
 | `agent.suggestions_followed_pct` | share of advice the family acts on (default 70, **to be set from the survey**) |
 | `power_cut_essential_load_kw` | what runs on backup during an outage (default 0.30 kW) |
 
+### Why the default scenario ignores the survey's solar homes
+
+My survey of 21 households found that among the 10 with solar, **9 of 10 are net-metered**, **7 of
+10 have a battery**, and most already run appliances by day. The default `at_risk` scenario keeps
+**none** of that - unregistered, no battery, evening appliance times - because it stands for the
+**national typical** home, and most of Pakistan's rooftop solar is not registered. The survey's
+solar homes are the better-off exception, which says something about who answered: a student
+network, 12 of the 21 in Islamabad or Rawalpindi.
+
+The survey checks the *direction* of the idea; it does not set the headline scenario. A scenario
+matching the survey's typical solar home is reported separately in
+[survey/survey_summary.md](survey/survey_summary.md).
+
+`agent.suggestions_followed_pct` stays at **70%** even though families reported roughly **80%**
+(weighted from "usually" 16 of 21 and "sometimes" 5 of 21), so the headline stays conservative.
+
 ### Deploying the demo publicly
 
 The app runs entirely from the cached weather in `data/`, so it needs no API keys and no network

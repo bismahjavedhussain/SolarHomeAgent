@@ -50,3 +50,14 @@ That lands at **40 seconds**. `05_family_view` is the one to drop first: it is t
 - `08_sidebar_switches` has dead time while the app recomputes after each change. Speeding that clip to 1.5x looks natural and buys back about 4 seconds.
 - The stills in `video/stills/` are full-resolution frames, useful for the application form or for holding a frame while you talk.
 - Nothing in the recording is sped up or cut mid-step; what you see is the app running at normal speed from the cached data, with no network access.
+
+---
+
+## Source footage for 0:07-0:35 (Agentic Arbiter)
+
+Your existing demo is on disk at `D:\FGHackathon\AGENTIC-ARBITER-demo.mp4` - 2:58.56, 2560x1440,
+30 fps, 100 MB, with your original voiceover on the audio track.
+
+Reference stills for the three shots to cut are in `video/arbiter_refs/`, named by the timestamp
+they came from. Timings and the three fixes needed before reuse (burned-in subtitles, the audio
+track, and the resolution mismatch) are in `SCRIPT.md`.

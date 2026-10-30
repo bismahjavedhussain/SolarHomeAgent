@@ -97,22 +97,45 @@ cannot check.
 
 ## Edit guide for 0:07–0:35
 
-I couldn't watch your FortyGuard video — YouTube returned only the title to me, no description or
-chapters — so this is by **kind of moment**, not timestamps. Three beats, about nine seconds each:
+I watched your demo by pulling frames out of `D:\FGHackathon\AGENTIC-ARBITER-demo.mp4`
+(2:58.56, 2560x1440, 30 fps, 100 MB). Reference stills for each shot below are in
+`video/arbiter_refs/`.
 
-1. **The problem (0:07–0:16).** The shot showing chillers running while outside air is already cold.
-   Overlay: **"238 data-centre campuses · 36 US states."**
-2. **The agent deciding (0:16–0:27).** The hour-by-hour decision view — ideally the moment it says
-   *no*, because the voiceover lands on "it refuses" right here. The deployed app at
-   `agentic-arbiter.onrender.com` will screen-record cleaner than old footage; grab it fresh if you
-   can. Overlay: **"Checks its own accuracy. Refuses when it can't prove it's safe."**
-3. **The result (0:27–0:35).** The results chart. Overlay: **"+406 chiller-hours a year · 913
-   held-out days"**, then **"2nd of 842 teams · FortyGuard '26"**.
+### What's in your existing video
 
-Keep the unspoken numbers (238 campuses, 913 days, 10.7%) **on screen only**. The script is at its
-five-number budget, and reading them aloud turns it into a press release.
+| Time | Screen |
+|---|---|
+| 0:00–0:28 | Landing page, rotating globe, title and tagline |
+| 0:28–0:34 | "Initialize Arbiter" click |
+| 0:34–1:00 | Main dashboard: 238 campuses, $42.4M–$84.8M, +92,988 free-cooling hours, the five-stage loop, site cards |
+| 1:00–1:06 | US map with site pins, Ashburn callout |
+| 1:06–1:16 | Configuration & Setup |
+| **1:16–1:34** | **Hourly Schedule & Reasoning** — hourly bound chart, agent 12 h vs incumbent 13 h, **unsafe declarations 0 vs 1**, **hours refused**, "the agent's own reasoning, checkable" |
+| 1:34–1:50 | Configuration & Setup again |
+| **1:50–2:06** | **Economic Impact** — 5,375 h/yr, **+406 h/yr**, **10.7%**, 94.1%, 65.6%, tariff sweep |
+| 2:06–2:20 | Plume & Geometry — wind rose, **bearings refused 0 of 72** |
+| **2:20–2:40** | **Self-Scoring** — "grades its own promise against what actually happened, **and widens its margin when it was wrong**", margin moved −0.739 → 0.191 °C |
+| 2:40–2:58 | Back to dashboard and map, closing |
 
----
+### The three beats to cut
+
+| New video | Take from | Why |
+|---|---|---|
+| **0:07–0:16** the problem | **0:00–0:10** | The globe, and the burned-in line *"Data centres run chillers when the air outside is already cold enough"* is almost word for word what the new voiceover says here. Overlay: **"238 data-centre campuses · 36 US states."** |
+| **0:16–0:27** it checks itself, and refuses | **2:22–2:32** (first choice) or **1:18–1:28** | Self-Scoring literally reads *"widens its margin when it was wrong"* — that is the line "it checks its own accuracy first" landing on screen. The Hourly Schedule shot is the alternative, since it shows **hours refused** and **unsafe declarations 0 vs 1** side by side. Overlay: **"Refuses when it can't prove it's safe."** |
+| **0:27–0:35** the result | **1:52–2:00**, then **0:38–0:44** | Economic Impact has **+406 h/yr** and **10.7%** on one screen, which is the number you say aloud. Cut to the dashboard's **+92,988 hours** for the last two seconds to show scale. Overlay: **"2nd of 842 teams · FortyGuard '26."** |
+
+### Three things to fix before you reuse any of it
+
+1. **The subtitles are burned into the picture**, in the bottom ~8% of frame, and they are the *old*
+   narration. Over a new voiceover they will contradict you. Crop the bottom 10% of the frame
+   (2560x1440 → 2560x1300, then scale to 1920x1080), or pick only the shots above where the old
+   line happens to match the new one.
+2. **Mute it.** The file carries your original voice track. Export video-only, or set its volume to
+   zero in the timeline.
+3. **Resolution differs.** The Arbiter video is 2560x1440; the Solar Home Agent recording is
+   1920x1080. Set the project to 1080p and scale the Arbiter clips down, or the cut will jump in
+   sharpness halfway through.
 
 ## Numbers in this script
 

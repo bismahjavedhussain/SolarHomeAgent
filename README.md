@@ -4,8 +4,8 @@
 today, and once with an agent that plans each day from the weather forecast and refuses to act
 when it is not confident.**
 
-**Live demo:** _<!-- PLACEHOLDER: paste the Streamlit Community Cloud URL here once deployed -->_
-`https://solarhomeagent-rfj4gtadocojqhqw5ghtrr.streamlit.app/`
+**Live demo:** https://solarhomeagent-rfj4gtadocojqhqw5ghtrr.streamlit.app/
+
 
 > **This is a simulation, not a measurement.** Every number below comes from running the code in
 > this repository against one real month of weather (June 2025, Islamabad). Nothing here is

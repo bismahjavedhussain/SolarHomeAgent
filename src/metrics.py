@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import pandas as pd
 
-from .tariff import estimate_bill
+from .tariff import estimate_bill, protected_loss_cost
 
 EVENING_START, EVENING_END = 18, 22
 
@@ -23,6 +23,10 @@ def summarise(run: dict, config: dict, scenario: dict) -> dict:
         run["profile"]["protected_eligible"], config["tariff"],
     )
 
+    # What crossing the protected limit would cost over the following months, if usage repeats.
+    loss_cost = (protected_loss_cost(import_units, config["tariff"])
+                 if bill["loses_protected_status_for_6_months"] else 0.0)
+
     planner = run.get("planner")
     return {
         "grid_units_month": round(import_units, 1),
@@ -40,11 +44,12 @@ def summarise(run: dict, config: dict, scenario: dict) -> dict:
         ),
         "bill_rs": round(bill["bill_rs"], 0),
         "energy_cost_rs": round(bill["energy_cost_rs"], 0),
+        "fixed_charge_rs": round(bill["fixed_charge_rs"], 0),
         "export_credit_rs": round(bill["export_credit_rs"], 0),
         "pricing": bill["pricing"],
         "protected_kept": bill["protected_kept"],
         "loses_protected_status_for_6_months": bill["loses_protected_status_for_6_months"],
-        "rate_is_placeholder": bill["rate_is_placeholder"],
+        "protected_loss_6mo_rs": round(loss_cost, 0),
         "unmet_kwh": round(outage["unmet_kwh"].sum(), 2),
         "unmet_hours": int((outage["unmet_kwh"] > 1e-6).sum()),
         "notifications": len(run["notifications"]),

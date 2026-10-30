@@ -91,6 +91,7 @@ def run_month(config: dict, scenario: dict, mode: str, weather: tuple | None = N
     appliances = build_appliances(config)
     battery = Battery(config["battery"]) if scenario["has_battery"] else None
     cuts = config["power_cuts"] if scenario.get("power_cuts", True) else []
+    cut_hours = [h for start, end in cuts for h in range(start, end)]
     days_in_month = len(actual) // 24
 
     planner = AgentPlanner(config, scenario, profile, appliances) if mode == "agent" else None
@@ -103,17 +104,20 @@ def run_month(config: dict, scenario: dict, mode: str, weather: tuple | None = N
         if planner is not None:
             plan = planner.plan_day(timestamp, day_forecast, month_units, days_in_month)
         else:
-            plan = usual_plan(appliances, timestamp)
+            plan = usual_plan(appliances, timestamp, cut_hours)
         notifications.extend(plan["notifications"])
 
         for _, record in day_actual.iterrows():
             hour = record["time"].hour
-            ac_kwh = ac_component_kw(hour, record["temp_c"], profile, config)
-            load = fixed_load_kw(hour, record["temp_c"], profile, config) + plan["appliance_kw"].get(hour, 0.0)
-            load = apply_precooling(load, hour, plan, ac_kwh)
+            outage = in_power_cut(hour, cuts)
+            if outage:
+                load = config["power_cut_essential_load_kw"]  # AC and flexible loads do not run on backup
+            else:
+                ac_kwh = ac_component_kw(hour, record["temp_c"], profile, config)
+                load = fixed_load_kw(hour, record["temp_c"], profile, config) + plan["appliance_kw"].get(hour, 0.0)
+                load = apply_precooling(load, hour, plan, ac_kwh)
 
             generation = solar_kw(record["ghi_wm2"], scenario["solar_kw"], config["solar"]["derate"])
-            outage = in_power_cut(hour, cuts)
 
             reserve_floor = plan["reserve_kwh"].get(hour) if planner is not None else None
             result = dispatch_hour(load, generation, battery, outage, scenario["export_mode"], reserve_floor)

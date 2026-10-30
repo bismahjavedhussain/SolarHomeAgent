@@ -29,6 +29,8 @@ class AgentPlanner:
         self.daily_errors: list[float] = []
         self.margins_used: list[float] = []
         self.guard_days = 0
+        cuts = config["power_cuts"] if scenario.get("power_cuts", True) else []
+        self.cut_hours = [h for start, end in cuts for h in range(start, end)]
 
     # --- forecasting -------------------------------------------------------
 
@@ -94,6 +96,8 @@ class AgentPlanner:
             hours_needed = appliance_hours(hour, appliance)
             if max(hours_needed) >= appliance.allowed_end:
                 continue  # the run would spill past the allowed window
+            if any(h in self.cut_hours for h in hours_needed):
+                continue  # nothing but essentials runs during an outage
             headroom = min(surplus.get(h, 0.0) - committed.get(h, 0.0) - kw
                            for h, kw in hours_needed.items())
             if headroom >= 0:
@@ -106,7 +110,7 @@ class AgentPlanner:
                  month_units_so_far: float, days_in_month: int) -> dict:
         """Decide tomorrow's appliance times, pre-cooling and battery reserve, with messages."""
         if day_forecast.empty:
-            return usual_plan(self.appliances, day)
+            return usual_plan(self.appliances, day, self.cut_hours)
 
         surplus, margins = self.conservative_surplus(day_forecast)
         confidence = self.confidence(day_forecast, margins)
@@ -220,8 +224,8 @@ class AgentPlanner:
         fixed = self.predicted_fixed_load(day_forecast)
         solar = self.predicted_solar(day_forecast)
         evening_deficit = sum(max(0.0, fixed.get(h, 0.0) - solar.get(h, 0.0)) for h in EVENING_HOURS)
-        cut_hours = [h for start, end in self.config["power_cuts"] for h in range(start, end)]
-        cut_need = sum(fixed.get(h, 0.0) for h in cut_hours)
+        # Only essential loads run on backup, so the cut needs far less than the full load.
+        cut_need = self.config["power_cut_essential_load_kw"] * len(self.cut_hours)
 
         capacity = self.config["battery"]["capacity_kwh"]
         daytime_floor = min(evening_deficit + cut_need, capacity)
@@ -231,7 +235,7 @@ class AgentPlanner:
             daytime_floor = min(capacity, daytime_floor * 1.1)
 
         # Hold the reserve back until the evening, then keep only what the coming power cut needs.
-        first_cut = min(cut_hours) if cut_hours else 24
+        first_cut = min(self.cut_hours) if self.cut_hours else 24
         floors = {}
         for hour in range(24):
             if hour < EVENING_HOURS.start:
@@ -259,6 +263,8 @@ class AgentPlanner:
         for hour in range(appliance.allowed_start, appliance.allowed_end):
             hours_needed = appliance_hours(hour, appliance)
             if max(hours_needed) >= appliance.allowed_end:
+                continue
+            if any(h in self.cut_hours for h in hours_needed):
                 continue
             headroom = min(surplus.get(h, 0.0) - committed.get(h, 0.0) for h in hours_needed)
             options.append((headroom, -hour, hour))

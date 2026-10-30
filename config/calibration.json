@@ -1,0 +1,12 @@
+{
+  "load_scale": {
+    "low_use": 0.5578
+  },
+  "target_units": {
+    "low_use": 175
+  },
+  "achieved_units": {
+    "low_use": 175.0
+  },
+  "note": "Assumed target, not measured. Update calibration.low_use_target_units from a real bill."
+}

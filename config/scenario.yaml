@@ -50,11 +50,11 @@ ac:
 households:
   low_use:
     ac_count: 1
-    base_load_scale: 1.0   # replaced by config/calibration.json when calibrated
+    load_scale: 1.0        # replaced by config/calibration.json when calibrated
     protected_eligible: true
   high_use:
     ac_count: 2
-    base_load_scale: 1.0
+    load_scale: 1.0
     protected_eligible: false
 
 appliances:

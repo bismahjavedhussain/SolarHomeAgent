@@ -1,0 +1,124 @@
+{
+  "raw": "D:\\IRENA_YOUTH_FORUM\\SolarHomeAgent\\video\\_raw\\page@f0b0999b700d7be7b965197fa269edfd.webm",
+  "total": 61.46,
+  "steps": [
+    {
+      "name": "01_metrics",
+      "start": 5.29,
+      "notes": [
+        "Opens on the at-risk home. Simulation banner, then grid units, evening units, bill."
+      ],
+      "end": 13.79,
+      "duration": 8.5,
+      "clip": "01_metrics.mp4",
+      "clip_seconds": 9.2,
+      "video_start": 4.93,
+      "video_end": 14.12
+    },
+    {
+      "name": "02_month_chart",
+      "start": 14.03,
+      "notes": [
+        "Cumulative units over the month, with the 200-unit line."
+      ],
+      "end": 19.74,
+      "duration": 5.71,
+      "clip": "02_month_chart.mp4",
+      "clip_seconds": 6.4,
+      "video_start": 13.66,
+      "video_end": 20.06
+    },
+    {
+      "name": "03_savings_box",
+      "start": 19.96,
+      "notes": [
+        "Crossing the limit counts twice: this month, and the next six months."
+      ],
+      "end": 24.37,
+      "duration": 4.41,
+      "clip": "03_savings_box.mp4",
+      "clip_seconds": 5.12,
+      "video_start": 19.58,
+      "video_end": 24.68
+    },
+    {
+      "name": "04_grid_insight",
+      "start": 24.59,
+      "notes": [
+        "Solar thrown away at midday against units bought after dark, plus the 1,000-home scale-up."
+      ],
+      "end": 29.14,
+      "duration": 4.55,
+      "clip": "04_grid_insight.mp4",
+      "clip_seconds": 5.24,
+      "video_start": 24.2,
+      "video_end": 29.44
+    },
+    {
+      "name": "05_family_view",
+      "start": 29.31,
+      "notes": [
+        "What the household actually sees, with a rupee figure per suggestion."
+      ],
+      "end": 33.78,
+      "duration": 4.47,
+      "clip": "05_family_view.mp4",
+      "clip_seconds": 5.2,
+      "video_start": 28.91,
+      "video_end": 34.08
+    },
+    {
+      "name": "06_day_detail",
+      "start": 33.98,
+      "notes": [
+        "A day the agent refused to move anything, at 16% confidence, then the day's load."
+      ],
+      "end": 41.0,
+      "duration": 7.02,
+      "clip": "06_day_detail.mp4",
+      "clip_seconds": 7.72,
+      "video_start": 33.57,
+      "video_end": 41.28
+    },
+    {
+      "name": "07_promises",
+      "start": 41.34,
+      "notes": [
+        "The agent marking its own homework against what the sun actually did."
+      ],
+      "end": 44.65,
+      "duration": 3.31,
+      "clip": "07_promises.mp4",
+      "clip_seconds": 4.04,
+      "video_start": 40.92,
+      "video_end": 44.93
+    },
+    {
+      "name": "08_sidebar_switches",
+      "start": 44.87,
+      "notes": [
+        "Results move with how often the family acts, and with the household."
+      ],
+      "end": 57.79,
+      "duration": 12.92,
+      "clip": "08_sidebar_switches.mp4",
+      "clip_seconds": 13.6,
+      "video_start": 44.45,
+      "video_end": 58.05
+    },
+    {
+      "name": "09_assumptions",
+      "start": 57.91,
+      "notes": [
+        "The assumptions and limits, opened on camera."
+      ],
+      "end": 61.28,
+      "duration": 3.37,
+      "clip": "09_assumptions.mp4",
+      "clip_seconds": 3.88,
+      "video_start": 57.47,
+      "video_end": 61.36
+    }
+  ],
+  "video_seconds": 61.36
+}

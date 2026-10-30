@@ -4,3 +4,8 @@ __pycache__/
 .venv/
 venv/
 .DS_Store
+
+# Recorded video: large binaries the editor regenerates. Stills and docs are kept.
+video/*.mp4
+video/clips/*.mp4
+video/_raw/

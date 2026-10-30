@@ -9,16 +9,18 @@ location:
   longitude: 73.0479
   timezone: Asia/Karachi
 
-# The scenario reported in results/HEADLINE.md.
+# The scenario reported in results/HEADLINE.md and opened by default in the app.
+# A home that currently sits just over the 200-unit limit, unregistered and without
+# a battery: the case where the tariff cliff actually bites.
 main_scenario:
-  has_battery: true
+  has_battery: false
   export_mode: none
-  household: low_use
+  household: at_risk
 
 # Switches for a single run (the scenario matrix overrides these).
-has_battery: true
+has_battery: false
 export_mode: none        # none | net_billing | net_metering
-household: low_use       # low_use | high_use
+household: at_risk       # low_use | at_risk | high_use
 solar_kw: 5
 
 # Daily outage windows as [start_hour, end_hour); [] means no power cuts.

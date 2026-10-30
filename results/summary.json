@@ -1,7 +1,7 @@
 {
   "month": "2025-06",
   "location": "Islamabad",
-  "main_scenario_key": "low_use_battery_none",
+  "main_scenario_key": "at_risk_nobattery_none",
   "forecast_source": "Open-Meteo historical-forecast API, *_previous_day1 (day-ahead forecast)",
   "calibration": {
     "load_scale": {

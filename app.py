@@ -70,15 +70,24 @@ with st.sidebar:
         "at_risk": "At risk - 1 AC, currently just over 200 units",
         "high_use": "High use - 2 ACs, well over the limit",
     }
+    households = list(config["households"])
+    default = config["main_scenario"]
     household = st.radio(
-        "Household", list(config["households"]),
+        "Household", households,
+        index=households.index(default["household"]) if default["household"] in households else 0,
         format_func=lambda v: household_labels.get(v, v),
         help="Each profile's baseline is calibrated to a configurable monthly target of grid units. "
              "Those targets are assumptions, to be set from a real bill. See ASSUMPTIONS.md.",
     )
-    has_battery = st.toggle("Battery (5 kWh)", value=True)
+    st.caption(
+        f"The 215-unit figure behind **At risk** is an **assumption**, to be set from a real bill "
+        f"(`calibration.at_risk_target_units`)."
+    )
+    has_battery = st.toggle("Battery (5 kWh)", value=bool(default["has_battery"]))
+    export_modes = ["none", "net_billing", "net_metering"]
     export_mode = st.selectbox(
-        "Can the home sell power?", ["none", "net_billing", "net_metering"],
+        "Can the home sell power?", export_modes,
+        index=export_modes.index(default["export_mode"]),
         format_func=lambda v: {
             "none": "No - not registered (surplus is wasted)",
             "net_billing": "Net billing (~Rs 11/unit, contested)",

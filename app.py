@@ -112,9 +112,16 @@ comparison = results["comparison"]
 
 
 def delta_text(before: float, after: float, unit: str = "") -> str:
-    """Signed change, phrased so that less is better."""
-    difference = after - before
-    return f"{difference:+.1f}{unit}" if difference else "no change"
+    """Signed change, phrased so that less is better; anything that rounds to zero is no change."""
+    difference = round(after - before, 1)
+    return f"{difference:+.1f}{unit}" if abs(difference) >= 0.05 else "no change"
+
+
+def delta_rupees(before: float, after: float) -> str:
+    """Signed change in rupees, with a currency sign and thousands separators."""
+    difference = round(after - before)
+    sign = "-" if difference < 0 else "+"
+    return f"{sign}Rs {abs(difference):,.0f}" if difference else "no change"
 
 
 st.subheader("The month at a glance")
@@ -132,17 +139,18 @@ columns[3].metric("Hours with no power", f"{am['unmet_hours']}",
                   delta_text(um["unmet_hours"], am["unmet_hours"]),
                   delta_color="inverse", help="During power cuts, when the battery cannot cover the load")
 columns[4].metric("Cost of units bought", f"Rs {am['energy_cost_rs']:,.0f}",
-                  delta_text(um["energy_cost_rs"], am["energy_cost_rs"]),
+                  delta_rupees(um["energy_cost_rs"], am["energy_cost_rs"]),
                   delta_color="inverse",
                   help=f"Usual behaviour: Rs {um['energy_cost_rs']:,.0f}. Excludes taxes, duties and "
                        f"fuel adjustments, so a real bill would be higher.")
 
 fair = st.columns(4)
-fair[0].metric("Units per 100 kWh actually served", f"{am['grid_units_per_100kwh_served']:g}",
-               delta_text(um["grid_units_per_100kwh_served"], am["grid_units_per_100kwh_served"]),
+fair[0].metric("Share of electricity from the grid (%)", f"{am['grid_units_per_100kwh_served']:g}%",
+               delta_text(um["grid_units_per_100kwh_served"], am["grid_units_per_100kwh_served"], "%"),
                delta_color="inverse",
-               help="A home that goes dark in a power cut looks cheaper, so units bought are "
-                    "shown per kWh actually delivered.")
+               help="Units bought as a share of the electricity the home actually used. Measured "
+                    "against electricity delivered, not demanded, because a home that goes dark in "
+                    "a power cut would otherwise look cheaper.")
 fair[1].metric("Solar wasted", f"{am['solar_wasted_kwh']:g} kWh",
                delta_text(um["solar_wasted_kwh"], am["solar_wasted_kwh"], " kWh"),
                delta_color="inverse", help="Surplus the home could neither use, store nor sell")
@@ -220,7 +228,9 @@ family_days = sorted({m["date"] for m in agent["notifications"]})
 if family_days:
     acted_days = [m["date"] for m in agent["notifications"] if m["kind"] == "shifted"]
     opening = next((d for d in family_days if d in acted_days), family_days[len(family_days) // 2])
-    family_day = st.selectbox("Day", family_days, index=family_days.index(opening), key="family_day")
+    family_day = st.selectbox(
+        "Day", family_days, index=family_days.index(opening), key="family_day",
+        format_func=lambda d: pd.Timestamp(d).strftime("%d %b"))
     todays = sorted((m for m in agent["notifications"] if m["date"] == family_day),
                     key=lambda m: (PRIORITY.get(m["kind"], 9), m["hour"]))[:3]
     cards = st.columns(max(1, len(todays)))

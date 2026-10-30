@@ -1,105 +1,105 @@
 date,hour,time,kind,appliance,message,confidence_pct,margin_source
-2025-06-01,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 90%).,90,cloud-cover
-2025-06-01,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then. (confidence 90%).,90,cloud-cover
-2025-06-02,10,10:00,shifted,water_motor,"Run the water motor at 10:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 73%).",73,cloud-cover
-2025-06-02,9,09:00,shifted,washing_machine,"Run the washing machine at 9:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 73%).",73,cloud-cover
-2025-06-02,10,10:00,shifted,iron,"Run the iron at 10:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 73%).",73,cloud-cover
-2025-06-03,13,13:00,shifted,water_motor,"Run the water motor at 13:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 75%).",75,cloud-cover
-2025-06-03,14,14:00,shifted,iron,"Run the iron at 14:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 75%).",75,cloud-cover
-2025-06-04,13,13:00,shifted,water_motor,"Run the water motor at 13:00 instead of 19:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 55%).",55,cloud-cover
-2025-06-04,13,13:00,shifted,washing_machine,"Run the washing machine at 13:00 instead of 18:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 55%).",55,cloud-cover
-2025-06-04,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 55%).",55,cloud-cover
-2025-06-05,14,14:00,shifted,water_motor,"Run the water motor at 14:00 instead of 19:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 56%).",56,cloud-cover
-2025-06-05,11,11:00,shifted,iron,"Run the iron at 11:00 instead of 20:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 56%).",56,cloud-cover
-2025-06-06,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 83%).,83,learned
-2025-06-06,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then. (confidence 83%).,83,learned
-2025-06-06,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then. (confidence 83%).,83,learned
+2025-06-01,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 90%).,90,cloud-cover
+2025-06-01,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then (confidence 90%).,90,cloud-cover
+2025-06-02,10,10:00,shifted,water_motor,"Run the water motor at 10:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 73%).",73,cloud-cover
+2025-06-02,9,09:00,shifted,washing_machine,"Run the washing machine at 9:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today (confidence 73%).",73,cloud-cover
+2025-06-02,10,10:00,shifted,iron,"Run the iron at 10:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 73%).",73,cloud-cover
+2025-06-03,13,13:00,shifted,water_motor,"Run the water motor at 13:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 75%).",75,cloud-cover
+2025-06-03,14,14:00,shifted,iron,"Run the iron at 14:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 75%).",75,cloud-cover
+2025-06-04,13,13:00,shifted,water_motor,"Run the water motor at 13:00 instead of 19:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 55%).",55,cloud-cover
+2025-06-04,13,13:00,shifted,washing_machine,"Run the washing machine at 13:00 instead of 18:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 55%).",55,cloud-cover
+2025-06-04,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 55%).",55,cloud-cover
+2025-06-05,14,14:00,shifted,water_motor,"Run the water motor at 14:00 instead of 19:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 56%).",56,cloud-cover
+2025-06-05,11,11:00,shifted,iron,"Run the iron at 11:00 instead of 20:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 56%).",56,cloud-cover
+2025-06-06,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 83%).,83,learned
+2025-06-06,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then (confidence 83%).,83,learned
+2025-06-06,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then (confidence 83%).,83,learned
 2025-06-06,14,14:00,precool,,"Pre-cooling the house between 14:00 and 17:00 while the sun is strong. Tomorrow evening should reach 37C, so this should take about 0.6 kWh off the evening AC (rough estimate, confidence 83%).",83,learned
-2025-06-07,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 84%).,84,learned
-2025-06-07,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then. (confidence 84%).,84,learned
-2025-06-07,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then. (confidence 84%).,84,learned
-2025-06-08,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 84%).,84,learned
-2025-06-08,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then. (confidence 84%).,84,learned
+2025-06-07,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 84%).,84,learned
+2025-06-07,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then (confidence 84%).,84,learned
+2025-06-07,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then (confidence 84%).,84,learned
+2025-06-08,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 84%).,84,learned
+2025-06-08,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then (confidence 84%).,84,learned
 2025-06-08,20,20:00,ignored,,"Nobody was able to act on today's suggestions, so the appliances ran at their usual times. The battery still followed its plan.",84,learned
-2025-06-09,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 84%).,84,learned
-2025-06-09,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then. (confidence 84%).,84,learned
-2025-06-09,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then. (confidence 84%).,84,learned
+2025-06-09,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 84%).,84,learned
+2025-06-09,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then (confidence 84%).,84,learned
+2025-06-09,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then (confidence 84%).,84,learned
 2025-06-09,20,20:00,ignored,,"Nobody was able to act on today's suggestions, so the appliances ran at their usual times. The battery still followed its plan.",84,learned
-2025-06-10,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 84%).,84,learned
-2025-06-10,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then. (confidence 84%).,84,learned
+2025-06-10,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 84%).,84,learned
+2025-06-10,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then (confidence 84%).,84,learned
 2025-06-10,20,20:00,ignored,,"Nobody was able to act on today's suggestions, so the appliances ran at their usual times. The battery still followed its plan.",84,learned
-2025-06-11,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 83%).,83,learned
-2025-06-11,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then. (confidence 83%).,83,learned
-2025-06-11,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then. (confidence 83%).,83,learned
+2025-06-11,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 83%).,83,learned
+2025-06-11,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then (confidence 83%).,83,learned
+2025-06-11,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then (confidence 83%).,83,learned
 2025-06-12,20,20:00,guard,,154 units used with 19 days left. Going over 400 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 400.,83,learned
-2025-06-12,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 83%).,83,learned
-2025-06-12,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then. (confidence 83%).,83,learned
+2025-06-12,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 83%).,83,learned
+2025-06-12,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then (confidence 83%).,83,learned
 2025-06-13,20,20:00,guard,,179 units used with 18 days left. Going over 400 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 400.,80,learned
-2025-06-13,10,10:00,shifted,water_motor,Run the water motor at 10:00 instead of 19:00. Your panels should cover it then. (confidence 80%).,80,learned
-2025-06-13,12,12:00,shifted,washing_machine,Run the washing machine at 12:00 instead of 18:00. Your panels should cover it then. (confidence 80%).,80,learned
-2025-06-13,11,11:00,shifted,iron,Run the iron at 11:00 instead of 20:00. Your panels should cover it then. (confidence 80%).,80,learned
+2025-06-13,10,10:00,shifted,water_motor,Run the water motor at 10:00 instead of 19:00. Your panels should cover it then (confidence 80%).,80,learned
+2025-06-13,12,12:00,shifted,washing_machine,Run the washing machine at 12:00 instead of 18:00. Your panels should cover it then (confidence 80%).,80,learned
+2025-06-13,11,11:00,shifted,iron,Run the iron at 11:00 instead of 20:00. Your panels should cover it then (confidence 80%).,80,learned
 2025-06-14,20,20:00,guard,,203 units used with 17 days left. Going over 400 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 400.,82,learned
-2025-06-14,10,10:00,shifted,water_motor,Run the water motor at 10:00 instead of 19:00. Your panels should cover it then. (confidence 82%).,82,learned
-2025-06-14,11,11:00,shifted,washing_machine,Run the washing machine at 11:00 instead of 18:00. Your panels should cover it then. (confidence 82%).,82,learned
-2025-06-14,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then. (confidence 82%).,82,learned
-2025-06-15,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 82%).,82,learned
-2025-06-15,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then. (confidence 82%).,82,learned
-2025-06-16,11,11:00,shifted,water_motor,"Run the water motor at 11:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 79%).",79,learned
-2025-06-16,10,10:00,shifted,washing_machine,"Run the washing machine at 10:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 79%).",79,learned
-2025-06-16,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 79%).",79,learned
+2025-06-14,10,10:00,shifted,water_motor,Run the water motor at 10:00 instead of 19:00. Your panels should cover it then (confidence 82%).,82,learned
+2025-06-14,11,11:00,shifted,washing_machine,Run the washing machine at 11:00 instead of 18:00. Your panels should cover it then (confidence 82%).,82,learned
+2025-06-14,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then (confidence 82%).,82,learned
+2025-06-15,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 82%).,82,learned
+2025-06-15,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then (confidence 82%).,82,learned
+2025-06-16,11,11:00,shifted,water_motor,"Run the water motor at 11:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 79%).",79,learned
+2025-06-16,10,10:00,shifted,washing_machine,"Run the washing machine at 10:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today (confidence 79%).",79,learned
+2025-06-16,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 79%).",79,learned
 2025-06-17,20,20:00,guard,,270 units used with 14 days left. Going over 500 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 500.,80,learned
-2025-06-17,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 80%).,80,learned
-2025-06-17,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then. (confidence 80%).,80,learned
-2025-06-18,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 81%).,81,learned
-2025-06-18,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then. (confidence 81%).,81,learned
-2025-06-18,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then. (confidence 81%).,81,learned
+2025-06-17,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 80%).,80,learned
+2025-06-17,10,10:00,shifted,iron,Run the iron at 10:00 instead of 20:00. Your panels should cover it then (confidence 80%).,80,learned
+2025-06-18,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 81%).,81,learned
+2025-06-18,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then (confidence 81%).,81,learned
+2025-06-18,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then (confidence 81%).,81,learned
 2025-06-18,20,20:00,ignored,,"Nobody was able to act on today's suggestions, so the appliances ran at their usual times. The battery still followed its plan.",81,learned
 2025-06-19,20,20:00,guard,,301 units used with 12 days left. Going over 500 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 500.,81,learned
-2025-06-19,10,10:00,shifted,water_motor,Run the water motor at 10:00 instead of 19:00. Your panels should cover it then. (confidence 81%).,81,learned
-2025-06-19,11,11:00,shifted,iron,Run the iron at 11:00 instead of 20:00. Your panels should cover it then. (confidence 81%).,81,learned
+2025-06-19,10,10:00,shifted,water_motor,Run the water motor at 10:00 instead of 19:00. Your panels should cover it then (confidence 81%).,81,learned
+2025-06-19,11,11:00,shifted,iron,Run the iron at 11:00 instead of 20:00. Your panels should cover it then (confidence 81%).,81,learned
 2025-06-19,20,20:00,ignored,,"Nobody was able to act on today's suggestions, so the appliances ran at their usual times. The battery still followed its plan.",81,learned
 2025-06-20,20,20:00,guard,,326 units used with 11 days left. Going over 500 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 500.,80,learned
-2025-06-20,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then. (confidence 80%).,80,learned
-2025-06-20,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then. (confidence 80%).,80,learned
-2025-06-20,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then. (confidence 80%).,80,learned
+2025-06-20,11,11:00,shifted,water_motor,Run the water motor at 11:00 instead of 19:00. Your panels should cover it then (confidence 80%).,80,learned
+2025-06-20,10,10:00,shifted,washing_machine,Run the washing machine at 10:00 instead of 18:00. Your panels should cover it then (confidence 80%).,80,learned
+2025-06-20,12,12:00,shifted,iron,Run the iron at 12:00 instead of 20:00. Your panels should cover it then (confidence 80%).,80,learned
 2025-06-20,20,20:00,ignored,,"Nobody was able to act on today's suggestions, so the appliances ran at their usual times. The battery still followed its plan.",80,learned
 2025-06-21,20,20:00,guard,,356 units used with 10 days left. Going over 500 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 500.,74,learned
-2025-06-21,12,12:00,shifted,water_motor,"Run the water motor at 12:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 74%).",74,learned
-2025-06-21,11,11:00,shifted,washing_machine,"Run the washing machine at 11:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 74%).",74,learned
-2025-06-21,10,10:00,shifted,iron,"Run the iron at 10:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 74%).",74,learned
+2025-06-21,12,12:00,shifted,water_motor,"Run the water motor at 12:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 74%).",74,learned
+2025-06-21,11,11:00,shifted,washing_machine,"Run the washing machine at 11:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today (confidence 74%).",74,learned
+2025-06-21,10,10:00,shifted,iron,"Run the iron at 10:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 74%).",74,learned
 2025-06-22,20,20:00,guard,,372 units used with 9 days left. Going over 500 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 500.,66,learned
-2025-06-22,13,13:00,shifted,water_motor,"Run the water motor at 13:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 66%).",66,learned
-2025-06-22,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 66%).",66,learned
+2025-06-22,13,13:00,shifted,water_motor,"Run the water motor at 13:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 66%).",66,learned
+2025-06-22,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 66%).",66,learned
 2025-06-23,20,20:00,guard,,381 units used with 8 days left. Going over 500 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 500.,74,learned
-2025-06-23,12,12:00,shifted,water_motor,"Run the water motor at 12:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 74%).",74,learned
-2025-06-23,11,11:00,shifted,washing_machine,"Run the washing machine at 11:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 74%).",74,learned
-2025-06-23,10,10:00,shifted,iron,"Run the iron at 10:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 74%).",74,learned
+2025-06-23,12,12:00,shifted,water_motor,"Run the water motor at 12:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 74%).",74,learned
+2025-06-23,11,11:00,shifted,washing_machine,"Run the washing machine at 11:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today (confidence 74%).",74,learned
+2025-06-23,10,10:00,shifted,iron,"Run the iron at 10:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 74%).",74,learned
 2025-06-24,20,20:00,guard,,391 units used with 7 days left. Going over 500 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 500.,79,learned
-2025-06-24,11,11:00,shifted,water_motor,"Run the water motor at 11:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 79%).",79,learned
-2025-06-24,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 79%).",79,learned
+2025-06-24,11,11:00,shifted,water_motor,"Run the water motor at 11:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 79%).",79,learned
+2025-06-24,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 79%).",79,learned
 2025-06-24,14,14:00,precool,,"Pre-cooling the house between 14:00 and 17:00 while the sun is strong. Tomorrow evening should reach 35C, so this should take about 0.6 kWh off the evening AC (rough estimate, confidence 79%).",79,learned
 2025-06-25,20,20:00,guard,,402 units used with 6 days left. Going over 500 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 500.,57,learned
-2025-06-25,9,09:00,shifted,water_motor,"Run the water motor at 9:00 instead of 19:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 57%).",57,learned
-2025-06-25,10,10:00,shifted,washing_machine,"Run the washing machine at 10:00 instead of 18:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 57%).",57,learned
-2025-06-25,14,14:00,shifted,iron,"Run the iron at 14:00 instead of 20:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 57%).",57,learned
+2025-06-25,9,09:00,shifted,water_motor,"Run the water motor at 9:00 instead of 19:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 57%).",57,learned
+2025-06-25,10,10:00,shifted,washing_machine,"Run the washing machine at 10:00 instead of 18:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 57%).",57,learned
+2025-06-25,14,14:00,shifted,iron,"Run the iron at 14:00 instead of 20:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 57%).",57,learned
 2025-06-26,19,19:00,refused,water_motor,Keeping the water motor at its usual 19:00. Not enough sun expected tomorrow to be confident about moving it (confidence 16%).,16,learned
 2025-06-26,20,20:00,refused,iron,Keeping the iron at its usual 20:00. Not enough sun expected tomorrow to be confident about moving it (confidence 16%).,16,learned
 2025-06-27,20,20:00,guard,,416 units used with 4 days left. Going over 400 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 400.,72,learned
-2025-06-27,9,09:00,shifted,water_motor,"Run the water motor at 9:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 72%).",72,learned
-2025-06-27,12,12:00,shifted,washing_machine,"Run the washing machine at 12:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 72%).",72,learned
-2025-06-27,11,11:00,shifted,iron,"Run the iron at 11:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 72%).",72,learned
+2025-06-27,9,09:00,shifted,water_motor,"Run the water motor at 9:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 72%).",72,learned
+2025-06-27,12,12:00,shifted,washing_machine,"Run the washing machine at 12:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today (confidence 72%).",72,learned
+2025-06-27,11,11:00,shifted,iron,"Run the iron at 11:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 72%).",72,learned
 2025-06-27,14,14:00,precool,,"Pre-cooling the house between 14:00 and 17:00 while the sun is strong. Tomorrow evening should reach 32C, so this should take about 0.6 kWh off the evening AC (rough estimate, confidence 72%).",72,learned
 2025-06-28,20,20:00,guard,,423 units used with 3 days left. Going over 400 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 400.,72,learned
-2025-06-28,10,10:00,shifted,water_motor,"Run the water motor at 10:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 72%).",72,learned
-2025-06-28,11,11:00,shifted,washing_machine,"Run the washing machine at 11:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 72%).",72,learned
-2025-06-28,9,09:00,shifted,iron,"Run the iron at 9:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 72%).",72,learned
+2025-06-28,10,10:00,shifted,water_motor,"Run the water motor at 10:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 72%).",72,learned
+2025-06-28,11,11:00,shifted,washing_machine,"Run the washing machine at 11:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today (confidence 72%).",72,learned
+2025-06-28,9,09:00,shifted,iron,"Run the iron at 9:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 72%).",72,learned
 2025-06-28,20,20:00,ignored,,"Nobody was able to act on today's suggestions, so the appliances ran at their usual times. The battery still followed its plan.",72,learned
 2025-06-29,20,20:00,guard,,433 units used with 2 days left. Going over 400 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 400.,57,learned
-2025-06-29,16,16:00,shifted,water_motor,"Run the water motor at 16:00 instead of 19:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 57%).",57,learned
-2025-06-29,14,14:00,shifted,iron,"Run the iron at 14:00 instead of 20:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it. (confidence 57%).",57,learned
+2025-06-29,16,16:00,shifted,water_motor,"Run the water motor at 16:00 instead of 19:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 57%).",57,learned
+2025-06-29,14,14:00,shifted,iron,"Run the iron at 14:00 instead of 20:00. Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it (confidence 57%).",57,learned
 2025-06-29,20,20:00,ignored,,"Nobody was able to act on today's suggestions, so the appliances ran at their usual times. The battery still followed its plan.",57,learned
 2025-06-30,20,20:00,guard,,441 units used with 1 days left. Going over 400 units re-prices every unit you used this month at a higher rate. Moving more jobs into the sun to try to stay under 400.,66,learned
-2025-06-30,13,13:00,shifted,water_motor,"Run the water motor at 13:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 66%).",66,learned
-2025-06-30,12,12:00,shifted,washing_machine,"Run the washing machine at 12:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 66%).",66,learned
-2025-06-30,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today. (confidence 66%).",66,learned
+2025-06-30,13,13:00,shifted,water_motor,"Run the water motor at 13:00 instead of 19:00. Your panels will probably cover it, though the forecast is less certain today (confidence 66%).",66,learned
+2025-06-30,12,12:00,shifted,washing_machine,"Run the washing machine at 12:00 instead of 18:00. Your panels will probably cover it, though the forecast is less certain today (confidence 66%).",66,learned
+2025-06-30,12,12:00,shifted,iron,"Run the iron at 12:00 instead of 20:00. Your panels will probably cover it, though the forecast is less certain today (confidence 66%).",66,learned
 2025-06-30,20,20:00,ignored,,"Nobody was able to act on today's suggestions, so the appliances ran at their usual times. The battery still followed its plan.",66,learned

@@ -216,10 +216,10 @@ class AgentPlanner:
     def _coverage_phrase(self, confidence: int) -> str:
         """Wording that gets more cautious as confidence falls."""
         if confidence >= 80:
-            return "Your panels should cover it then."
+            return "Your panels should cover it then"
         if confidence >= 60:
-            return "Your panels will probably cover it, though the forecast is less certain today."
-        return "Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it."
+            return "Your panels will probably cover it, though the forecast is less certain today"
+        return "Your panels might cover it, but tomorrow's forecast is shaky, so keep an eye on it"
 
     def _plan_precooling(self, day: pd.Timestamp, day_forecast: pd.DataFrame, surplus: dict[int, float],
                          committed: dict[int, float], confidence: int, guard_on: bool) -> tuple[dict, dict, list]:
